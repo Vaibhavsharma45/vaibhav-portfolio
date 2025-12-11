@@ -516,7 +516,6 @@ const Portfolio = () => {
                 { icon: Phone, text: '+91-9012907709', link: 'tel:+919012907709' },
                 { icon: Github, text: 'github.com/vaibhavsharma45', link: 'https://github.com/vaibhavsharma45' },
                 { icon: Linkedin, text: 'linkedin.com/in/vaibhav-0sharma', link: 'https://linkedin.com/in/vaibhav-0sharma' },
-                { icon: Kaggle, text: 'Kaggle.com/vaibhavsharma45', link: 'https://www.kaggle.com/vaibhavsharma45' }
               ].map((contact, idx) => (
                 <div key={idx} className="flex items-center gap-3 transform hover:translate-x-4 transition-all duration-300 group">
                   <div className={`p-3 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'} group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 transition-all duration-300`}>
