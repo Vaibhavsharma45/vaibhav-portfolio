@@ -102,14 +102,14 @@ const Portfolio = () => {
     {
       role: 'Data Analyst Intern',
       company: 'Inten Geek',
-      duration: 'Nov 2024 - Dec 2024',
+      duration: 'Nov 2025 - Dec 2025',
       description: 'Developed and deployed an interactive Power BI Dashboard analyzing the Titanic Survival Dataset. Applied core data analysis skills to visualize key metrics (KPIs) and provide actionable insights regarding survival rates based on Pclass and Gender. Gained hands-on experience with Power BI Desktop and Google Sheets, strengthening expertise in data storytelling and visualization.',
       skills: ['Power BI', 'Data Analysis', 'Google Sheets', 'Data Visualization']
     },
     {
       role: 'Full Stack Developer',
       company: 'Marg Darshak (Personal Project)',
-      duration: '2024',
+      duration: '2025',
       description: 'Built a comprehensive web platform combining Career Compass (AI-powered career recommendations), Gyan Kosh (digital spiritual wisdom repository), and Skill Saathi (curated learning resources). Addressed real student challenges: career confusion, accessible wisdom, and scattered learning resources.',
       skills: ['Flask', 'Python', 'Seaborn', 'Machine Learning', 'Web Development']
     }
@@ -139,10 +139,10 @@ const Portfolio = () => {
   ];
 
   const certifications = [
-    { name: 'Data Science with Gen AI', org: 'PW Skills', year: '2024-2025 (Ongoing)', color: 'from-blue-500 to-cyan-500' },
-    { name: 'Power BI for Data Analytics', org: 'Various Masterclasses', year: '2024', color: 'from-purple-500 to-pink-500' },
-    { name: 'Python Programming & ML', org: 'Self-learned', year: '2024', color: 'from-green-500 to-teal-500' },
-    { name: 'Agentic AI 60 Days Roadmap', org: 'Self-paced Learning', year: '2024-2025 (Ongoing)', color: 'from-orange-500 to-red-500' }
+    { name: 'Data Science with Gen AI', org: 'PW Skills', year: '2025-Present (Ongoing)', color: 'from-blue-500 to-cyan-500' },
+    { name: 'Power BI for Data Analytics', org: 'Various Masterclasses', year: '2025', color: 'from-purple-500 to-pink-500' },
+    { name: 'Python Programming & ML', org: 'Self-learned', year: '2025', color: 'from-green-500 to-teal-500' },
+    { name: 'Agentic AI 60 Days Roadmap', org: 'Self-paced Learning', year: '2025-2025 (Ongoing)', color: 'from-orange-500 to-red-500' }
   ];
 
   const goals = {
@@ -515,7 +515,8 @@ const Portfolio = () => {
                 { icon: Mail, text: 'vaibhavsharma95124v@gmail.com', link: 'mailto:vaibhavsharma95124v@gmail.com' },
                 { icon: Phone, text: '+91-9012907709', link: 'tel:+919012907709' },
                 { icon: Github, text: 'github.com/vaibhavsharma45', link: 'https://github.com/vaibhavsharma45' },
-                { icon: Linkedin, text: 'linkedin.com/in/vaibhav-0sharma', link: 'https://linkedin.com/in/vaibhav-0sharma' }
+                { icon: Linkedin, text: 'linkedin.com/in/vaibhav-0sharma', link: 'https://linkedin.com/in/vaibhav-0sharma' },
+                { icon: Kaggle, text: 'Kaggle.com/vaibhavsharma45', link: 'https://www.kaggle.com/vaibhavsharma45' }
               ].map((contact, idx) => (
                 <div key={idx} className="flex items-center gap-3 transform hover:translate-x-4 transition-all duration-300 group">
                   <div className={`p-3 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'} group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 transition-all duration-300`}>
@@ -563,7 +564,7 @@ const Portfolio = () => {
       {/* Footer */}
       <footer className={`py-8 text-center ${darkMode ? 'bg-gray-800/70' : 'bg-white/70'} backdrop-blur-sm border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
         <p className="text-gray-600 dark:text-gray-400 animate-pulse">
-          © 2024 Vaibhav Sharma. Built with React & Tailwind CSS. Jo kuch bhi hota hai, ache ke liye hota hai. ❤️
+          © 2025 Vaibhav Sharma. Built with React & Tailwind CSS. "Everything happens for a reason". ❤️
         </p>
       </footer>
 
