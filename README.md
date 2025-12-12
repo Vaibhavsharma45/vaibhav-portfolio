@@ -52,8 +52,7 @@ A modern, responsive portfolio website showcasing my journey as an aspiring AI E
 ![Light Mode]()
 
 ### Dark Mode
-![Dark Mode](<img width="1766" height="852" alt="image" src="https://github.com/user-attachments/assets/d10ea397-2162-482f-abc9-3aee1eb6c540" />
-)
+![Dark Mode](<img width="1766" height="852" alt="image" src="https://github.com/user-attachments/assets/d10ea397-2162-482f-abc9-3aee1eb6c540" />)
 
 ## 💻 Local Development
 
