@@ -42,7 +42,7 @@ A modern, responsive portfolio website showcasing my journey as an aspiring AI E
 🔗 **[View Live Portfolio](https://thevaibhavacom.vercel.app/)**
 
 ## 📸 Screenshots
-![Uploading Screenshot 2025-12-12 072725.png…](1)
+![images/dark-mode.png…](1)
 ![Uploading Screenshot 2025-12-12 072739.png…](2)
 ![Uploading Screenshot 2025-12-12 072801.png…](3)
 ![Uploading Screenshot 2025-12-12 072825.png…](4)
