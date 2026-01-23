@@ -166,7 +166,7 @@ const Portfolio = () => {
   };
 
   const handleDownloadResume = () => {
-    alert('Resume download feature - Connect this to your actual resume PDF link!');
+    alert('VaibhavSharmaRes.pdf');
   };
 
   return (
