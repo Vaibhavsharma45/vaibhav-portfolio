@@ -29,7 +29,7 @@ const Portfolio = () => {
       }
     }, 100);
     return () => clearInterval(timer);
-  }, [roles]);
+  }, [roleIndex]);
 
   useEffect(() => {
     fetch('https://api.github.com/users/vaibhavsharma45/repos?sort=updated&per_page=6')
@@ -161,12 +161,24 @@ const Portfolio = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Resume_downloaded');
+    alert('Thanks for reaching out! I will get back to you soon. 😊');
     setFormData({ name: '', email: '', message: '' });
   };
 
+  // ✅ YE FUNCTION RESUME DOWNLOAD KAREGA
   const handleDownloadResume = () => {
-    alert("Resume_downloaded");
+    // Option 1: Agar resume public folder mein hai
+    const resumeUrl = '/Vaibhav_Sharma_Resume.pdf';
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Vaibhav_Sharma_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Option 2: Agar Google Drive link use karna hai to ye uncomment kar:
+    // const driveUrl = 'YOUR_GOOGLE_DRIVE_LINK_HERE';
+    // window.open(driveUrl, '_blank');
   };
 
   return (
@@ -406,7 +418,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-
       {/* Projects Section */}
       <section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
