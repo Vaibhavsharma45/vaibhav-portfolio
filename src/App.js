@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Phone, Moon, Sun, Download, ExternalLink, Award, Target, Briefcase, Code, User, Heart, TrendingUp, ArrowUp, Sparkles, Zap } from 'lucide-react';
 
 const Portfolio = () => {
@@ -29,7 +29,7 @@ const Portfolio = () => {
       }
     }, 100);
     return () => clearInterval(timer);
-  }, [roles]);
+  }, [roleIndex]);
 
   useEffect(() => {
     fetch('https://api.github.com/users/vaibhavsharma45/repos?sort=updated&per_page=6')
