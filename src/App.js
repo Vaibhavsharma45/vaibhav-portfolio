@@ -36,7 +36,7 @@ const Portfolio = () => {
       .then(res => res.json())
       .then(data => setGithubRepos(data))
       .catch(err => console.log(err));
-  }, []);
+  }, [roles]);
 
   useEffect(() => {
     const handleScroll = () => {
