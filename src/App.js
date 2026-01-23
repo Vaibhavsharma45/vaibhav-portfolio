@@ -161,7 +161,7 @@ const Portfolio = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(VaibhavSharmaRes.pdf);
+    alert('VaibhavSharmaRes.pdf');
     setFormData({ name: '', email: '', message: '' });
   };
 
