@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, Phone, Moon, Sun, Download, ExternalLink, Award, Target, Briefcase, Code, User, Heart, TrendingUp, ArrowUp, Sparkles, Zap } from 'lucide-react';
 
 const Portfolio = () => {
@@ -36,7 +36,7 @@ const Portfolio = () => {
       .then(res => res.json())
       .then(data => setGithubRepos(data))
       .catch(err => console.log(err));
-  }, [roles]);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -158,10 +158,10 @@ const Portfolio = () => {
       'Contribute to open-source AI projects'
     ]
   };
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Thank you! Your message has been received. I will get back to you soon!');
+    alert(VaibhavSharmaRes.pdf);
     setFormData({ name: '', email: '', message: '' });
   };
 
