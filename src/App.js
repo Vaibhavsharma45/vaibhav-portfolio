@@ -158,7 +158,7 @@ const Portfolio = () => {
       'Contribute to open-source AI projects'
     ]
   };
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert('Thank you! Your message has been received. I will get back to you soon!');
