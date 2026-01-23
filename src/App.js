@@ -29,14 +29,14 @@ const Portfolio = () => {
       }
     }, 100);
     return () => clearInterval(timer);
-  }, [roles]);
+  }, [roleIndex]);
 
   useEffect(() => {
     fetch('https://api.github.com/users/vaibhavsharma45/repos?sort=updated&per_page=6')
       .then(res => res.json())
       .then(data => setGithubRepos(data))
       .catch(err => console.log(err));
-  }, []);
+  }, [roles]);
 
   useEffect(() => {
     const handleScroll = () => {
