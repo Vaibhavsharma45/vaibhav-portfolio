@@ -161,12 +161,12 @@ const Portfolio = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('VaibhavSharmaRes.pdf');
+    alert('Resume_downloaded');
     setFormData({ name: '', email: '', message: '' });
   };
 
   const handleDownloadResume = () => {
-    alert('VaibhavSharmaRes.pdf');
+    alert("Resume_downloaded");
   };
 
   return (
