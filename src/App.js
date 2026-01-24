@@ -29,7 +29,7 @@ const Portfolio = () => {
       }
     }, 100);
     return () => clearInterval(timer);
-  }, [roleIndex]);
+  }, [roles]);
 
   useEffect(() => {
     fetch('https://api.github.com/users/vaibhavsharma45/repos?sort=updated&per_page=6')
