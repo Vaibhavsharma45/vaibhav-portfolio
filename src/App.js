@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Phone, Moon, Sun, Download, ExternalLink, Award, Target, Briefcase, Code, User, Heart, TrendingUp, ArrowUp, Sparkles, Zap } from 'lucide-react';
 
 const Portfolio = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [typedText, setTypedText] = useState('');
   const [githubRepos, setGithubRepos] = useState([]);
@@ -140,9 +140,9 @@ const Portfolio = () => {
 
   const certifications = [
     { name: 'Data Science with Gen AI', org: 'PW Skills', year: '2025-Present (Ongoing)', color: 'from-blue-500 to-cyan-500' },
-    { name: 'Power BI for Data Analytics', org: 'Various Masterclasses', year: '2025', color: 'from-purple-500 to-pink-500' },
-    { name: 'Python Programming & ML', org: 'Self-learned', year: '2025', color: 'from-green-500 to-teal-500' },
-    { name: 'Agentic AI 60 Days Roadmap', org: 'Self-paced Learning', year: '2025-2025 (Ongoing)', color: 'from-orange-500 to-red-500' }
+    { name: 'Gen AI for all', org: 'PW Skills', year: '2025', color: 'from-purple-500 to-pink-500' },
+    { name: 'Python Programming & ML', org: 'Self-learned', year: '2025-2026', color: 'from-green-500 to-teal-500' },
+    { name: 'Introduction to Prompt Engineering', org: 'Simplilearn', year: '2026', color: 'from-orange-500 to-red-500' }
   ];
 
   const goals = {
