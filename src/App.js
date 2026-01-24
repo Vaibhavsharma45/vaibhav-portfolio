@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Github, Linkedin, Mail, Phone, Moon, Sun, Download, ExternalLink, Award, Target, Briefcase, Code, User, Heart, TrendingUp, ArrowUp, Sparkles, Zap } from 'lucide-react';
 
 const Portfolio = () => {
@@ -11,7 +11,7 @@ const Portfolio = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState({});
 
-  const roles = ['AI Engineer', 'Data Scientist', 'ML Enthusiast', 'Problem Solver'];
+  const roles = useMemo(() => ['AI Engineer', 'Data Scientist', 'ML Enthusiast', 'Problem Solver'], []);
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -29,14 +29,14 @@ const Portfolio = () => {
       }
     }, 100);
     return () => clearInterval(timer);
-  }, [roleIndex]);
+  }, [roleIndex, roles]);
 
   useEffect(() => {
     fetch('https://api.github.com/users/vaibhavsharma45/repos?sort=updated&per_page=6')
       .then(res => res.json())
       .then(data => setGithubRepos(data))
       .catch(err => console.log(err));
-  }, [roles]);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -165,9 +165,7 @@ const Portfolio = () => {
     setFormData({ name: '', email: '', message: '' });
   };
 
-  // ✅ YE FUNCTION RESUME DOWNLOAD KAREGA
   const handleDownloadResume = () => {
-    // Option 1: Agar resume public folder mein hai
     const resumeUrl = '/Vaibhav_Sharma_Resume.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
@@ -175,10 +173,6 @@ const Portfolio = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
-    // Option 2: Agar Google Drive link use karna hai to ye uncomment kar:
-    // const driveUrl = 'YOUR_GOOGLE_DRIVE_LINK_HERE';
-    // window.open(driveUrl, '_blank');
   };
 
   return (
@@ -365,7 +359,7 @@ const Portfolio = () => {
             <span className="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Technical Skills</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(skills).map(([category, items], catIdx) => (
+            {Object.entries(skills).map(([category, items]) => (
               <div key={category} className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-gray-100/70'} backdrop-blur-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border ${darkMode ? 'border-gray-600' : 'border-gray-200'} group relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-500"></div>
                 <div className="flex items-center gap-2 mb-4 relative z-10">
