@@ -1,170 +1,110 @@
-# 🚀 Vaibhav Sharma - Personal Portfolio
+# Vaibhav Sharma — Personal Portfolio
 
-A modern, responsive portfolio website showcasing my journey as an aspiring AI Engineer and Data Scientist.
-
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
-![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-## ✨ Features
-
-- 🌗 **Dark/Light Mode Toggle** - Seamless theme switching
-- 🎨 **Modern UI/UX** - Beautiful gradient animations and smooth transitions
-- 📱 **Fully Responsive** - Perfect on mobile, tablet, and desktop
-- ⚡ **Fast Performance** - Optimized React components
-- 🔄 **Dynamic Typing Animation** - Rotating role descriptions
-- 🐙 **GitHub Integration** - Auto-fetches latest repositories
-- 📧 **Contact Form** - Get in touch easily
-- 🎯 **Smooth Scroll Navigation** - Enhanced user experience
-
-## 🛠️ Tech Stack
-
-- **Frontend:** React.js
-- **Styling:** Tailwind CSS
-- **Icons:** Lucide React
-- **Deployment:** Vercel
-- **Version Control:** Git & GitHub
-
-## 🎯 Sections
-
-- **Home** - Introduction with animated typing effect
-- **About** - Personal background and interests
-- **Challenges** - Key obstacles overcome in my journey
-- **Skills** - Technical expertise categorized by domain
-- **Experience** - Work experience and projects
-- **GitHub Projects** - Live repository showcase
-- **Certifications** - Learning achievements
-- **Goals** - Short-term and long-term aspirations
-- **Contact** - Get in touch with me
-
-## 🚀 Live Demo
-
-🔗 **[View Live Portfolio](https://thevaibhavacom.vercel.app/)**
-
-## 📸 Screenshots
-![dark-mode.png](1)
-![Uploading Screenshot 2025-12-12 072739.png…](2)
-![Uploading Screenshot 2025-12-12 072801.png…](3)
-![Uploading Screenshot 2025-12-12 072825.png…](4)
-
-
-### Light Mode
-![Light Mode]()
-
-### Dark Mode
-![Dark Mode](<img width="1766" height="852" alt="image" src="https://github.com/user-attachments/assets/d10ea397-2162-482f-abc9-3aee1eb6c540" />)
-
-## 💻 Local Development
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/vaibhavsharma45/portfolio.git
-cd portfolio
-```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Start development server
-```bash
-npm start
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-### Build for Production
-```bash
-npm run build
-```
-
-## 📂 Project Structure
-```
-vaibhav-portfolio/
-├── public/
-├── src/
-│   ├── App.js          # Main component with all sections
-│   ├── index.js        # Entry point
-│   └── index.css       # Tailwind styles
-├── package.json
-├── tailwind.config.js
-└── README.md
-```
-
-## 🎨 Customization
-
-### Update Personal Information
-
-Edit `src/App.js` and modify:
-
-- **Personal Details:** Name, bio, contact info
-- **Skills:** Add/remove skills in the `skills` object
-- **Experience:** Update the `experiences` array
-- **Projects:** GitHub repos auto-fetch from your profile
-- **Goals:** Modify `goals` object
-
-### Change Colors
-
-Update `tailwind.config.js` for custom color schemes.
-
-## 🌟 Features in Detail
-
-### Animations
-- Particle background animation
-- Mouse follower effect
-- Scroll reveal animations
-- Hover effects on all interactive elements
-- Smooth page transitions
-
-### Responsive Design
-- Mobile-first approach
-- Breakpoints for all device sizes
-- Touch-friendly interactions
-
-### Performance
-- Optimized React rendering
-- Lazy loading where applicable
-- Efficient state management
-
-## 📝 To-Do
-
-- [ ] Add blog section
-- [ ] Integrate actual resume PDF download
-- [ ] Add more project details
-- [ ] Implement contact form backend
-- [ ] Add analytics
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 Author
-
-**Vaibhav Sharma**
-
-- GitHub: [@vaibhavsharma45](https://github.com/vaibhavsharma45)
-- LinkedIn: [Vaibhav Sharma](https://linkedin.com/in/vaibhav-0sharma)
-- Email: vaibhavsharma95124v@gmail.com
-- Kaggle: [Vaibhav Sharma](https://kaggle.com/Vaibhavsharma45)
-
-## 💖 Support
-
-If you like this portfolio, give it a ⭐ on GitHub!
+A modern, **dark futuristic** portfolio built with React, Vite, and Tailwind CSS.  
+Optimized for recruiters and ATS-friendly content.
 
 ---
 
-**Built with ❤️ by Vaibhav Sharma**
+## 🚀 Quick Start
 
-*"Jo kuch bhi hota hai, ache ke liye hota hai"*
+```bash
+# Install (if you see cache errors: npm cache clean --force first)
+npm install
+
+# Dev
+npm run dev
+
+# Build
+npm run build
+
+# Preview build
+npm run preview
+```
+
+---
+
+## 📁 Project Structure
+
+```
+personal_portfolio/
+├── public/
+│   ├── favicon.svg
+│   └── VaibhavSharmaResume.pdf   ← Place your resume PDF here
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   ├── data.js          ← Edit content here
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+├── package.json
+├── DEPLOYMENT.md        ← Deployment steps
+└── README.md
+```
+
+---
+
+## ✏️ Updating Content
+
+Edit **`src/data.js`** to change:
+
+- `profile` — name, role, links, email, resume URL  
+- `about` — story, passion, focus  
+- `skills` — categories and items  
+- `projects` — title, tech, problem, solution, GitHub, live URL  
+- `experience` — jobs and bullets  
+- `education` — degree, school, period  
+- `certifications` — name, issuer  
+
+**Resume download:**  
+Place `VaibhavSharmaResume.pdf` in the `public/` folder.  
+To use an external link (e.g. Google Drive), set `resumeUrl` in `data.js` to the full URL.
+
+---
+
+## 🛠 Tech Stack
+
+- **React 18** + **Vite 5**
+- **Tailwind CSS 3**
+- **Lucide React** (icons)
+- **Google Fonts:** Outfit, JetBrains Mono
+
+---
+
+## 📄 Deployment
+
+See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for:
+
+- GitHub Pages  
+- Vercel  
+- Netlify  
+
+---
+
+---
+
+## 💡 Improvement Suggestions
+
+- **Resume:** Put `VaibhavSharmaResume.pdf` in `public/` so the **Resume** button works. Or set `resumeUrl` in `data.js` to a Google Drive/Dropbox link.
+- **Live demos:** Add `live: 'https://...'` for projects in `data.js` to show a **Demo** link (e.g. Streamlit, Render, Vercel).
+- **Contact form backend:** Replace the `mailto:` form with [Formspree](https://formspree.io), [Netlify Forms](https://www.netlify.com/products/forms/), or a small backend (e.g. serverless function) to receive messages without opening the mail client.
+- **Blog / case studies:** Add a `/blog` or project deep-dives (problem, approach, metrics) to show thought process and impact.
+- **OG image:** Add `og:image` in `index.html` (e.g. a 1200×630 image in `public/`) for richer link previews on LinkedIn/Twitter.
+- **Analytics:** Add Vercel Analytics, Plausible, or Google Analytics to see traffic and improve content.
+- **Performance:** You’re already on Vite + production build. For heavy images, use next-gen formats (WebP) and `loading="lazy"`.
+
+---
+
+## 📌 License
+
+Private. Use as your personal portfolio.
