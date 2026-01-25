@@ -469,15 +469,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-
-       {/* Projects Section */}
-      <section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-center flex items-center justify-center gap-3">
-            <Code className="text-blue-500 animate-pulse" />
-            <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Featured Projects</span>
-          </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 text-lg">Real-world ML applications with measurable impact</p>
           
           {/* Featured Projects */}
           <div className="grid md:grid-cols-1 gap-8 mb-16">
@@ -538,8 +529,8 @@ const Portfolio = () => {
               </div>
             ))}
           </div>
-          </div>
-        </section>
+          
+      
       {/* Certifications */}
       <section id="certifications" className={`py-20 px-4 transition-all duration-1000 ${isVisible.certifications ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
