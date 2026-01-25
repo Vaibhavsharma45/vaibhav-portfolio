@@ -11,7 +11,7 @@ const Portfolio = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState({});
 
-  const roles = useMemo(() => ['Data Analyst', 'ML Enthusiast', 'AI Engineer', 'Problem Solver'], []);
+  const roles = useMemo(() => ['AI Engineer', 'Data Scientist', 'ML Enthusiast', 'Problem Solver'], []);
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -91,51 +91,27 @@ const Portfolio = () => {
   };
 
   const skills = {
-    'Languages': ['Python', 'SQL', 'HTML', 'CSS', 'C++'],
-    'ML/Data Science': ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'Deep Learning', 'NLP', 'Random Forest'],
-    'Data Visualization': ['Power BI', 'Matplotlib', 'Seaborn', 'Plotly'],
-    'Tools & Platforms': ['Git', 'GitHub', 'VS Code', 'Jupyter Notebook', 'Vercel', 'Google Colab', 'Streamlit'],
-    'Databases': ['SQLite', 'MongoDB', 'MySQL'],
-    'Web Development': ['Flask', 'React', 'REST API']
+    'Languages': ['Python', 'C++', 'HTML', 'CSS', 'SQL'],
+    'ML/Data Science': ['TensorFlow', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Plotly', 'Bokeh'],
+    'Tools & Platforms': ['Power BI', 'Git', 'VS Code', 'Jupyter', 'IntelliJ', 'Render', 'Google Colab', 'Postman', 'Kaggle'],
+    'Databases': ['MySQL', 'MongoDB'],
+    'Web Development': ['Flask', 'HTML', 'CSS', 'JavaScript']
   };
 
   const experiences = [
     {
       role: 'Data Analyst Intern',
-      company: 'Intern Geek',
+      company: 'Inten Geek',
       duration: 'Nov 2025 - Dec 2025',
-      description: 'Conducted exploratory data analysis on Titanic dataset, uncovering survival patterns and key statistical insights. Applied hypothesis testing and statistical analysis techniques to validate data-driven assumptions. Designed interactive Power BI dashboards to visualize trends and communicate findings to stakeholders. Created comprehensive data visualizations using Python libraries (Matplotlib, Seaborn) for reporting.',
-      skills: ['Power BI', 'Data Analysis', 'EDA', 'Matplotlib', 'Seaborn', 'Statistical Analysis']
-    }
-  ];
-
-  const featuredProjects = [
-    {
-      title: 'Cryptocurrency Volatility Prediction',
-      duration: 'Jan 2025 - Mar 2025',
-      description: 'Engineered 15+ technical indicators and built Random Forest regression model on 50,000+ cryptocurrency records. Achieved R² of 0.85, RMSE of 0.0164, and MAE of 0.0098 through feature engineering and model optimization.',
-      skills: ['Python', 'Random Forest', 'Feature Engineering', 'Streamlit'],
-      metrics: ['R² Score: 0.85', 'RMSE: 0.0164', 'MAE: 0.0098', '50K+ Records'],
-      liveLink: 'https://cryptocurrency-volatility-prediction.streamlit.app',
-      githubLink: 'https://github.com/Vaibhavsharma45/Cryptocurrency-Volatility-Prediction'
+      description: 'Developed and deployed an interactive Power BI Dashboard analyzing the Titanic Survival Dataset. Applied core data analysis skills to visualize key metrics (KPIs) and provide actionable insights regarding survival rates based on Pclass and Gender. Gained hands-on experience with Power BI Desktop and Google Sheets, strengthening expertise in data storytelling and visualization.',
+      skills: ['Power BI', 'Data Analysis', 'Google Sheets', 'Data Visualization']
     },
     {
-      title: 'MARG-DARSHAK',
-      duration: 'Apr 2025 - Jun 2025',
-      description: 'ML-Based Career Prediction System using Random Forest classifier with feature selection and cross-validation. Built full-stack Flask application with SQLite database and Plotly dashboards, deployed on Render.',
-      skills: ['Flask', 'Random Forest', 'SQLite', 'Plotly', 'Machine Learning'],
-      metrics: ['Full-Stack App', 'ML Classifier', 'Database Integration', 'Deployed on Render'],
-      liveLink: 'https://marg-darshak.onrender.com',
-      githubLink: 'https://github.com/Vaibhavsharma45/Marg-Darshak'
-    },
-    {
-      title: 'Resume Analyser',
-      duration: 'Jul 2025 - Sep 2025',
-      description: 'NLP-Based ATS Compatibility System leveraging Flask and React. Created NLP pipeline using TF-IDF and NLTK for automated resume scoring. Designed Flask REST API with PDF parsing capabilities for document processing.',
-      skills: ['NLP', 'Flask', 'React', 'TF-IDF', 'NLTK', 'REST API'],
-      metrics: ['ATS Scoring', 'PDF Parsing', 'NLP Pipeline', 'Full-Stack Solution'],
-      liveLink: 'https://resume-analyser-frontend.vercel.app',
-      githubLink: 'https://github.com/Vaibhavsharma45/Resume-Analyser'
+      role: 'Full Stack Developer',
+      company: 'Marg Darshak (Personal Project)',
+      duration: '2025',
+      description: 'Built a comprehensive web platform combining Career Compass (AI-powered career recommendations), Gyan Kosh (digital spiritual wisdom repository), and Skill Saathi (curated learning resources). Addressed real student challenges: career confusion, accessible wisdom, and scattered learning resources.',
+      skills: ['Flask', 'Python', 'Seaborn', 'Machine Learning', 'Web Development']
     }
   ];
 
@@ -200,53 +176,20 @@ const Portfolio = () => {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${darkMode ? 'text-white' : 'text-gray-900'} relative overflow-hidden`}>
-      {/* Multi-Color Animated Gradient Background */}
-      <div className="fixed inset-0 z-0">
-        {/* Animated Gradient */}
-        <div className={`absolute inset-0 ${darkMode 
-          ? 'bg-gradient-to-br from-purple-900 via-blue-900 to-pink-900' 
-          : 'bg-gradient-to-br from-purple-100 via-blue-100 to-pink-100'} animate-gradient-shift`}></div>
-        
-        {/* Floating Orbs */}
-        <div className="absolute inset-0 opacity-40">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full blur-3xl ${
-                i % 4 === 0 ? 'bg-blue-500' : 
-                i % 4 === 1 ? 'bg-purple-500' : 
-                i % 4 === 2 ? 'bg-pink-500' : 'bg-cyan-500'
-              }`}
-              style={{
-                width: Math.random() * 400 + 200 + 'px',
-                height: Math.random() * 400 + 200 + 'px',
-                top: Math.random() * 100 + '%',
-                left: Math.random() * 100 + '%',
-                animation: `float ${Math.random() * 20 + 15}s ease-in-out infinite`,
-                animationDelay: Math.random() * 5 + 's'
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Animated Stars/Particles */}
-        <div className="absolute inset-0 opacity-50">
+    <div className={`min-h-screen transition-colors duration-500 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden`}>
+      {/* Animated Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 opacity-30">
           {[...Array(50)].map((_, i) => (
             <div
               key={i}
-              className={`absolute rounded-full ${
-                i % 5 === 0 ? 'bg-yellow-400' :
-                i % 5 === 1 ? 'bg-blue-400' :
-                i % 5 === 2 ? 'bg-purple-400' :
-                i % 5 === 3 ? 'bg-pink-400' : 'bg-cyan-400'
-              }`}
+              className={`absolute rounded-full ${darkMode ? 'bg-blue-500' : 'bg-purple-400'}`}
               style={{
-                width: Math.random() * 3 + 1 + 'px',
-                height: Math.random() * 3 + 1 + 'px',
+                width: Math.random() * 4 + 1 + 'px',
+                height: Math.random() * 4 + 1 + 'px',
                 top: Math.random() * 100 + '%',
                 left: Math.random() * 100 + '%',
-                animation: `twinkle ${Math.random() * 5 + 3}s linear infinite`,
+                animation: `float ${Math.random() * 10 + 10}s linear infinite`,
                 animationDelay: Math.random() * 5 + 's'
               }}
             />
@@ -311,12 +254,12 @@ const Portfolio = () => {
             <span className="animate-pulse text-blue-500">|</span>
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 animate-[fadeIn_1.5s_ease-out]">
-            BCA Student | Data Analyst Intern | Machine Learning Enthusiast
+            BCA Graduate | Data Science with Gen AI Learner | Building AI Solutions
           </p>
           <div className="flex justify-center gap-4 mb-8">
             {[
-              { icon: Github, link: 'https://github.com/Vaibhavsharma45', color: 'hover:bg-gray-800' },
-              { icon: Linkedin, link: 'https://www.linkedin.com/in/vaibhavasharma45', color: 'hover:bg-blue-600' },
+              { icon: Github, link: 'https://github.com/vaibhavsharma45', color: 'hover:bg-gray-800' },
+              { icon: Linkedin, link: 'https://linkedin.com/in/vaibhav-0sharma', color: 'hover:bg-blue-600' },
               { icon: Mail, link: 'mailto:vaibhavsharma95124v@gmail.com', color: 'hover:bg-red-500' }
             ].map((social, idx) => (
               <a
@@ -354,10 +297,10 @@ const Portfolio = () => {
                   Who I Am
                 </h3>
                 <p className="text-lg leading-relaxed mb-6 relative z-10">
-                  I'm Vaibhav Sharma, a data-driven BCA student with hands-on experience in machine learning, data analysis, and NLP. I have a proven ability to build end-to-end ML pipelines with high accuracy on large datasets. Skilled in Python, SQL, and Power BI with a track record of deploying production-ready applications using Flask and Streamlit.
+                  I'm Vaibhav Sharma, an aspiring AI Engineer currently in the learning phase. I recently completed my BCA and am actively exploring the data science field while building various projects. I'm pursuing a Data Science with Gen AI course on PW Skills, combining theoretical knowledge with hands-on project development.
                 </p>
                 <p className="text-lg leading-relaxed relative z-10">
-                  Currently seeking Data Analyst or Machine Learning Intern roles to further apply my predictive modeling and analytical skills. I believe in continuous learning and building impactful solutions.
+                  I believe in the philosophy: <span className="italic font-semibold text-blue-500 animate-pulse">"Jo kuch bhi hota hai, ache ke liye hota hai"</span> (Whatever happens, happens for good). This mindset keeps me motivated through challenges and continuous learning.
                 </p>
               </div>
             </div>
@@ -469,68 +412,39 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-          
-          {/* Featured Projects */}
-          <div className="grid md:grid-cols-1 gap-8 mb-16">
-            {featuredProjects.map((project, index) => (
-              <div key={index} className={`p-8 rounded-2xl ${darkMode ? 'bg-gray-800/70' : 'bg-white/70'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02] border ${darkMode ? 'border-gray-700' : 'border-gray-200'} group relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-blue-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500"></div>
-                
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 relative z-10">
-                  <div>
-                    <h3 className="text-2xl font-semibold text-blue-500 group-hover:text-purple-500 transition-colors duration-300">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mt-1">{project.duration}</p>
-                  </div>
-                  <div className="flex gap-3 mt-3 md:mt-0">
-                    {project.liveLink && (
-                      <a 
-                        href={project.liveLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg"
-                      >
-                        <ExternalLink size={16} />
-                        Live Demo
-                      </a>
-                    )}
-                    {project.githubLink && (
-                      <a 
-                        href={project.githubLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-lg hover:from-gray-800 hover:to-black transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg"
-                      >
-                        <Github size={16} />
-                        Code
-                      </a>
-                    )}
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed relative z-10">{project.description}</p>
-                
-                {/* Metrics */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4 relative z-10">
-                  {project.metrics.map((metric, idx) => (
-                    <div key={idx} className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700/50' : 'bg-gray-100/50'} text-center`}>
-                      <p className="text-sm font-semibold text-blue-500">{metric}</p>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Skills */}
-                <div className="flex flex-wrap gap-2 relative z-10">
-                  {project.skills.map((skill, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-sm hover:from-pink-500 hover:to-red-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 shadow-lg cursor-pointer">
-                      {skill}
+      {/* Projects Section */}
+      <section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3">
+            <Github className="text-blue-500 animate-pulse" />
+            <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">GitHub Projects</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {githubRepos.length > 0 ? githubRepos.map((repo, index) => (
+              <div key={index} className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-gray-100/70'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 transform hover:scale-105 border ${darkMode ? 'border-gray-600' : 'border-gray-200'} group relative overflow-hidden`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-500"></div>
+                <h3 className="text-xl font-semibold mb-2 text-blue-500 group-hover:text-purple-500 transition-colors duration-300 relative z-10">{repo.name}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm line-clamp-2 relative z-10">
+                  {repo.description || 'No description available'}
+                </p>
+                <div className="flex justify-between items-center relative z-10">
+                  {repo.language && (
+                    <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs transform group-hover:scale-110 transition-all duration-300">
+                      {repo.language}
                     </span>
-                  ))}
+                  )}
+                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-purple-500 transform hover:scale-125 hover:rotate-12 transition-all duration-300">
+                    <ExternalLink size={20} />
+                  </a>
                 </div>
               </div>
-            ))}
+            )) : (
+              <div className="col-span-3 text-center text-gray-500 animate-pulse">Loading projects...</div>
+            )}
           </div>
-          
-      
+        </div>
+      </section>
+
       {/* Certifications */}
       <section id="certifications" className={`py-20 px-4 transition-all duration-1000 ${isVisible.certifications ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
