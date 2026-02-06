@@ -1,23 +1,74 @@
-// Contact.jsx
-export default function Contact() {
-  return (
-    <section className="py-20 bg-primary text-white text-center">
-      <h2 className="text-4xl font-bold">Let’s Build Something Together</h2>
-      <p className="mt-4">
-        Open to internships, freelance, and full-time opportunities.
-      </p>
-      <p className="mt-2 text-lg">
-  I’m actively looking for internships and entry-level software roles.
-</p>
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
-      <a
-        href="mailto:yourmail@gmail.com"
-        className="inline-block mt-6 px-6 py-3 bg-white text-primary rounded-lg"
-      >
+const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_mh8anwa",   // 🔴 your service ID
+        "template_l1wrhjj",   // 🔴 your template ID
+        form.current,
+        "1is2TvfZtRyWbncE5"       // 🔴 your public key
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        () => {
+          alert("Something went wrong. Please try again.");
+        }
+      );
+  };
+
+  return (
+    <section id="contact" className="py-24 px-4">
+      <h2 className="text-4xl font-bold text-center mb-8">
         Contact Me
-      </a>
+      </h2>
+
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="max-w-xl mx-auto space-y-4"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          className="w-full p-3 rounded bg-white/80 dark:bg-white/10"
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          className="w-full p-3 rounded bg-white/80 dark:bg-white/10"
+        />
+
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+          className="w-full p-3 rounded bg-white/80 dark:bg-white/10"
+        />
+
+        <button
+          type="submit"
+          className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold"
+        >
+          Send Message
+        </button>
+      </form>
     </section>
   );
-}
+};
 
-
+export default Contact;
