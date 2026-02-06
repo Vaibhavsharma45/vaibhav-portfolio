@@ -1,3 +1,5 @@
+import WhyHireMe from "./components/WhyHIreme";
+import CurrentlyLearning from "./components/CurrentlyLearning";
 import React, { useState, useEffect, useMemo } from 'react';
 import { Github, Linkedin, Mail, Phone, Moon, Sun, Download, ExternalLink, Award, Target, Briefcase, Code, User, Heart, TrendingUp, ArrowUp, Sparkles, Zap } from 'lucide-react';
 
