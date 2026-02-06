@@ -380,6 +380,9 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+      <WhyHireMe />
+<CurrentlyLearning />
+
 
       {/* Experience Section */}
       <section id="experience" className={`py-20 px-4 transition-all duration-1000 ${isVisible.experience ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
