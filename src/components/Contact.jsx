@@ -12,10 +12,11 @@ export default function Contact() {
       >
         Contact Me
       </a>
+      <p className="mt-2 text-lg">
+  I’m actively looking for internships and entry-level software roles.
+</p>
     </section>
   );
 }
 
-<p className="mt-2 text-lg">
-  I’m actively looking for internships and entry-level software roles.
-</p>
+
