@@ -616,7 +616,6 @@
 // };
 
 // export default Portfolio;
-
 import { useState, useEffect, useRef } from "react";
 
 // ─── CSS-in-JS Styles injected once ─────────────────────────────────────────
@@ -991,7 +990,9 @@ function Nav() {
 }
 
 // ─── Typewriter hook ─────────────────────────────────────────────────────────
-function useTypewriter(roles) {
+const TYPEWRITER_ROLES = ["AI Engineer", "Data Scientist", "ML Enthusiast", "Computer Vision Dev", "Gen AI Builder", "Problem Solver"];
+
+function useTypewriter() {
   const [text, setText] = useState("");
   const state = useRef({ ri: 0, ci: 0, del: false });
 
@@ -999,7 +1000,7 @@ function useTypewriter(roles) {
     let timer;
     const tick = () => {
       const { ri, ci, del } = state.current;
-      const word = roles[ri];
+      const word = TYPEWRITER_ROLES[ri];
       if (!del) {
         const next = ci + 1;
         setText(word.slice(0, next));
@@ -1016,7 +1017,7 @@ function useTypewriter(roles) {
         state.current.ci = next;
         if (next === 0) {
           state.current.del = false;
-          state.current.ri = (ri + 1) % roles.length;
+          state.current.ri = (ri + 1) % TYPEWRITER_ROLES.length;
         }
         timer = setTimeout(tick, 55);
       }
@@ -1085,20 +1086,6 @@ function ScrollTop() {
 
 // ─── Orbit Field (hero right) ─────────────────────────────────────────────────
 function OrbitField() {
-  const orb = (cls, pcls, label) => (
-    <div className={cls} style={{ transform: "translate(-50%,-50%)" }}>
-      <div className={`orb-pill ${pcls}`} style={{ transform: "" }}>{label}</div>
-    </div>
-  );
-
-  const makeOrbit = (cls, pills) => (
-    <div className={`orbit ${cls}`}>
-      {pills.map(([pos, color, label], i) => (
-        <div key={i} className={`orb-pill ${color} ${pos}`}>{label}</div>
-      ))}
-    </div>
-  );
-
   const o1Pills = [
     ["op1", "pill-violet", "Python"],
     ["op2", "pill-rose", "YOLOv8"],
@@ -1156,8 +1143,7 @@ function OrbitField() {
 
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 function Hero() {
-  const roles = ["AI Engineer", "Data Scientist", "ML Enthusiast", "Computer Vision Dev", "Gen AI Builder", "Problem Solver"];
-  const tw = useTypewriter(roles);
+  const tw = useTypewriter();
   return (
     <section id="home">
       <div className="hero-inner">
