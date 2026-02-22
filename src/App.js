@@ -185,15 +185,14 @@ const css = `
 /* ─────────────────────────────────────────
    DATA
    ───────────────────────────────────────── */
-const ROLES = ['AI Engineer', 'Data Scientist', 'ML Practitioner', 'Computer Vision Developer', 'Gen AI Specialist', 'Problem Solver'];
+const ROLES = ['AI Engineer', 'Data Scientist', 'ML Enthusiast', 'Problem Solver'];
 
 const SKILLS = [
-  { label: 'Languages', tags: ['Python', 'C++', 'HTML', 'CSS', 'SQL', 'JavaScript'], color: S.violet },
-  { label: 'ML / AI', tags: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'YOLOv8', 'LangChain', 'HuggingFace', 'OpenCV', 'NLTK'], color: S.rose },
-  { label: 'Data & Analytics', tags: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Plotly', 'Power BI'], color: S.mint },
-  { label: 'Tools & Platforms', tags: ['Kaggle', 'Jupyter', 'Google Colab', 'Git', 'VS Code', 'Postman'], color: S.sky },
-  { label: 'Databases', tags: ['MySQL', 'MongoDB'], color: S.violet },
-  { label: 'Deployment', tags: ['Flask', 'FastAPI', 'Streamlit', 'React', 'Vercel', 'Render'], color: S.rose },
+  { label: 'Languages', tags: ['Python', 'C++', 'HTML', 'CSS', 'SQL'], color: S.violet },
+  { label: 'ML / Data Science', tags: ['TensorFlow', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Plotly', 'Bokeh'], color: S.rose },
+  { label: 'Tools & Platforms', tags: ['Power BI', 'Git', 'VS Code', 'Jupyter', 'IntelliJ', 'Render', 'Google Colab', 'Postman', 'Kaggle'], color: S.mint },
+  { label: 'Databases', tags: ['MySQL', 'MongoDB'], color: S.sky },
+  { label: 'Web Development', tags: ['Flask', 'HTML', 'CSS', 'JavaScript'], color: S.violet },
 ];
 
 const PROJECTS = [
@@ -233,50 +232,49 @@ const EXPERIENCE = [
     role: 'Data Analyst Intern',
     company: '@ InternGeek',
     bullets: [
-      'Developed an interactive Power BI dashboard analyzing the Titanic Survival Dataset with key KPI visualizations',
-      'Identified survival patterns across Passenger Class and Gender segments, delivering actionable insights',
-      'Applied data storytelling techniques using Power BI Desktop and Google Sheets',
+      'Developed and deployed an interactive Power BI Dashboard analyzing the Titanic Survival Dataset',
+      'Applied core data analysis skills to visualize key metrics (KPIs) and provide actionable insights regarding survival rates based on Pclass and Gender',
+      'Gained hands-on experience with Power BI Desktop and Google Sheets, strengthening expertise in data storytelling and visualization',
     ],
-    tags: ['Power BI', 'Data Analysis', 'Google Sheets', 'Visualization'],
+    tags: ['Power BI', 'Data Analysis', 'Google Sheets', 'Data Visualization'],
   },
   {
-    period: 'Jan 2025 — Present',
-    role: 'AI/ML Training Program',
-    company: '@ PW Skills · 6-Month Curriculum',
+    period: '2025',
+    role: 'Full Stack Developer',
+    company: '@ Marg Darshak (Personal Project)',
     bullets: [
-      'Completed an intensive curriculum spanning Machine Learning, Deep Learning, Computer Vision, NLP, and Generative AI',
-      'Shipped 10+ production-grade AI projects covering the full development lifecycle',
-      'Gained hands-on experience in model optimization, deployment pipelines, and MLOps fundamentals',
+      'Built a comprehensive web platform combining Career Compass (AI-powered career recommendations), Gyan Kosh (digital spiritual wisdom repository), and Skill Saathi (curated learning resources)',
+      'Addressed real student challenges: career confusion, accessible wisdom, and scattered learning resources',
     ],
-    tags: ['Machine Learning', 'Deep Learning', 'Computer Vision', 'Gen AI'],
+    tags: ['Flask', 'Python', 'Seaborn', 'Machine Learning', 'Web Development'],
   },
 ];
 
 const CHALLENGES = [
-  { num:'01', title:'Self-taught ML Journey', desc:'Independently acquired expertise in Python and Machine Learning without formal mentorship — building projects from scratch that earned peer recognition and opened professional doors.' },
-  { num:'02', title:'Mastering Complex Algorithms', desc:'Overcame initial difficulty with ML algorithms by revisiting foundational mathematics and systematically practicing across diverse datasets until concepts solidified.' },
-  { num:'03', title:'Kaggle Comeback', desc:'Transformed an unsuccessful first competition attempt into a top 20% finish by conducting a thorough post-analysis, iterating on approach, and committing to consistent practice.' },
-  { num:'04', title:'Resource Constraints', desc:'Limited GPU access drove creative engineering: lightweight architectures, cloud resource optimization, and efficient training pipelines — ultimately making for a more resourceful engineer.' },
+  { num:'01', title:'Self-taught ML Journey', desc:'Learned Python and Machine Learning independently without formal mentorship, building small projects that eventually gained peer recognition.' },
+  { num:'02', title:'Mastering Complex Algorithms', desc:'Struggled initially with ML algorithms; revisited foundational mathematics and practiced extensively with multiple datasets to build understanding.' },
+  { num:'03', title:'Kaggle Comeback Story', desc:'First Kaggle competition attempt was unsuccessful. Analyzed mistakes, practiced continuously, and achieved top 20% finish in subsequent competitions.' },
+  { num:'04', title:'Resource Optimization', desc:'Limited GPU access initially required using lightweight models and cloud resources while balancing learning with other responsibilities.' },
 ];
 
 const CERTS = [
-  { icon:'🎓', year:'2025 — Present', name:'Data Science with Gen AI', org:'PW Skills' },
+  { icon:'🎓', year:'2025 — Present (Ongoing)', name:'Data Science with Gen AI', org:'PW Skills' },
   { icon:'⚡', year:'2025', name:'Gen AI for All', org:'PW Skills' },
-  { icon:'🐍', year:'2025 — 2026', name:'Python Programming & Machine Learning', org:'Self-directed Study' },
+  { icon:'🐍', year:'2025 — 2026', name:'Python Programming & ML', org:'Self-learned' },
   { icon:'🤖', year:'2026', name:'Introduction to Prompt Engineering', org:'Simplilearn' },
 ];
 
 const GOALS = {
   short: [
-    'Complete the Data Science with Gen AI curriculum',
-    'Build 5+ production ML projects',
-    'Secure an AI/ML engineering role or internship',
-    'Complete the Agentic AI learning path',
+    'Complete Data Science with Gen AI course',
+    'Build 5+ ML projects for portfolio',
+    'Get AI/ML internship',
+    'Complete Agentic AI journey',
   ],
   long: [
-    'Grow into a senior AI Engineer at a product-focused company',
-    'Contribute to cutting-edge AI systems that create real-world impact',
-    'Give back through meaningful open-source AI contributions',
+    'Become a skilled AI Engineer',
+    'Work on cutting-edge AI products',
+    'Contribute to open-source AI projects',
   ],
 };
 
@@ -392,7 +390,7 @@ const Hero = ({ typedText }) => (
         {/* Tag */}
         <div style={{ display:'inline-flex', alignItems:'center', gap:10, background:S.glass, backdropFilter:'blur(14px)', border:`1px solid ${S.border}`, borderRadius:100, padding:'6px 16px 6px 8px', marginBottom:'2rem', fontFamily:"'Space Mono',monospace", fontSize:'.6rem', color:S.muted, letterSpacing:'1.5px', boxShadow:'0 8px 32px rgba(26,20,16,0.12)' }}>
           <span style={{ width:8, height:8, borderRadius:'50%', background:S.mint, boxShadow:`0 0 8px ${S.mint}`, display:'inline-block', animation:'bdot 2s ease-in-out infinite' }}></span>
-          Gen AI Engineer · Muzaffarnagar, India
+          Gen AI Engineer · Muzaffarnagar, UP, India
         </div>
 
         <h1 style={{ fontFamily:"'Playfair Display',serif", fontSize:'clamp(3.5rem,8vw,7.5rem)', fontWeight:900, lineHeight:.95, letterSpacing:'-3px', color:S.ink, marginBottom:'1.5rem' }}>
@@ -404,7 +402,7 @@ const Hero = ({ typedText }) => (
         </div>
 
         <p style={{ fontSize:'.97rem', color:S.muted, lineHeight:1.85, maxWidth:460, marginBottom:'2.5rem', fontWeight:300 }}>
-          <strong style={{ color:S.ink, fontWeight:500 }}>BCA graduate. AI/ML engineer in the making.</strong> Building production-grade intelligent systems across computer vision, NLP, and generative AI. Every project ships. No shortcuts.
+          BCA Graduate | Data Science with Gen AI Learner | Building AI Solutions that solve real problems.
         </p>
 
         <div style={{ display:'flex', gap:'1rem', flexWrap:'wrap' }}>
@@ -502,13 +500,10 @@ const About = () => (
             <em style={{ color:S.violet }}>Who</em> I Am
           </h3>
           <p style={{ fontSize:'.9rem', fontWeight:300, color:S.muted, lineHeight:1.85, marginBottom:'1rem' }}>
-            I'm <strong style={{ color:S.ink, fontWeight:500 }}>Vaibhav Sharma</strong>, a Gen AI engineer based in Muzaffarnagar, UP. Currently completing my BCA at Maa Shakumbhari University while actively building AI-driven applications that solve real problems.
+            I'm <strong style={{ color:S.ink, fontWeight:500 }}>Vaibhav Sharma</strong>, an aspiring AI Engineer currently in the learning phase. I recently completed my BCA and am actively exploring the data science field while building various projects. I'm pursuing a Data Science with Gen AI course on PW Skills, combining theoretical knowledge with hands-on project development.
           </p>
           <p style={{ fontSize:'.9rem', fontWeight:300, color:S.muted, lineHeight:1.85, marginBottom:'1rem' }}>
-            I'm enrolled in an intensive <strong style={{ color:S.ink, fontWeight:500 }}>Data Science with Gen AI</strong> program at PW Skills — covering the full spectrum from classical ML to modern LLMs. My work spans computer vision, NLP, and deployed web applications.
-          </p>
-          <p style={{ fontSize:'.9rem', fontWeight:300, color:S.muted, lineHeight:1.85 }}>
-            I live by a simple philosophy: <em style={{ color:S.violet }}>"Jo kuch bhi hota hai, ache ke liye hota hai."</em>
+            I believe in the philosophy: <em style={{ color:S.violet }}>"Jo kuch bhi hota hai, ache ke liye hota hai"</em> (Whatever happens, happens for good). This mindset keeps me motivated through challenges and continuous learning.
           </p>
           <div style={{ marginTop:'1.5rem', padding:'1.2rem 1.5rem', background:'rgba(107,63,160,0.06)', borderLeft:`3px solid ${S.violet}`, borderRadius:'0 12px 12px 0', fontFamily:"'Space Mono',monospace", fontSize:'.72rem', color:S.violet, lineHeight:1.7 }}>
             # Strong fundamentals. Real solutions. No shortcuts.
@@ -528,9 +523,10 @@ const About = () => (
               {[
                 ['Location', 'Muzaffarnagar, UP, India', S.ink],
                 ['Education', 'BCA — Maa Shakumbhari University', S.ink],
-                ['Focus', 'Gen AI · Computer Vision · NLP', S.violet],
+                ['Specialization', 'Gen AI | CV | NLP', S.violet],
+                ['Status', 'Actively Seeking Opportunities', S.mint],
                 ['Kaggle', 'Top 20% Competitor', S.gold],
-                ['Status', 'OPEN TO WORK', S.mint],
+                ['Motto', 'Strong fundamentals. Real solutions.', S.muted],
               ].map(([k, v, c]) => (
                 <div key={k} style={{ display:'grid', gridTemplateColumns:'130px 1fr', gap:'.5rem' }}>
                   <span style={{ color:S.muted }}>{k}</span>
@@ -544,11 +540,11 @@ const About = () => (
           {/* Interests */}
           <GlassCard style={{ padding:'.5rem' }} className="rv d3">
             {[
-              ['01', 'Tracking AI/ML research & emerging tech trends'],
-              ['02', 'Cricket & maintaining a regular fitness routine'],
-              ['03', 'Reading — philosophy, productivity, and growth'],
-              ['04', 'Astrology & systems of self-understanding'],
-              ['05', 'Taking on new challenges & diverse experiences'],
+              ['01', 'Exploring new technologies and staying updated with AI/ML trends'],
+              ['02', 'Regular exercise and playing cricket'],
+              ['03', 'Reading articles and powerful thoughts for personal growth'],
+              ['04', 'Exploring astrology and finding methods for self-improvement'],
+              ['05', 'Gaining diverse experiences and trying new things'],
             ].map(([num, text]) => (
               <div key={num} className="int-li" style={{ display:'flex', alignItems:'center', gap:14, padding:'13px 16px', borderBottom:'1px solid rgba(26,20,16,0.06)', fontSize:'.88rem', color:S.muted, fontWeight:300 }}>
                 <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'.55rem', color:S.violet, minWidth:28 }}>{num}</span>
@@ -751,7 +747,7 @@ const Contact = () => (
         <div className="rv">
           <BigH>Let's build<br />something<br /><em style={{ color:S.violet }}>intelligent.</em></BigH>
           <p style={{ fontSize:'.95rem', fontWeight:300, color:S.muted, lineHeight:1.85, marginBottom:'2.5rem' }}>
-            Actively seeking roles in AI/ML engineering, data science, and generative AI. Open to full-time positions, internships, and meaningful collaborations.
+            Actively seeking opportunities in AI/ML engineering, data science, and Gen AI. Open to full-time roles, internships, and interesting collaborations. Let's build something together.
           </p>
           <a href="mailto:vaibhavsharma95124v@gmail.com" style={{ display:'inline-flex', alignItems:'center', gap:12, background:S.ink, color:S.cream, fontFamily:"'Space Mono',monospace", fontSize:'.7rem', letterSpacing:'2px', textTransform:'uppercase', padding:'18px 36px', borderRadius:100, textDecoration:'none', cursor:'none', boxShadow:'0 4px 24px rgba(26,20,16,0.2)', transition:'all .35s' }}
             onMouseOver={e => { e.currentTarget.style.background = S.violet; e.currentTarget.style.boxShadow = '0 8px 36px rgba(107,63,160,0.4)'; }}
