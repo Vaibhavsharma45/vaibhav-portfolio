@@ -18,6 +18,7 @@ const Portfolio = () => {
   const roles = useMemo(() => [
     'AI & ML Engineer',
     'Data Scientist',
+    'Generative AI Enthusiast',
     'Python Developer',
     'Backend Engineer',
     'Problem Solver',
@@ -78,9 +79,9 @@ const Portfolio = () => {
   // ── DATA ──────────────────────────────────────────────────────────────────
   const skills = {
     'Languages': ['Python', 'C++', 'JavaScript', 'HTML', 'CSS', 'SQL'],
-    'AI / ML': ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'OpenCV', 'LangChain'],
-    'Backend & Web': ['Flask', 'FastAPI', 'Node.js', 'REST APIs', 'MongoDB', 'MySQL'],
-    'Tools & Platforms': ['Power BI', 'Git', 'GitHub', 'Docker', 'VS Code', 'Jupyter', 'Google Colab', 'Kaggle', 'Postman', 'Render'],
+    'AI / ML': ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'OpenCV', 'LangChain','Machine Learning', 'Data Analysis', 'Data Visualisation', 'EDA', 'Feature Engineering', 'Model Deployment'],
+    'Backend & Web': ['Flask', 'FastAPI', 'MongoDB', 'MySQL', 'REST APIs', 'Web Development',],
+    'Tools & Platforms': ['Power BI', 'Git', 'GitHub', 'Docker', 'VS Code', 'Jupyter', 'Google Colab', 'Kaggle', 'Postman', 'Render','Vercel', 'Groq API', 'ChromaDB', 'Google Sheets', 'Plotly', 'LlamaIndex', 'LangGraph','Render'],
   };
 
   const experiences = [
@@ -91,36 +92,6 @@ const Portfolio = () => {
       description: 'Developed and deployed an interactive Power BI Dashboard analysing the Titanic Survival Dataset. Visualised key KPIs — survival rates by Pclass and Gender — using data storytelling techniques. Gained hands-on experience with Power BI Desktop and Google Sheets, translating raw data into actionable insights.',
       skills: ['Power BI', 'Data Analysis', 'Google Sheets', 'Data Visualisation'],
     },
-    {
-      role: 'Full Stack Developer (Personal Project)',
-      company: 'Marg Darshak',
-      duration: '2025',
-      description: 'Built a comprehensive web platform combining Career Compass (AI-powered career recommendations using ML), Gyan Kosh (digital spiritual wisdom repository), and Skill Saathi (curated learning resources). Solved real student pain-points: career confusion, scattered resources, and lack of accessible guidance.',
-      skills: ['Flask', 'Python', 'Machine Learning', 'Scikit-learn', 'Web Development'],
-    },
-  ];
-
-  const challenges = [
-    {
-      title: 'Self-taught ML Journey',
-      description: 'Learned Python and Machine Learning independently — no formal mentorship. Built small projects from scratch that eventually gained peer recognition and boosted my confidence.',
-      icon: '🚀',
-    },
-    {
-      title: 'Mastering Complex Algorithms',
-      description: 'Struggled initially with ML math. Revisited linear algebra and statistics from fundamentals, practised on multiple datasets, and built genuine intuition over time.',
-      icon: '🧠',
-    },
-    {
-      title: 'Kaggle Comeback Story',
-      description: 'First competition attempt was unsuccessful. Analysed mistakes methodically, improved feature engineering skills, and achieved top 20% finishes in subsequent competitions.',
-      icon: '🏆',
-    },
-    {
-      title: 'Resource Optimisation',
-      description: 'Limited GPU access required creative solutions — lightweight models, Google Colab, and smart batching strategies. Constraints accelerated problem-solving ability.',
-      icon: '⚡',
-    },
   ];
 
   const certifications = [
@@ -128,13 +99,14 @@ const Portfolio = () => {
     { name: 'Gen AI for All', org: 'PW Skills', year: '2025', color: 'from-purple-500 to-pink-500' },
     { name: 'Introduction to Prompt Engineering', org: 'Simplilearn', year: '2026', color: 'from-orange-500 to-red-500' },
     { name: 'Python Programming & ML', org: 'Self-directed Learning', year: '2025–2026', color: 'from-green-500 to-teal-500' },
+    { name: 'AI & ML COHART', org: 'Intern Geek', year: '2026', color: 'from-green-500 to-teal-500' },
   ];
 
   const goals = {
     shortTerm: [
       'Complete Data Science with Gen AI course (PW Skills)',
       'Build 5+ end-to-end ML projects for portfolio',
-      'Land first AI/ML internship',
+      'Land first AI/ML internship/job',
       'Complete Agentic AI & LangChain deep-dive',
       'Contribute to an open-source ML library',
     ],
@@ -290,7 +262,7 @@ const Portfolio = () => {
             <span className="animate-pulse text-blue-500">|</span>
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            BCA Graduate · Data Science with Gen AI Learner · Building AI Solutions that Matter
+             · Data Science with Gen AI Learner · Building AI Solutions that Matter 
           </p>
           <div className="flex justify-center gap-4 mb-8">
             {[
@@ -499,7 +471,7 @@ const Portfolio = () => {
                 description: 'AI-powered resume analysis tool — parses uploaded PDFs, extracts skills and keywords, scores against job descriptions, and suggests improvements using NLP techniques.',
                 stack: ['Python', 'Flask', 'NLP', 'JavaScript', 'CSS'],
                 github: 'https://github.com/Vaibhavsharma45/Resume_Analyser',
-                live: null,
+                live: 'https://resume-analyser-gbp1.vercel.app/',
                 stars: 1,
               },
               {
@@ -509,7 +481,7 @@ const Portfolio = () => {
                 description: 'End-to-end ML pipeline predicting 7-day crypto volatility using Random Forest with 14 engineered features (ATR, Bollinger Bands, momentum). Achieves R² ~0.85 with Streamlit deployment.',
                 stack: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit', 'Plotly'],
                 github: 'https://github.com/Vaibhavsharma45/crypto-volatility-prediction-project',
-                live: null,
+                live: 'https://crypto-volatility-prediction-project-mak4penaud7jwri5vptzto.streamlit.app/',
                 stars: 2,
               },
               {
@@ -734,7 +706,7 @@ const Portfolio = () => {
       {/* ── FOOTER ── */}
       <footer className={`py-8 text-center ${darkMode ? 'bg-gray-800/70' : 'bg-white/70'} backdrop-blur-sm border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
         <p className="text-gray-600 dark:text-gray-400 animate-pulse">
-          © {new Date().getFullYear()} Vaibhav Sharma · Built with React & Tailwind CSS · "Jo kuch bhi hota hai, ache ke liye hota hai" ❤️
+          © {new Date().getFullYear()} Vaibhav Sharma  "Jo kuch bhi hota hai, ache ke liye hota hai" ❤️
         </p>
       </footer>
 
