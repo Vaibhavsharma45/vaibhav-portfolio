@@ -65,7 +65,7 @@ const Portfolio = () => {
   // ── THEME ─────────────────────────────────────────────────────────────────
   const D = darkMode;
   const bg        = D ? 'bg-[#060d1f]'     : 'bg-slate-50';
-  const bgAlt     = D ? 'bg-[#0a1628]'     : 'bg-white';
+  //const bgAlt     = D ? 'bg-[#0a1628]'     : 'bg-white';
   const bgCard    = D ? 'bg-[#0d1f3c]/70'  : 'bg-white';
   const bgCard2   = D ? 'bg-[#060d1f]'     : 'bg-gray-50';
   const border    = D ? 'border-[#1e3a5f]' : 'border-gray-200';
@@ -252,11 +252,11 @@ const Portfolio = () => {
     </div>
   );
 
-  // Light mode card hover handler
-  const cardHover = (el, color, enter) => {
-    el.style.boxShadow = enter ? `0 4px 30px ${color}, 0 0 0 1px ${color}` : 'none';
-    el.style.transform = enter ? 'translateY(-4px)' : 'translateY(0)';
-  };
+  // // Light mode card hover handler
+  // const cardHover = (el, color, enter) => {
+  //   el.style.boxShadow = enter ? `0 4px 30px ${color}, 0 0 0 1px ${color}` : 'none';
+  //   el.style.transform = enter ? 'translateY(-4px)' : 'translateY(0)';
+  // };
 
   return (
     <div className={`min-h-screen transition-all duration-500 ${bg} ${textMain} relative overflow-hidden`}>
