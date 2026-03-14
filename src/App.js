@@ -12,7 +12,6 @@ const Portfolio = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState({});
 
   // ── TYPING ANIMATION ──────────────────────────────────────────────────────
@@ -60,10 +59,8 @@ const Portfolio = () => {
       });
       if (current) setActiveSection(current);
     };
-    const handleMouseMove = (e) => setMousePosition({ x: e.clientX, y: e.clientY });
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => { window.removeEventListener('scroll', handleScroll); window.removeEventListener('mousemove', handleMouseMove); };
+    return () => { window.removeEventListener('scroll', handleScroll);  };
   }, []);
 
   // ── INTERSECTION OBSERVER ─────────────────────────────────────────────────
@@ -236,7 +233,7 @@ const Portfolio = () => {
 
   // ── RENDER ────────────────────────────────────────────────────────────────
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden`}>
+    <div className={`min-h-screen transition-colors duration-500 ${darkMode ? 'bg-gray-900 text-white' : 'bg-amber-50 text-gray-900'} relative overflow-hidden`}>
 
       {/* Animated Background Particles */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -252,10 +249,6 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-
-      {/* Mouse Follower */}
-      <div className="fixed w-6 h-6 rounded-full pointer-events-none z-50 mix-blend-difference bg-white transition-transform duration-100"
-        style={{ left: mousePosition.x - 12, top: mousePosition.y - 12, transform: 'translate(-50%, -50%)' }} />
 
       {/* ── NAVBAR ── */}
       <nav className={`fixed top-0 w-full z-50 backdrop-blur-xl ${darkMode ? 'bg-gray-800/80' : 'bg-white/80'} shadow-lg border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
@@ -455,50 +448,106 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── PROJECTS ── */}
-      <section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
-            <Github className="text-blue-500 animate-pulse" />
-            <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">GitHub Projects</span>
-          </h2>
-          <p className="text-center text-gray-500 dark:text-gray-400 mb-10 text-sm">Click ✨ AI Description to generate a professional summary for each project</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {githubRepos.length > 0 ? githubRepos.map((repo, i) => (
-              <div key={i} className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-gray-100/70'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 transform hover:scale-105 border ${darkMode ? 'border-gray-600' : 'border-gray-200'} group relative overflow-hidden flex flex-col`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-500"></div>
-                <h3 className="text-xl font-semibold mb-2 text-blue-500 group-hover:text-purple-500 transition-colors duration-300 relative z-10">{repo.name}</h3>
-                <div className="relative z-10 flex-1">
-                  <AIDescription repo={repo} />
-                </div>
-                <div className="flex justify-between items-center relative z-10 mt-auto">
-                  {repo.language && (
-                    <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs transform group-hover:scale-110 transition-all duration-300">
-                      {repo.language}
-                    </span>
-                  )}
-                  <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                    <span>⭐ {repo.stargazers_count}</span>
-                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-purple-500 transform hover:scale-125 transition-all duration-300">
-                      <ExternalLink size={18} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            )) : (
-              <div className="col-span-3 text-center text-gray-500 animate-pulse">Loading projects…</div>
-            )}
+     {/* ── PROJECTS ── */}
+<section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
+      <Github className="text-blue-500 animate-pulse" />
+      <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Projects</span>
+    </h2>
+    <p className="text-center text-gray-500 dark:text-gray-400 mb-12 text-sm">Click ✨ AI Description to generate a professional summary</p>
+
+    {/* Pinned Projects */}
+    <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+      <span className="text-yellow-500">📌</span>
+      <span className={darkMode ? 'text-white' : 'text-gray-800'}>Featured Projects</span>
+    </h3>
+    <div className="grid md:grid-cols-2 gap-6 mb-14">
+      {[
+        {
+          name: 'Marg Darshak',
+          description: 'AI-powered career guidance platform with Career Compass, Gyan Kosh & Skill Saathi.',
+          language: 'Python',
+          html_url: 'https://github.com/Vaibhavsharma45/marg-darshak',
+          homepage: 'https://marg-darshak-lzy4.onrender.com/',
+          stargazers_count: 1,
+        },
+        {
+          name: 'Birth Weight Predictor',
+          description: 'ML model predicting birth weight with 92%+ accuracy using regression techniques.',
+          language: 'Python',
+          html_url: 'https://github.com/Vaibhavsharma45/birth-weight-predictor',
+          homepage: 'https://birth-weight-predictor.onrender.com',
+          stargazers_count: 1,
+        },
+      ].map((repo, i) => (
+        <div key={i} className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-amber-100/60'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-yellow-400/40 group relative overflow-hidden`}>
+          <div className="absolute top-3 right-3 text-yellow-400 text-xs font-semibold font-mono bg-yellow-400/10 px-2 py-1 rounded-full">📌 Pinned</div>
+          <h3 className="text-xl font-semibold mb-2 text-blue-500 group-hover:text-purple-500 transition-colors duration-300">{repo.name}</h3>
+          <div className="mb-4">
+            <AIDescription repo={repo} />
           </div>
-          <div className="text-center mt-8">
-            <a href={`https://github.com/${GITHUB_USERNAME}`} target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105">
-              <Github size={18} /> View All Repos
-            </a>
+          <div className="flex justify-between items-center">
+            <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs">{repo.language}</span>
+            <div className="flex gap-3">
+              {repo.homepage && (
+                <a href={repo.homepage} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-xs px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full hover:opacity-80 transition-all">
+                  🌐 Live Demo
+                </a>
+              )}
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer"
+                className="text-blue-500 hover:text-purple-500 transition-all duration-300">
+                <ExternalLink size={18} />
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
 
-      {/* ── CERTIFICATIONS ── */}
+    {/* GitHub Repos */}
+    <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+      <Github size={20} className="text-blue-500" />
+      <span className={darkMode ? 'text-white' : 'text-gray-800'}>Latest GitHub Repos</span>
+    </h3>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+      {githubRepos.length > 0 ? githubRepos.map((repo, i) => (
+        <div key={i} className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-gray-100/70'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border ${darkMode ? 'border-gray-600' : 'border-gray-200'} group relative overflow-hidden flex flex-col`}>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-500"></div>
+          <h3 className="text-xl font-semibold mb-2 text-blue-500 group-hover:text-purple-500 transition-colors duration-300 relative z-10">{repo.name}</h3>
+          <div className="relative z-10 flex-1">
+            <AIDescription repo={repo} />
+          </div>
+          <div className="flex justify-between items-center relative z-10 mt-auto">
+            {repo.language && (
+              <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs">{repo.language}</span>
+            )}
+            <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+              <span>⭐ {repo.stargazers_count}</span>
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer"
+                className="text-blue-500 hover:text-purple-500 transform hover:scale-125 transition-all duration-300">
+                <ExternalLink size={18} />
+              </a>
+            </div>
+          </div>
+        </div>
+      )) : (
+        <div className="col-span-3 text-center text-gray-500 animate-pulse">Loading projects…</div>
+      )}
+    </div>
+
+    {/* Explore Button */}
+    <div className="text-center">
+      <a href={`https://github.com/Vaibhavsharma45`} target="_blank" rel="noreferrer"
+        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+        <Github size={22} />
+        Explore All Projects on GitHub
+        <ExternalLink size={18} />
+      </a>
+    </div>
+  </div>
+</section> {/* ── CERTIFICATIONS ── */}
       <section id="certifications" className={`py-20 px-4 transition-all duration-1000 ${isVisible.certifications ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3">
