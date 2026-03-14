@@ -185,17 +185,17 @@ const Portfolio = () => {
 
   const goals = {
     shortTerm: [
-      { icon: '🎯', text: 'Land first AI/ML job or internship within 6 months', tag: 'Top Priority' },
-      { icon: '🚀', text: 'Complete Data Science with Gen AI course & build 2 more production projects', tag: 'In Progress' },
-      { icon: '🤖', text: 'Master Agentic AI — LangGraph, AutoGen, and multi-agent systems', tag: 'Learning' },
-      { icon: '🌟', text: 'Contribute to an open-source AI/ML library on GitHub', tag: 'Upcoming' },
-      { icon: '📝', text: 'Write technical blog posts on projects and learnings', tag: 'Upcoming' },
+      { icon: '🎯', text: 'Land a full-time AI/ML role or internship within the next 6 months', tag: 'Top Priority' },
+      { icon: '🚀', text: 'Complete the Data Science with Gen AI course and ship 2 more production-grade projects', tag: 'In Progress' },
+      { icon: '🤖', text: 'Master Agentic AI — LangGraph, AutoGen, and multi-agent system design', tag: 'Learning' },
+      { icon: '🌟', text: 'Make meaningful contributions to an open-source AI/ML library on GitHub', tag: 'Upcoming' },
+      { icon: '📝', text: 'Start writing technical articles documenting projects, learnings, and experiments', tag: 'Upcoming' },
     ],
     longTerm: [
-      { icon: '🏢', text: 'Work as an AI Engineer at a product-based company building real GenAI products', tag: '1-2 Years' },
-      { icon: '🎓', text: 'Pursue higher studies or research in AI/ML if right opportunity comes', tag: '2-3 Years' },
-      { icon: '💡', text: 'Build and launch an AI-powered SaaS product that solves a real problem', tag: '2-3 Years' },
-      { icon: '🌍', text: 'Give back — mentor aspiring AI engineers from tier-2/3 cities like me', tag: 'Long Term' },
+      { icon: '🏢', text: 'Work as an AI Engineer at a product-based company building real-world Generative AI solutions', tag: '1–2 Years' },
+      { icon: '🎓', text: 'Pursue advanced studies or research in AI/ML if the right opportunity presents itself', tag: '2–3 Years' },
+      { icon: '💡', text: 'Build and launch an AI-powered SaaS product that solves a genuine problem at scale', tag: '2–3 Years' },
+      { icon: '🌍', text: 'Mentor aspiring AI engineers from tier-2 and tier-3 cities — give back what I never had', tag: 'Long Term' },
     ],
   };
 
