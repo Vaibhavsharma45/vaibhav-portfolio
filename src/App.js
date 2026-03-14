@@ -508,11 +508,15 @@ function Contact() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          service_id: "YOUR_SERVICE_ID",       // ← Replace with your EmailJS Service ID
-          template_id: "YOUR_TEMPLATE_ID",     // ← Replace with your EmailJS Template ID
-          user_id: "YOUR_PUBLIC_KEY",          // ← Replace with your EmailJS Public Key
-          template_params: { from_name: form.name, from_email: form.email, message: form.message },
-        }),
+  service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+  user_id: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+  template_params: {
+    name: form.name,       // {{name}} → tera template
+    email: form.email,     // {{email}} → Reply To field
+    message: form.message, // {{message}} → tera template
+      },
+      }),
       });
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
