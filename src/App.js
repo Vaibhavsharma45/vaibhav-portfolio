@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Github, Linkedin, Mail, Phone, Moon, Sun, Download, ExternalLink, Award, Target, Briefcase, Code, User, Heart, TrendingUp, ArrowUp, Sparkles, MessageCircle } from 'lucide-react';
+
 const GITHUB_USERNAME = 'Vaibhavsharma45';
-const ANTHROPIC_MODEL = 'claude-sonnet-4-20250514';
 
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -14,12 +14,8 @@ const Portfolio = () => {
   const [isVisible, setIsVisible] = useState({});
 
   const roles = useMemo(() => [
-    'AI & ML Engineer',
-    'Data Scientist',
-    'Generative AI Enthusiast',
-    'Python Developer',
-    'Backend Engineer',
-    'Problem Solver',
+    'AI & ML Engineer', 'Data Scientist', 'Generative AI Enthusiast',
+    'Python Developer', 'Backend Engineer', 'Problem Solver',
   ], []);
   const [roleIndex, setRoleIndex] = useState(0);
 
@@ -66,120 +62,30 @@ const Portfolio = () => {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // ── DATA ──────────────────────────────────────────────────────────────────
-
   const skills = {
-    'Languages 💻': {
-      color: 'from-blue-500 to-blue-600',
-      bg: 'from-blue-50 to-blue-100',
-      border: 'border-blue-200',
-      dark: 'from-blue-900/40 to-blue-800/40',
-      items: ['Python', 'C++', 'JavaScript', 'HTML5', 'CSS3', 'SQL'],
-    },
-    'AI / ML 🤖': {
-      color: 'from-purple-500 to-purple-600',
-      bg: 'from-purple-50 to-purple-100',
-      border: 'border-purple-200',
-      dark: 'from-purple-900/40 to-purple-800/40',
-      items: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'OpenCV', 'LangChain', 'LangGraph', 'LlamaIndex', 'Groq API', 'EDA', 'Feature Engineering', 'Model Deployment'],
-    },
-    'Backend & Web 🌐': {
-      color: 'from-emerald-500 to-emerald-600',
-      bg: 'from-emerald-50 to-emerald-100',
-      border: 'border-emerald-200',
-      dark: 'from-emerald-900/40 to-emerald-800/40',
-      items: ['Flask', 'FastAPI', 'REST APIs', 'MongoDB', 'MySQL', 'Web Development'],
-    },
-    'Tools & Platforms 🛠️': {
-      color: 'from-orange-500 to-orange-600',
-      bg: 'from-orange-50 to-orange-100',
-      border: 'border-orange-200',
-      dark: 'from-orange-900/40 to-orange-800/40',
-      items: ['Power BI', 'Git', 'GitHub', 'Docker', 'VS Code', 'Jupyter', 'Google Colab', 'Kaggle', 'Postman', 'Render', 'Vercel', 'ChromaDB', 'Plotly', 'Streamlit'],
-    },
+    'Languages 💻': { color: 'from-blue-500 to-blue-600', bg: 'from-blue-50 to-blue-100', border: 'border-blue-200', dark: 'from-blue-900/40 to-blue-800/40', items: ['Python', 'C++', 'JavaScript', 'HTML5', 'CSS3', 'SQL'] },
+    'AI / ML 🤖': { color: 'from-purple-500 to-purple-600', bg: 'from-purple-50 to-purple-100', border: 'border-purple-200', dark: 'from-purple-900/40 to-purple-800/40', items: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'OpenCV', 'LangChain', 'LangGraph', 'LlamaIndex', 'Groq API', 'EDA', 'Feature Engineering', 'Model Deployment'] },
+    'Backend & Web 🌐': { color: 'from-emerald-500 to-emerald-600', bg: 'from-emerald-50 to-emerald-100', border: 'border-emerald-200', dark: 'from-emerald-900/40 to-emerald-800/40', items: ['Flask', 'FastAPI', 'REST APIs', 'MongoDB', 'MySQL', 'Web Development'] },
+    'Tools & Platforms 🛠️': { color: 'from-orange-500 to-orange-600', bg: 'from-orange-50 to-orange-100', border: 'border-orange-200', dark: 'from-orange-900/40 to-orange-800/40', items: ['Power BI', 'Git', 'GitHub', 'Docker', 'VS Code', 'Jupyter', 'Google Colab', 'Kaggle', 'Postman', 'Render', 'Vercel', 'ChromaDB', 'Plotly', 'Streamlit'] },
   };
 
   const challenges = [
-    {
-      icon: '👨‍👩‍👦',
-      title: 'Family Pressure vs Passion',
-      description: 'Coming from a non-tech background, there was constant pressure to pursue a stable government job instead of AI. I chose to let my work speak — built real projects, secured an internship, and proved that a career in AI is not just possible, but promising.',
-      badge: 'Overcame ✓',
-      badgeColor: 'bg-green-100 text-green-700',
-    },
-    {
-      icon: '🧠',
-      title: 'Overcoming Self-Doubt',
-      description: 'Early on, I doubted whether someone from a tier-2 city without elite college credentials could break into AI. My first Kaggle attempt landed in the bottom 50%. Instead of quitting, I analysed every mistake — and today I have 6 deployed projects to show for it.',
-      badge: 'Still growing ↑',
-      badgeColor: 'bg-blue-100 text-blue-700',
-    },
-    {
-      icon: '🌐',
-      title: 'English Barrier in Technical Learning',
-      description: 'Most quality AI/ML resources are in English, which was a significant barrier initially. I tackled it by combining vernacular explanations with official documentation, taking bilingual notes, and practising consistently — now I read research papers and docs with ease.',
-      badge: 'Solved ✓',
-      badgeColor: 'bg-purple-100 text-purple-700',
-    },
-    {
-      icon: '⚡',
-      title: 'Self-Taught Without Formal Mentorship',
-      description: 'With no structured mentorship or campus resources, the internet, GitHub, and open-source communities became my classroom. This forced me to develop strong independent problem-solving skills — a habit that now lets me pick up any new technology quickly.',
-      badge: 'Core Strength 💪',
-      badgeColor: 'bg-orange-100 text-orange-700',
-    },
+    { icon: '👨‍👩‍👦', title: 'Family Pressure vs Passion', description: 'Coming from a non-tech background, there was constant pressure to pursue a stable government job instead of AI. I chose to let my work speak — built real projects, secured an internship, and proved that a career in AI is not just possible, but promising.', badge: 'Overcame ✓', badgeColor: 'bg-green-100 text-green-700' },
+    { icon: '🧠', title: 'Overcoming Self-Doubt', description: 'Early on, I doubted whether someone from a tier-2 city without elite college credentials could break into AI. My first Kaggle attempt landed in the bottom 50%. Instead of quitting, I analysed every mistake — and today I have 6 deployed projects to show for it.', badge: 'Still growing ↑', badgeColor: 'bg-blue-100 text-blue-700' },
+    { icon: '🌐', title: 'English Barrier in Technical Learning', description: 'Most quality AI/ML resources are in English, which was a significant barrier initially. I tackled it by combining vernacular explanations with official documentation, taking bilingual notes, and practising consistently — now I read research papers and docs with ease.', badge: 'Solved ✓', badgeColor: 'bg-purple-100 text-purple-700' },
+    { icon: '⚡', title: 'Self-Taught Without Formal Mentorship', description: 'With no structured mentorship or campus resources, the internet, GitHub, and open-source communities became my classroom. This forced me to develop strong independent problem-solving skills — a habit that now lets me pick up any new technology quickly.', badge: 'Core Strength 💪', badgeColor: 'bg-orange-100 text-orange-700' },
   ];
+
   const experiences = [
-    {
-      role: 'Data Analyst Intern',
-      company: 'Intern Geek',
-      duration: 'Nov 2025 – Dec 2025',
-      description: 'Developed and deployed an interactive Power BI Dashboard analysing the Titanic Survival Dataset. Visualised key KPIs — survival rates by Pclass and Gender — using data storytelling techniques. Gained hands-on experience with Power BI Desktop and Google Sheets, translating raw data into actionable insights.',
-      skills: ['Power BI', 'Data Analysis', 'Google Sheets', 'Data Visualisation'],
-    },
+    { role: 'Data Analyst Intern', company: 'Intern Geek', duration: 'Nov 2025 – Dec 2025', description: 'Developed and deployed an interactive Power BI Dashboard analysing the Titanic Survival Dataset. Visualised key KPIs — survival rates by Pclass and Gender — using data storytelling techniques. Gained hands-on experience with Power BI Desktop and Google Sheets, translating raw data into actionable insights.', skills: ['Power BI', 'Data Analysis', 'Google Sheets', 'Data Visualisation'] },
   ];
 
   const certifications = [
-    {
-      name: 'Artificial Intelligence & Machine Learning Cohort',
-      org: 'Intern Geek',
-      year: 'Jan – Feb 2026',
-      grade: 'Grade: A+',
-      color: 'from-purple-500 to-pink-500',
-      icon: '🏆',
-    },
-    {
-      name: 'Data Analytics Internship',
-      org: 'Intern Geek',
-      year: 'Nov – Dec 2025',
-      grade: 'Intern ID: IG251491',
-      color: 'from-green-500 to-teal-500',
-      icon: '💼',
-    },
-    {
-      name: 'Data Science with Generative AI',
-      org: 'PW Skills',
-      year: '2025 – Present (Ongoing)',
-      grade: 'In Progress',
-      color: 'from-blue-500 to-cyan-500',
-      icon: '📊',
-    },
-    {
-      name: 'Gen AI for All',
-      org: 'PW Skills',
-      year: '2025',
-      grade: 'Completed',
-      color: 'from-violet-500 to-purple-500',
-      icon: '🤖',
-    },
-    {
-      name: 'Introduction to Prompt Engineering',
-      org: 'Simplilearn',
-      year: '2026',
-      grade: 'Completed',
-      color: 'from-orange-500 to-red-500',
-      icon: '💡',
-    },
+    { name: 'Artificial Intelligence & Machine Learning Cohort', org: 'Intern Geek', year: 'Jan – Feb 2026', grade: 'Grade: A+', color: 'from-purple-500 to-pink-500', icon: '🏆' },
+    { name: 'Data Analytics Internship', org: 'Intern Geek', year: 'Nov – Dec 2025', grade: 'Intern ID: IG251491', color: 'from-green-500 to-teal-500', icon: '💼' },
+    { name: 'Data Science with Generative AI', org: 'PW Skills', year: '2025 – Present (Ongoing)', grade: 'In Progress', color: 'from-blue-500 to-cyan-500', icon: '📊' },
+    { name: 'Gen AI for All', org: 'PW Skills', year: '2025', grade: 'Completed', color: 'from-violet-500 to-purple-500', icon: '🤖' },
+    { name: 'Introduction to Prompt Engineering', org: 'Simplilearn', year: '2026', grade: 'Completed', color: 'from-orange-500 to-red-500', icon: '💡' },
   ];
 
   const goals = {
@@ -212,8 +118,7 @@ const Portfolio = () => {
     setFormStatus('sending');
     try {
       await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
           template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
@@ -238,39 +143,15 @@ const Portfolio = () => {
     document.body.removeChild(link);
   };
 
-  const AIDescription = ({ repo }) => {
-    const [desc, setDesc] = useState(repo.description || '');
-    const [loading, setLoading] = useState(false);
-    const [generated, setGenerated] = useState(false);
-    const generate = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch('https://api.anthropic.com/v1/messages', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ model: ANTHROPIC_MODEL, max_tokens: 1000, messages: [{ role: 'user', content: `Write a concise 2-sentence professional description for a GitHub repository called "${repo.name}" by an AI/ML engineer. Description: "${repo.description || 'No description'}". Language: ${repo.language || 'Unknown'}. Stars: ${repo.stargazers_count}. Make it impressive for a job portfolio. Return ONLY the 2 sentences.` }] }),
-        });
-        const data = await res.json();
-        const text = data.content?.find(b => b.type === 'text')?.text;
-        if (text) setDesc(text);
-        setGenerated(true);
-      } catch { setGenerated(true); }
-      setLoading(false);
-    };
-    return (
-      <div className="mb-3">
-        {!generated ? (
-          <button onClick={generate} disabled={loading} className="text-xs px-3 py-1 border border-dashed border-blue-400 text-blue-400 rounded-full hover:bg-blue-500/10 transition-all duration-200">
-            {loading ? '⏳ Generating…' : '✨ AI Description'}
-          </button>
-        ) : <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">{desc}</p>}
-      </div>
-    );
-  };
+  const RepoDescription = ({ repo }) => (
+    <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 mb-3">
+      {repo.description || 'An open-source project by Vaibhav Sharma. Click to view on GitHub.'}
+    </p>
+  );
 
   return (
     <div className={`min-h-screen transition-colors duration-500 ${darkMode ? 'bg-gray-900 text-white' : 'bg-amber-50 text-gray-900'} relative overflow-hidden`}>
 
-      {/* Particles */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 opacity-30">
           {[...Array(50)].map((_, i) => (
@@ -280,7 +161,7 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* ── NAVBAR ── */}
+      {/* NAVBAR */}
       <nav className={`fixed top-0 w-full z-50 backdrop-blur-xl ${darkMode ? 'bg-gray-800/80' : 'bg-white/80'} shadow-lg border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -294,15 +175,14 @@ const Portfolio = () => {
                 </a>
               ))}
             </div>
-            <button onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-full hover:scale-110 transition-all duration-300 ${darkMode ? 'bg-yellow-400 text-gray-900' : 'bg-gray-900 text-yellow-400'}`}>
+            <button onClick={() => setDarkMode(!darkMode)} className={`p-2 rounded-full hover:scale-110 transition-all duration-300 ${darkMode ? 'bg-yellow-400 text-gray-900' : 'bg-gray-900 text-yellow-400'}`}>
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section id="home" className={`pt-32 pb-20 px-4 relative transition-opacity duration-1000 ${isVisible.home ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="mb-8 relative">
@@ -319,24 +199,20 @@ const Portfolio = () => {
             Aspiring <span className="text-blue-500 font-semibold min-w-[300px] text-left">{typedText}</span>
             <span className="animate-pulse text-blue-500">|</span>
           </div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Data Science with Gen AI Learner · Building AI Solutions that Matter
-          </p>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">Data Science with Gen AI Learner · Building AI Solutions that Matter</p>
           <div className="flex justify-center gap-4 mb-8">
             {[
               { icon: Github, link: 'https://github.com/Vaibhavsharma45', color: 'hover:bg-gray-800' },
               { icon: Linkedin, link: 'https://linkedin.com/in/vaibhav-0sharma', color: 'hover:bg-blue-600' },
               { icon: Mail, link: 'mailto:vaibhavsharma95124v@gmail.com', color: 'hover:bg-red-500' },
             ].map((s, idx) => (
-              <a key={idx} href={s.link} target={s.link.startsWith('http') ? '_blank' : undefined}
-                rel={s.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+              <a key={idx} href={s.link} target={s.link.startsWith('http') ? '_blank' : undefined} rel={s.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className={`p-3 rounded-full bg-gray-200 dark:bg-gray-700 ${s.color} hover:text-white transition-all duration-300 transform hover:scale-125 hover:rotate-12 shadow-lg hover:shadow-2xl`}>
                 <s.icon size={24} />
               </a>
             ))}
           </div>
-          <button onClick={handleDownloadResume}
-            className="px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full hover:shadow-2xl transition-all duration-300 flex items-center gap-2 mx-auto transform hover:scale-110 hover:-translate-y-1 relative overflow-hidden group">
+          <button onClick={handleDownloadResume} className="px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full hover:shadow-2xl transition-all duration-300 flex items-center gap-2 mx-auto transform hover:scale-110 hover:-translate-y-1 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <Download size={20} className="relative z-10 group-hover:animate-bounce" />
             <span className="relative z-10">Download Resume</span>
@@ -344,7 +220,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── ABOUT ── */}
+      {/* ABOUT */}
       <section id="about" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3">
@@ -358,7 +234,7 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Sparkles className="text-yellow-500" /> Who I Am</h3>
                 <p className="text-lg leading-relaxed mb-4 relative z-10">I'm <strong>Vaibhav Sharma</strong>, an aspiring AI & ML Engineer from Muzaffarnagar, UP. I recently completed my BCA and am actively building expertise in Python, Machine Learning, and Data Science — combining coursework at PW Skills with hands-on project development.</p>
                 <p className="text-lg leading-relaxed mb-4 relative z-10">I focus on <strong>strong fundamentals and real projects</strong> over shortcuts. From building ML models to deploying Flask APIs, I want to understand every layer of the stack.</p>
-                <p className="text-lg leading-relaxed relative z-10">My philosophy: <span className="italic font-semibold text-blue-500 animate-pulse">"Jo kuch bhi hota hai, ache ke liye hota hai"</span> — this mindset keeps me going through challenges.</p>
+                <p className="text-lg leading-relaxed relative z-10">My philosophy: <span className="italic font-semibold text-blue-500">"Jo kuch bhi hota hai, ache ke liye hota hai"</span> — this mindset keeps me going through challenges.</p>
               </div>
             </div>
             <div className="transform hover:scale-105 transition-all duration-500 group">
@@ -378,7 +254,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── CHALLENGES ── */}
+      {/* CHALLENGES */}
       <section id="challenges" className={`py-20 px-4 transition-all duration-1000 ${isVisible.challenges ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
@@ -402,7 +278,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── SKILLS ── */}
+      {/* SKILLS */}
       <section id="skills" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.skills ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
@@ -412,9 +288,7 @@ const Portfolio = () => {
           <p className="text-center text-gray-500 dark:text-gray-400 mb-12 text-sm">Tools & technologies I work with 🛠️</p>
           <div className="grid md:grid-cols-2 gap-8">
             {Object.entries(skills).map(([category, data]) => (
-              <div key={category}
-                className={`p-6 rounded-2xl bg-gradient-to-br ${darkMode ? data.dark : data.bg} backdrop-blur-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 border ${data.border} group relative overflow-hidden`}>
-                {/* Shimmer */}
+              <div key={category} className={`p-6 rounded-2xl bg-gradient-to-br ${darkMode ? data.dark : data.bg} backdrop-blur-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 border ${data.border} group relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none"></div>
                 <div className="flex items-center gap-2 mb-5 relative z-10">
                   <div className={`w-1 h-6 rounded-full bg-gradient-to-b ${data.color}`}></div>
@@ -422,10 +296,7 @@ const Portfolio = () => {
                 </div>
                 <div className="flex flex-wrap gap-2 relative z-10">
                   {data.items.map((skill, i) => (
-                    <span key={i}
-                      className={`px-3 py-1.5 bg-gradient-to-r ${data.color} text-white rounded-full text-sm font-medium hover:scale-110 hover:-translate-y-1 transition-all duration-200 shadow-md hover:shadow-lg cursor-default`}>
-                      {skill}
-                    </span>
+                    <span key={i} className={`px-3 py-1.5 bg-gradient-to-r ${data.color} text-white rounded-full text-sm font-medium hover:scale-110 hover:-translate-y-1 transition-all duration-200 shadow-md hover:shadow-lg cursor-default`}>{skill}</span>
                   ))}
                 </div>
               </div>
@@ -434,7 +305,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── EXPERIENCE ── */}
+      {/* EXPERIENCE */}
       <section id="experience" className={`py-20 px-4 transition-all duration-1000 ${isVisible.experience ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3">
@@ -464,7 +335,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── PROJECTS ── */}
+      {/* PROJECTS */}
       <section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
@@ -472,15 +343,13 @@ const Portfolio = () => {
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-center text-gray-500 dark:text-gray-400 mb-12 text-sm">Real projects — built, deployed, and live 🚀</p>
-
           <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
             <span className="text-yellow-500">📌</span>
             <span className={darkMode ? 'text-white' : 'text-gray-800'}>Featured Projects</span>
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
             {projects.map((project, i) => (
-              <div key={i}
-                className={`p-6 rounded-2xl bg-gradient-to-br ${darkMode ? 'from-gray-700/80 to-gray-800/80' : project.gradient} backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-[1.03] border-2 ${project.border} group relative overflow-hidden flex flex-col cursor-pointer`}>
+              <div key={i} className={`p-6 rounded-2xl bg-gradient-to-br ${darkMode ? 'from-gray-700/80 to-gray-800/80' : project.gradient} backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-[1.03] border-2 ${project.border} group relative overflow-hidden flex flex-col cursor-pointer`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out z-10 pointer-events-none"></div>
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradientHover} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm pointer-events-none`}></div>
                 <div className="flex items-start justify-between mb-3 relative z-20">
@@ -500,13 +369,11 @@ const Portfolio = () => {
                   ))}
                 </div>
                 <div className="flex gap-2 relative z-20 mt-auto">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-white transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 shadow-md">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-white transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 shadow-md">
                     <Github size={13} /> Code
                   </a>
                   {project.live ? (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-green-500 to-teal-500 text-white hover:opacity-85 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 shadow-md">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-green-500 to-teal-500 text-white hover:opacity-85 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 shadow-md">
                       <ExternalLink size={13} /> Live Demo
                     </a>
                   ) : (
@@ -516,54 +383,37 @@ const Portfolio = () => {
               </div>
             ))}
           </div>
-
-          {/* GitHub Repos */}
           <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
             <Github size={20} className="text-blue-500" />
             <span className={darkMode ? 'text-white' : 'text-gray-800'}>Latest GitHub Repos</span>
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {githubRepos.length > 0 ? githubRepos.map((repo, i) => (
-              <div key={i}
-                className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-gray-100/70'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] border ${darkMode ? 'border-gray-600' : 'border-gray-200'} group relative overflow-hidden flex flex-col`}
-                style={{ animationDelay: `${i * 0.1}s` }}>
-                {/* Shimmer */}
+              <div key={i} className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-gray-100/70'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] border ${darkMode ? 'border-gray-600' : 'border-gray-200'} group relative overflow-hidden flex flex-col`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/15 group-hover:to-purple-500/15 transition-all duration-500"></div>
-                {/* Top bar */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 <h3 className="text-lg font-semibold mb-2 text-blue-500 group-hover:text-purple-500 transition-colors duration-300 relative z-10">{repo.name}</h3>
-                <div className="relative z-10 flex-1">
-                  <AIDescription repo={repo} />
-                </div>
+                <div className="relative z-10 flex-1"><RepoDescription repo={repo} /></div>
                 <div className="flex justify-between items-center relative z-10 mt-auto">
-                  {repo.language && (
-                    <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs group-hover:from-blue-500 group-hover:to-purple-500 transition-all duration-300">{repo.language}</span>
-                  )}
+                  {repo.language && <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs group-hover:from-blue-500 group-hover:to-purple-500 transition-all duration-300">{repo.language}</span>}
                   <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                     <span className="group-hover:text-yellow-500 transition-colors duration-300">⭐ {repo.stargazers_count}</span>
-                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer"
-                      className="text-blue-500 hover:text-purple-500 transform hover:scale-125 hover:rotate-12 transition-all duration-300">
-                      <ExternalLink size={18} />
-                    </a>
+                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-purple-500 transform hover:scale-125 hover:rotate-12 transition-all duration-300"><ExternalLink size={18} /></a>
                   </div>
                 </div>
               </div>
-            )) : (
-              <div className="col-span-3 text-center text-gray-500 animate-pulse">Loading projects…</div>
-            )}
+            )) : <div className="col-span-3 text-center text-gray-500 animate-pulse">Loading projects…</div>}
           </div>
-
           <div className="text-center">
-            <a href="https://github.com/Vaibhavsharma45" target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+            <a href="https://github.com/Vaibhavsharma45" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
               <Github size={22} /> Explore All Projects on GitHub <ExternalLink size={18} />
             </a>
           </div>
         </div>
       </section>
 
-      {/* ── CERTIFICATIONS ── */}
+      {/* CERTIFICATIONS */}
       <section id="certifications" className={`py-20 px-4 transition-all duration-1000 ${isVisible.certifications ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3">
@@ -580,7 +430,7 @@ const Portfolio = () => {
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold mb-1 group-hover:text-blue-500 transition-colors duration-300">{cert.name}</h3>
                     <p className="text-gray-500 dark:text-gray-400 text-sm">{cert.org}</p>
-                    <div className="flex items-center gap-3 mt-2">
+                    <div className="flex items-center gap-3 mt-2 flex-wrap">
                       <p className={`text-sm bg-gradient-to-r ${cert.color} bg-clip-text text-transparent font-semibold`}>{cert.year}</p>
                       <span className={`text-xs px-2 py-0.5 rounded-full bg-gradient-to-r ${cert.color} text-white font-medium`}>{cert.grade}</span>
                     </div>
@@ -592,7 +442,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── GOALS ── */}
+      {/* GOALS */}
       <section id="goals" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.goals ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
@@ -606,7 +456,7 @@ const Portfolio = () => {
               <h3 className="text-2xl font-semibold mb-6 text-blue-500 group-hover:text-green-500 transition-colors duration-300 relative z-10 flex items-center gap-2">⚡ Short-term Goals</h3>
               <ul className="space-y-4 relative z-10">
                 {goals.shortTerm.map((goal, i) => (
-                  <li key={i} className="flex items-start gap-3 hover:translate-x-2 transition-transform duration-300 group/item">
+                  <li key={i} className="flex items-start gap-3 hover:translate-x-2 transition-transform duration-300">
                     <span className="text-xl mt-0.5">{goal.icon}</span>
                     <div>
                       <span className="text-base leading-relaxed">{goal.text}</span>
@@ -635,7 +485,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── CONTACT ── */}
+      {/* CONTACT */}
       <section id="contact" className={`py-20 px-4 transition-all duration-1000 ${isVisible.contact ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3">
@@ -646,42 +496,29 @@ const Portfolio = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
               {[
-                { icon: Mail, text: 'vaibhavsharma95124v@gmail.com', link: 'mailto:vaibhavsharma95124v@gmail.com', color: 'group-hover:from-red-500 group-hover:to-orange-500' },
-                { icon: Phone, text: '+91-9012907709', link: 'tel:+919012907709', color: 'group-hover:from-blue-500 group-hover:to-cyan-500' },
-                { icon: MessageCircle, text: 'WhatsApp: +91-9012907709', link: 'https://wa.me/919012907709', color: 'group-hover:from-green-500 group-hover:to-teal-500' },
-                { icon: Github, text: 'github.com/Vaibhavsharma45', link: 'https://github.com/Vaibhavsharma45', color: 'group-hover:from-gray-700 group-hover:to-gray-900' },
-                { icon: Linkedin, text: 'linkedin.com/in/vaibhav-0sharma', link: 'https://linkedin.com/in/vaibhav-0sharma', color: 'group-hover:from-blue-600 group-hover:to-blue-800' },
+                { icon: Mail, text: 'vaibhavsharma95124v@gmail.com', link: 'mailto:vaibhavsharma95124v@gmail.com' },
+                { icon: Phone, text: '+91-9012907709', link: 'tel:+919012907709' },
+                { icon: MessageCircle, text: 'WhatsApp: +91-9012907709', link: 'https://wa.me/919012907709' },
+                { icon: Github, text: 'github.com/Vaibhavsharma45', link: 'https://github.com/Vaibhavsharma45' },
+                { icon: Linkedin, text: 'linkedin.com/in/vaibhav-0sharma', link: 'https://linkedin.com/in/vaibhav-0sharma' },
               ].map((c, idx) => (
                 <div key={idx} className="flex items-center gap-3 transform hover:translate-x-4 transition-all duration-300 group">
-                  <div className={`p-3 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'} bg-gradient-to-r from-transparent to-transparent ${c.color} group-hover:text-white transition-all duration-300`}>
+                  <div className={`p-3 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'} group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 transition-all duration-300`}>
                     <c.icon className="text-blue-500 group-hover:text-white transition-colors duration-300" size={20} />
                   </div>
-                  <a href={c.link} target={c.link.startsWith('http') ? '_blank' : undefined}
-                    rel={c.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="hover:text-blue-500 transition-colors duration-300 text-sm">{c.text}</a>
+                  <a href={c.link} target={c.link.startsWith('http') ? '_blank' : undefined} rel={c.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="hover:text-blue-500 transition-colors duration-300 text-sm">{c.text}</a>
                 </div>
               ))}
-
-              {/* WhatsApp CTA */}
-              <a href="https://wa.me/919012907709" target="_blank" rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <a href="https://wa.me/919012907709" target="_blank" rel="noopener noreferrer" className="mt-2 flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
                 <MessageCircle size={20} /> Chat on WhatsApp
               </a>
             </div>
-
             <div className={`p-8 rounded-2xl ${darkMode ? 'bg-gray-800/70' : 'bg-white/70'} backdrop-blur-sm shadow-xl border ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
               <div className="space-y-4">
-                <input type="text" placeholder="Your Name" value={formData.name}
-                  onChange={e => setFormData({ ...formData, name: e.target.value })}
-                  className={`w-full p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 transition-all duration-300 focus:scale-105 outline-none`} />
-                <input type="email" placeholder="Your Email" value={formData.email}
-                  onChange={e => setFormData({ ...formData, email: e.target.value })}
-                  className={`w-full p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 transition-all duration-300 focus:scale-105 outline-none`} />
-                <textarea placeholder="Your Message" value={formData.message} rows="4"
-                  onChange={e => setFormData({ ...formData, message: e.target.value })}
-                  className={`w-full p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 transition-all duration-300 focus:scale-105 outline-none resize-none`} />
-                <button onClick={handleSubmit} disabled={formStatus === 'sending'}
-                  className="w-full py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 relative overflow-hidden group disabled:opacity-70">
+                <input type="text" placeholder="Your Name" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className={`w-full p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 transition-all duration-300 focus:scale-105 outline-none`} />
+                <input type="email" placeholder="Your Email" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className={`w-full p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 transition-all duration-300 focus:scale-105 outline-none`} />
+                <textarea placeholder="Your Message" value={formData.message} rows="4" onChange={e => setFormData({ ...formData, message: e.target.value })} className={`w-full p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-100'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 transition-all duration-300 focus:scale-105 outline-none resize-none`} />
+                <button onClick={handleSubmit} disabled={formStatus === 'sending'} className="w-full py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 relative overflow-hidden group disabled:opacity-70">
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10">{formStatus === 'sending' ? 'Sending…' : formStatus === 'sent' ? '✓ Message Sent!' : 'Send Message'}</span>
                 </button>
@@ -691,24 +528,19 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+      {/* FOOTER */}
       <footer className={`py-8 text-center ${darkMode ? 'bg-gray-800/70' : 'bg-white/70'} backdrop-blur-sm border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
-        <p className="text-gray-600 dark:text-gray-400 animate-pulse">
-          © {new Date().getFullYear()} Vaibhav Sharma · "Jo kuch bhi hota hai, ache ke liye hota hai" ❤️
-        </p>
+        <p className="text-gray-600 dark:text-gray-400 animate-pulse">© {new Date().getFullYear()} Vaibhav Sharma · "Jo kuch bhi hota hai, ache ke liye hota hai" ❤️</p>
       </footer>
 
       {showScrollTop && (
-        <button onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2 z-50 animate-bounce">
+        <button onClick={scrollToTop} className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2 z-50 animate-bounce">
           <ArrowUp size={24} />
         </button>
       )}
 
       <style>{`
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
       `}</style>
     </div>

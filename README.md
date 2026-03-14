@@ -1,170 +1,164 @@
-# 🚀 Vaibhav Sharma - Personal Portfolio
+# 🚀 Vaibhav Sharma — AI & ML Engineer Portfolio
 
-A modern, responsive portfolio website showcasing my journey as an aspiring AI Engineer and Data Scientist.
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-thevaibhavacom.vercel.app-blue?style=for-the-badge)](https://thevaibhavacom.vercel.app/)
+[![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
-![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+A modern, fully responsive personal portfolio built with React and Tailwind CSS. Designed for job applications and personal branding as an aspiring AI & ML Engineer.
 
-## ✨ Features
-
-- 🌗 **Dark/Light Mode Toggle** - Seamless theme switching
-- 🎨 **Modern UI/UX** - Beautiful gradient animations and smooth transitions
-- 📱 **Fully Responsive** - Perfect on mobile, tablet, and desktop
-- ⚡ **Fast Performance** - Optimized React components
-- 🔄 **Dynamic Typing Animation** - Rotating role descriptions
-- 🐙 **GitHub Integration** - Auto-fetches latest repositories
-- 📧 **Contact Form** - Get in touch easily
-- 🎯 **Smooth Scroll Navigation** - Enhanced user experience
-
-## 🛠️ Tech Stack
-
-- **Frontend:** React.js
-- **Styling:** Tailwind CSS
-- **Icons:** Lucide React
-- **Deployment:** Vercel
-- **Version Control:** Git & GitHub
-
-## 🎯 Sections
-
-- **Home** - Introduction with animated typing effect
-- **About** - Personal background and interests
-- **Challenges** - Key obstacles overcome in my journey
-- **Skills** - Technical expertise categorized by domain
-- **Experience** - Work experience and projects
-- **GitHub Projects** - Live repository showcase
-- **Certifications** - Learning achievements
-- **Goals** - Short-term and long-term aspirations
-- **Contact** - Get in touch with me
-
-## 🚀 Live Demo
-
-🔗 **[View Live Portfolio](https://thevaibhavacom.vercel.app/)**
-
-## 📸 Screenshots
-![dark-mode.png](1)
-![Uploading Screenshot 2025-12-12 072739.png…](2)
-![Uploading Screenshot 2025-12-12 072801.png…](3)
-![Uploading Screenshot 2025-12-12 072825.png…](4)
-
-
-### Light Mode
-![Light Mode]()
-
-### Dark Mode
-![Dark Mode](<img width="1766" height="852" alt="image" src="https://github.com/user-attachments/assets/d10ea397-2162-482f-abc9-3aee1eb6c540" />)
-
-## 💻 Local Development
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/vaibhavsharma45/portfolio.git
-cd portfolio
-```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Start development server
-```bash
-npm start
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-### Build for Production
-```bash
-npm run build
-```
-
-## 📂 Project Structure
-```
-vaibhav-portfolio/
-├── public/
-├── src/
-│   ├── App.js          # Main component with all sections
-│   ├── index.js        # Entry point
-│   └── index.css       # Tailwind styles
-├── package.json
-├── tailwind.config.js
-└── README.md
-```
-
-## 🎨 Customization
-
-### Update Personal Information
-
-Edit `src/App.js` and modify:
-
-- **Personal Details:** Name, bio, contact info
-- **Skills:** Add/remove skills in the `skills` object
-- **Experience:** Update the `experiences` array
-- **Projects:** GitHub repos auto-fetch from your profile
-- **Goals:** Modify `goals` object
-
-### Change Colors
-
-Update `tailwind.config.js` for custom color schemes.
-
-## 🌟 Features in Detail
-
-### Animations
-- Particle background animation
-- Mouse follower effect
-- Scroll reveal animations
-- Hover effects on all interactive elements
-- Smooth page transitions
-
-### Responsive Design
-- Mobile-first approach
-- Breakpoints for all device sizes
-- Touch-friendly interactions
-
-### Performance
-- Optimized React rendering
-- Lazy loading where applicable
-- Efficient state management
-
-## 📝 To-Do
-
-- [ ] Add blog section
-- [ ] Integrate actual resume PDF download
-- [ ] Add more project details
-- [ ] Implement contact form backend
-- [ ] Add analytics
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 Author
-
-**Vaibhav Sharma**
-
-- GitHub: [@vaibhavsharma45](https://github.com/vaibhavsharma45)
-- LinkedIn: [Vaibhav Sharma](https://linkedin.com/in/vaibhav-0sharma)
-- Email: vaibhavsharma95124v@gmail.com
-- Kaggle: [Vaibhav Sharma](https://kaggle.com/Vaibhavsharma45)
-
-## 💖 Support
-
-If you like this portfolio, give it a ⭐ on GitHub!
+**🔗 Live:** [https://thevaibhavacom.vercel.app/](https://thevaibhavacom.vercel.app/)
 
 ---
 
-**Built with ❤️ by Vaibhav Sharma**
+## ✨ Features
 
-*"Jo kuch bhi hota hai, ache ke liye hota hai"*
+- 🌗 **Dark / Light Mode** — Seamless theme toggle
+- ⌨️ **Typing Animation** — Rotating role descriptions in hero
+- 🎨 **Unique Colored Cards** — Each project card has its own gradient identity
+- ✨ **Shimmer & Glow Animations** — Smooth hover effects on all cards
+- 📌 **Featured Projects** — 6 real deployed projects with live demo links
+- 🔄 **GitHub Repos** — Auto-fetched latest repositories
+- 📜 **Certifications** — Verified certificates with grade badges
+- 🎯 **Goals Section** — Short-term and long-term with priority tags
+- 💪 **Challenges & Growth** — Real personal story, no filter
+- 📧 **Contact Form** — EmailJS integration with WhatsApp CTA
+- 📱 **Fully Responsive** — Works on mobile, tablet, and desktop
+- ⚡ **Floating Particles** — Animated background
+- 🔝 **Scroll to Top** — Smooth scroll behaviour
+- 🔍 **SEO Ready** — Meta tags in `public/index.html`
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React.js 18 |
+| Styling | Tailwind CSS 3 |
+| Icons | Lucide React |
+| Contact | EmailJS |
+| Deployment | Vercel |
+| Data | GitHub REST API |
+
+---
+
+## 📂 Project Structure
+
+```
+vaibhav-portfolio/
+├── public/
+│   ├── index.html              ← SEO meta tags
+│   └── Vaibhav_Sharma_Resume.pdf  ← Resume (add yours here)
+├── src/
+│   ├── App.js                  ← Main component (all sections)
+│   ├── index.css               ← Tailwind directives
+│   └── index.js                ← React entry point
+├── .env                        ← EmailJS keys (not in git)
+├── tailwind.config.js
+└── package.json
+```
+
+---
+
+## 🚀 Local Setup
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/Vaibhavsharma45/vaibhav-portfolio.git
+cd vaibhav-portfolio
+
+# 2. Install dependencies
+npm install
+
+# 3. Add environment variables
+# Create a .env file in root:
+REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
+
+# 4. Start dev server
+npm start
+# → Open http://localhost:3000
+```
+
+---
+
+## 📧 EmailJS Setup
+
+1. Sign up free at [emailjs.com](https://www.emailjs.com)
+2. Create a Gmail service → copy **Service ID**
+3. Create an email template with `{{name}}`, `{{email}}`, `{{message}}` variables → copy **Template ID**
+4. Go to Account → API Keys → copy **Public Key**
+5. Add all three to your `.env` file
+6. Add same keys to **Vercel → Settings → Environment Variables** for production
+
+---
+
+## 🌐 Deploying to Vercel
+
+```bash
+# Push to GitHub — Vercel auto-deploys on every push
+git add .
+git commit -m "your message"
+git push origin main
+```
+
+Make sure to add your `.env` variables in **Vercel Dashboard → Project → Settings → Environment Variables**.
+
+---
+
+## 📝 Customisation
+
+All content is in `src/App.js` at the top in clearly labelled data constants:
+
+| Constant | What to edit |
+|---|---|
+| `skills` | Technical skills by category |
+| `challenges` | Your personal growth story |
+| `experiences` | Work experience |
+| `certifications` | Your certificates |
+| `goals` | Short-term and long-term goals |
+| `projects` | Your featured projects |
+
+To update contact info, search for `vaibhavsharma95124v@gmail.com` and replace with your details.
+
+---
+
+## 🎨 Sections
+
+| # | Section | Description |
+|---|---|---|
+| 1 | **Home** | Hero with typing animation and social links |
+| 2 | **About** | Bio and personal interests |
+| 3 | **Challenges** | Real growth story with outcome badges |
+| 4 | **Skills** | 4 colored category cards with shimmer |
+| 5 | **Experience** | Work timeline |
+| 6 | **Projects** | 6 featured + GitHub repos auto-fetched |
+| 7 | **Certifications** | Verified certificates with grades |
+| 8 | **Goals** | Roadmap with priority tags |
+| 9 | **Contact** | Form + WhatsApp CTA |
+
+---
+
+## 👨‍💻 Author
+
+**Vaibhav Sharma** — Aspiring AI & ML Engineer
+
+- 🌐 Portfolio: [thevaibhavacom.vercel.app](https://thevaibhavacom.vercel.app/)
+- 💼 LinkedIn: [linkedin.com/in/vaibhav-0sharma](https://linkedin.com/in/vaibhav-0sharma)
+- 🐙 GitHub: [github.com/Vaibhavsharma45](https://github.com/Vaibhavsharma45)
+- 📧 Email: vaibhavsharma95124v@gmail.com
+- 💬 WhatsApp: [+91-9012907709](https://wa.me/919012907709)
+
+---
+
+## 📄 License
+
+This project is open source under the [MIT License](LICENSE).
+
+⭐ **If this helped you, give it a star!**
+
+---
+
+*"Jo kuch bhi hota hai, ache ke liye hota hai" ❤️*
