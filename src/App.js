@@ -65,7 +65,6 @@ const Portfolio = () => {
   // ── THEME CLASSES ─────────────────────────────────────────────────────────
   const bg       = darkMode ? 'bg-[#060d1f]'      : 'bg-gray-50';
   const bgAlt    = darkMode ? 'bg-[#0a1628]'      : 'bg-white';
-  const bgCard   = darkMode ? 'bg-[#0d1f3c]/80'   : 'bg-white/80';
   const border   = darkMode ? 'border-[#1e3a5f]'  : 'border-gray-200';
   const textMain = darkMode ? 'text-slate-100'     : 'text-gray-900';
   const textMuted= darkMode ? 'text-slate-400'     : 'text-gray-500';
