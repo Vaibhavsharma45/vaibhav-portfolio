@@ -153,10 +153,6 @@ To update contact info, search for `vaibhavsharma95124v@gmail.com` and replace w
 
 ---
 
-## 📄 License
-
-This project is open source under the [MIT License](LICENSE).
-
 ⭐ **If this helped you, give it a star!**
 
 ---
