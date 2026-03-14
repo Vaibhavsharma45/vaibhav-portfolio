@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Github, Linkedin, Mail, Phone, Moon, Sun, Download, ExternalLink, Award, Target, Briefcase, Code, User, Heart, TrendingUp, ArrowUp, Sparkles, Zap, MessageCircle } from 'lucide-react';
-
+import { Github, Linkedin, Mail, Phone, Moon, Sun, Download, ExternalLink, Award, Target, Briefcase, Code, User, Heart, TrendingUp, ArrowUp, Sparkles, MessageCircle } from 'lucide-react';
 const GITHUB_USERNAME = 'Vaibhavsharma45';
 const ANTHROPIC_MODEL = 'claude-sonnet-4-20250514';
 
