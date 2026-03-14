@@ -103,33 +103,32 @@ const Portfolio = () => {
     {
       icon: '👨‍👩‍👦',
       title: 'Family Pressure vs Passion',
-      description: 'Ghar waale kehte the — "stable government job lo, yeh AI wai kuch nahi hoga." Pressure real tha. But maine apne kaam se prove kiya ki AI mein future hai — projects build kiye, internship li, aur ab portfolio dekh ke woh khud proud hain.',
+      description: 'Coming from a non-tech background, there was constant pressure to pursue a stable government job instead of AI. I chose to let my work speak — built real projects, secured an internship, and proved that a career in AI is not just possible, but promising.',
       badge: 'Overcame ✓',
       badgeColor: 'bg-green-100 text-green-700',
     },
     {
       icon: '🧠',
-      title: 'Self-Doubt — "Kya Mujhse Hoga?"',
-      description: 'Shuruat mein lagta tha — yeh sab IIT waalon ke liye hai, mera kya kaam. Pehle project fail hua, Kaggle mein bottom 50% aaya. But har failure ke baad uthke dobara baitha — aur aaj 6 deployed projects hain.',
-      badge: 'Still going ↑',
+      title: 'Overcoming Self-Doubt',
+      description: 'Early on, I doubted whether someone from a tier-2 city without elite college credentials could break into AI. My first Kaggle attempt landed in the bottom 50%. Instead of quitting, I analysed every mistake — and today I have 6 deployed projects to show for it.',
+      badge: 'Still growing ↑',
       badgeColor: 'bg-blue-100 text-blue-700',
     },
     {
       icon: '🌐',
-      title: 'English Barrier in Learning',
-      description: 'English-medium documentation aur courses samajhna mushkil tha starting mein. Solution? Hinglish notes banaye, YouTube se concepts samjhe, aur practice se fluency aayi. Ab English docs directly padhta hun.',
+      title: 'English Barrier in Technical Learning',
+      description: 'Most quality AI/ML resources are in English, which was a significant barrier initially. I tackled it by combining vernacular explanations with official documentation, taking bilingual notes, and practising consistently — now I read research papers and docs with ease.',
       badge: 'Solved ✓',
       badgeColor: 'bg-purple-100 text-purple-700',
     },
     {
       icon: '⚡',
-      title: 'No Formal Mentorship',
-      description: 'Koi guide karne waala nahi tha. Internet, GitHub, aur YouTube hi mentor the. Self-learning ki wajah se ab problem-solving approach zyada strong hai — koi bhi cheez sikhni ho, khud research karke seekh leta hun.',
-      badge: 'Strength now 💪',
+      title: 'Self-Taught Without Formal Mentorship',
+      description: 'With no structured mentorship or campus resources, the internet, GitHub, and open-source communities became my classroom. This forced me to develop strong independent problem-solving skills — a habit that now lets me pick up any new technology quickly.',
+      badge: 'Core Strength 💪',
       badgeColor: 'bg-orange-100 text-orange-700',
     },
   ];
-
   const experiences = [
     {
       role: 'Data Analyst Intern',
