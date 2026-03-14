@@ -447,65 +447,139 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+{/* ── PROJECTS ── */}
+      <section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
+            <Github className="text-blue-500 animate-pulse" />
+            <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Projects</span>
+          </h2>
+          <p className="text-center text-gray-500 dark:text-gray-400 mb-12 text-sm">Real projects — built, deployed, and live 🚀</p>
 
-     {/* ── PROJECTS ── */}
-<section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
-      <Github className="text-blue-500 animate-pulse" />
-      <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Projects</span>
-    </h2>
-    <p className="text-center text-gray-500 dark:text-gray-400 mb-12 text-sm">Click ✨ AI Description to generate a professional summary</p>
+          {/* ── FEATURED PROJECTS ── */}
+          <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <span className="text-yellow-500">📌</span>
+            <span className={darkMode ? 'text-white' : 'text-gray-800'}>Featured Projects</span>
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+            {[
+              {
+                name: 'DataMind Pro',
+                emoji: '📊',
+                tag: 'AI · Full Stack',
+                description: 'AI-powered data analysis platform — upload any CSV/Excel and get auto EDA, ML models, Groq LLM insights, PDF/PPT reports, and a chatbot. Built with Flask + 9 Blueprints + Groq Llama 3.3 70B.',
+                stack: ['Flask', 'Python', 'Groq API', 'Scikit-learn', 'Plotly'],
+                github: 'https://github.com/Vaibhavsharma45/Auto_analyst',
+                live: 'https://datamind-pro.onrender.com',
+                stars: 1,
+              },
+              {
+                name: 'Bujji AI',
+                emoji: '🤖',
+                tag: 'AI · Voice Assistant',
+                description: 'Personal JARVIS-style voice assistant — wake word "Hey Robo", LangGraph ReAct agent, ChromaDB memory, PC control, WhatsApp/email, browser automation, and a web dashboard. 100% free stack.',
+                stack: ['Python', 'LangGraph', 'Groq API', 'FastAPI', 'ChromaDB'],
+                github: 'https://github.com/Vaibhavsharma45/Bujji_AI',
+                live: null,
+              },
+              {
+                name: 'Marg Darshak',
+                emoji: '🧭',
+                tag: 'AI · Web App',
+                description: 'Comprehensive web platform combining Career Compass (AI career recommendations), Gyan Kosh (spiritual wisdom repository), and Skill Saathi (curated learning resources) — solving real student pain-points.',
+                stack: ['Flask', 'Python', 'Scikit-learn', 'Seaborn', 'ML'],
+                github: 'https://github.com/Vaibhavsharma45/marg-darshak',
+                live: 'https://marg-darshak.onrender.com',
+                stars: 1,
+              },
+              {
+                name: 'Resume Analyser',
+                emoji: '📄',
+                tag: 'AI · NLP',
+                description: 'AI-powered resume analysis tool — parses uploaded PDFs, extracts skills and keywords, scores against job descriptions, and suggests improvements using NLP techniques.',
+                stack: ['Python', 'Flask', 'NLP', 'JavaScript', 'CSS'],
+                github: 'https://github.com/Vaibhavsharma45/Resume_Analyser',
+                live: null,
+                stars: 1,
+              },
+              {
+                name: 'Crypto Volatility Predictor',
+                emoji: '📈',
+                tag: 'ML · Finance',
+                description: 'End-to-end ML pipeline predicting 7-day crypto volatility using Random Forest with 14 engineered features (ATR, Bollinger Bands, momentum). Achieves R² ~0.85 with Streamlit deployment.',
+                stack: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit', 'Plotly'],
+                github: 'https://github.com/Vaibhavsharma45/crypto-volatility-prediction-project',
+                live: null,
+                stars: 2,
+              },
+              {
+                name: 'Birth Weight Predictor',
+                emoji: '🏥',
+                tag: 'ML · Healthcare',
+                description: 'Machine learning model predicting birth weight from maternal health indicators with 92%+ accuracy using regression techniques. Deployed as an interactive web app.',
+                stack: ['Python', 'Scikit-learn', 'Pandas', 'Flask', 'Seaborn'],
+                github: 'https://github.com/Vaibhavsharma45/birth-weight-predictor',
+                live: 'https://birth-weight-predictor.onrender.com',
+                stars: 1,
+              },
+            ].map((project, i) => (
+              <div key={i} className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-amber-50/80'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border ${darkMode ? 'border-gray-600' : 'border-amber-200'} group relative overflow-hidden flex flex-col`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-500"></div>
 
-    {/* Pinned Projects */}
-    <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-      <span className="text-yellow-500">📌</span>
-      <span className={darkMode ? 'text-white' : 'text-gray-800'}>Featured Projects</span>
-    </h3>
-    <div className="grid md:grid-cols-2 gap-6 mb-14">
-      {[
-        {
-          name: 'Marg Darshak',
-          description: 'AI-powered career guidance platform with Career Compass, Gyan Kosh & Skill Saathi.',
-          language: 'Python',
-          html_url: 'https://github.com/Vaibhavsharma45/marg-darshak',
-          homepage: 'https://marg-darshak-lzy4.onrender.com/',
-          stargazers_count: 1,
-        },
-        {
-          name: 'Birth Weight Predictor',
-          description: 'ML model predicting birth weight with 92%+ accuracy using regression techniques.',
-          language: 'Python',
-          html_url: 'https://github.com/Vaibhavsharma45/birth-weight-predictor',
-          homepage: 'https://birth-weight-predictor.onrender.com',
-          stargazers_count: 1,
-        },
-      ].map((repo, i) => (
-        <div key={i} className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/70' : 'bg-amber-100/60'} backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-yellow-400/40 group relative overflow-hidden`}>
-          <div className="absolute top-3 right-3 text-yellow-400 text-xs font-semibold font-mono bg-yellow-400/10 px-2 py-1 rounded-full">📌 Pinned</div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-500 group-hover:text-purple-500 transition-colors duration-300">{repo.name}</h3>
-          <div className="mb-4">
-            <AIDescription repo={repo} />
+                {/* Header */}
+                <div className="flex items-start justify-between mb-3 relative z-10">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">{project.emoji}</span>
+                    <div>
+                      <h3 className="text-lg font-bold text-blue-500 group-hover:text-purple-500 transition-colors duration-300 leading-tight">{project.name}</h3>
+                      <span className={`text-xs px-2 py-0.5 rounded-full font-mono ${darkMode ? 'bg-gray-600 text-gray-300' : 'bg-white text-gray-500'} border ${darkMode ? 'border-gray-500' : 'border-gray-200'}`}>{project.tag}</span>
+                    </div>
+                  </div>
+                  {project.stars && <span className="text-xs text-yellow-500 font-mono">⭐ {project.stars}</span>}
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4 relative z-10 flex-1">{project.description}</p>
+
+                {/* Stack */}
+                <div className="flex flex-wrap gap-1.5 mb-4 relative z-10">
+                  {project.stack.map((tech, ti) => (
+                    <span key={ti} className="text-xs px-2 py-0.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-300/30 rounded-full text-blue-600 dark:text-blue-300 font-mono">{tech}</span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex gap-2 relative z-10 mt-auto">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer"
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 ${darkMode ? 'bg-gray-600 hover:bg-gray-500 text-white' : 'bg-gray-800 hover:bg-gray-700 text-white'}`}>
+                    <Github size={13} /> Code
+                  </a>
+                  {project.live ? (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-green-500 to-teal-500 text-white hover:opacity-85 transition-all duration-300">
+                      <ExternalLink size={13} /> Live Demo
+                    </a>
+                  ) : (
+                    <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-default">
+                      🖥️ Local / Desktop
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="flex justify-between items-center">
-            <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs">{repo.language}</span>
-            <div className="flex gap-3">
-              {repo.homepage && (
-                <a href={repo.homepage} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full hover:opacity-80 transition-all">
-                  🌐 Live Demo
-                </a>
-              )}
-              <a href={repo.html_url} target="_blank" rel="noopener noreferrer"
-                className="text-blue-500 hover:text-purple-500 transition-all duration-300">
-                <ExternalLink size={18} />
-              </a>
-            </div>
+
+          {/* ── EXPLORE BUTTON ── */}
+          <div className="text-center">
+            <a href="https://github.com/Vaibhavsharma45" target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <Github size={22} />
+              Explore All Projects on GitHub
+              <ExternalLink size={18} />
+            </a>
           </div>
         </div>
-      ))}
-    </div>
-
+      </section>
     {/* GitHub Repos */}
     <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
       <Github size={20} className="text-blue-500" />
