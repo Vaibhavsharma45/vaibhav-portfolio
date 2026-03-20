@@ -226,12 +226,6 @@ const Portfolio = () => {
     </div>
   );
 
-  const glow = (el, color, enter) => {
-    el.style.boxShadow = enter ? color : 'none';
-    el.style.transform = enter ? 'translateY(-4px)' : 'translateY(0)';
-    el.style.transition = 'box-shadow 0.3s, transform 0.3s';
-  };
-
   const inputCls = `w-full p-3 rounded-xl text-sm border outline-none transition-all duration-300 ${
     D ? 'bg-[#060d1f] text-slate-100 border-[#1e3a5f] placeholder-slate-600 focus:border-cyan-400'
       : 'bg-white text-gray-900 border-gray-200 placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100'
