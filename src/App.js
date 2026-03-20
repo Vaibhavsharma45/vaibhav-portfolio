@@ -91,10 +91,10 @@ const Portfolio = () => {
   const education = [
     {
       degree: 'Bachelor of Computer Applications (BCA)',
-      institution: 'Chaudhary Charan Singh University',
-      location: 'Muzaffarnagar, Uttar Pradesh',
-      period: '2022 – 2025',
-      grade: 'Completed',
+      institution: 'Maa Shakumbhari University',
+      location: 'Saharanpur, Uttar Pradesh',
+      period: '2023 – 2026',
+      grade: 'In Progress',
       icon: '🎓',
       color: 'from-cyan-500 to-blue-500',
       glowD: 'rgba(34,211,238,0.2)',
