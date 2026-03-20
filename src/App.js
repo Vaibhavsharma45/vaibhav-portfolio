@@ -133,8 +133,15 @@ const Portfolio = () => {
   ];
 
   const experiences = [
-    { role:'Data Analyst Intern', company:'Intern Geek', duration:'Nov 2025 – Dec 2025', description:'Developed and deployed an interactive Power BI Dashboard analysing the Titanic Survival Dataset. Visualised key KPIs — survival rates by Pclass and Gender — using data storytelling techniques. Gained hands-on experience with Power BI Desktop and Google Sheets, translating raw data into actionable insights.', skills:['Power BI','Data Analysis','Google Sheets','Data Visualisation'] },
-  ];
+  {
+    role: 'Data Analyst Intern',
+    company: 'Intern Geek',
+    duration: 'Nov 2025 – Dec 2025',
+    description: 'Analysed retail sales and customer behaviour data using Python — performed end-to-end EDA, customer segmentation, product performance analysis, and generated actionable business insights with visualisations. Delivered a comprehensive final report with recommendations backed by data.',
+    skills: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'EDA', 'Data Visualisation'],
+    github: 'https://github.com/Vaibhavsharma45/Intern_Geek_project_analysis',
+  },
+];
 
   const certifications = [
     { name:'Artificial Intelligence & Machine Learning Cohort', org:'Intern Geek', year:'Jan – Feb 2026', grade:'Grade: A+', color:'from-purple-500 to-pink-500', glowD:'rgba(168,85,247,0.2)', glowL:'rgba(168,85,247,0.12)', icon:'🏆' },
@@ -171,35 +178,44 @@ const Portfolio = () => {
 
   // ── CONTACT FORM ──────────────────────────────────────────────────────────
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    setFormStatus('sending');
-    try {
-      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-          template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-          user_id: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
-          template_params: { name: formData.name, email: formData.email, message: formData.message },
-        }),
-      });
-      if (res.ok) {
-        setFormStatus('sent');
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setFormStatus(''), 4000);
-      } else {
-        setFormStatus('error');
-      }
-    } catch {
-      // Fallback to mailto
-      window.open(`mailto:vaibhavsharma95124v@gmail.com?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(formData.message)}`, '_blank');
+  e.preventDefault();
+  if (!formData.name || !formData.email || !formData.message) return;
+  setFormStatus('sending');
+  try {
+    // EmailJS browser SDK method
+    const params = {
+      service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      user_id: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+      template_params: {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+    };
+    const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params),
+    });
+    if (res.status === 200) {
       setFormStatus('sent');
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setFormStatus(''), 4000);
+    } else {
+      throw new Error('failed');
     }
-  };
+  } catch {
+    // Fallback — open Gmail
+    window.open(
+      `mailto:vaibhavsharma95124v@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`,
+      '_blank'
+    );
+    setFormStatus('sent');
+    setFormData({ name: '', email: '', message: '' });
+    setTimeout(() => setFormStatus(''), 4000);
+  }
+};
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
@@ -497,6 +513,12 @@ const Portfolio = () => {
               </div>
             ))}
           </div>
+        <div className="flex flex-wrap gap-2 relative z-10 mt-4">
+  <a href={exp.github} target="_blank" rel="noopener noreferrer"
+    className={`flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-semibold border transition-all duration-300 hover:scale-105 ${D?'border-purple-500/40 text-purple-400 bg-purple-500/10 hover:bg-purple-500/20':'border-purple-300 text-purple-700 bg-purple-50 hover:bg-purple-100'}`}>
+    <Github size={13} /> View Project on GitHub →
+  </a>
+</div>
         </div>
       </section>
 
@@ -716,8 +738,8 @@ const Portfolio = () => {
                 </div>
 
                 {formStatus === 'error' && (
-                  <p className="text-red-400 text-xs text-center">Something went wrong. Please try again or email directly.</p>
-                )}
+  <p className="text-orange-400 text-xs text-center">Opening your email client as fallback...</p>
+)}
 
                 <button
                   type="submit"
