@@ -62,67 +62,32 @@ const Portfolio = () => {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // ── THEME ─────────────────────────────────────────────────────────────────
   const D = darkMode;
   const bg      = D ? 'bg-[#060d1f]'    : 'bg-slate-50';
-  const bgAlt   = D ? 'bg-[#0a1628]'    : 'bg-white';
   const bgCard  = D ? 'bg-[#0d1f3c]/70' : 'bg-white';
   const bgCard2 = D ? 'bg-[#060d1f]'    : 'bg-gray-50';
   const border  = D ? 'border-[#1e3a5f]': 'border-gray-200';
   const tMain   = D ? 'text-slate-100'  : 'text-gray-900';
   const tMuted  = D ? 'text-slate-400'  : 'text-gray-600';
   const navBg   = D ? 'bg-[#060d1f]/90' : 'bg-white/95';
-  const sec     = (alt) => alt ? (D ? bgAlt : 'bg-blue-50/30') : (D ? bg : 'bg-slate-50');
+  const sec     = (alt) => alt ? (D ? 'bg-[#0a1628]' : 'bg-blue-50/30') : (D ? bg : 'bg-slate-50');
 
-  // ── DATA ──────────────────────────────────────────────────────────────────
   const NAV_ITEMS = ['Home','About','Education','Skills','Experience','Projects','Certifications','Goals','Contact'];
 
   const skills = [
-    { category:'Programming', icon:'</>', iconColor: D?'text-cyan-400':'text-cyan-600', glowD:'rgba(34,211,238,0.18)', glowL:'rgba(6,182,212,0.12)', lightBg:'bg-cyan-50', lightBorder:'border-cyan-200', items:['Python','SQL','JavaScript','HTML5','CSS3','C++','DSA'] },
-    { category:'Machine Learning', icon:'🧠', iconColor: D?'text-pink-400':'text-pink-600', glowD:'rgba(244,114,182,0.18)', glowL:'rgba(219,39,119,0.1)', lightBg:'bg-pink-50', lightBorder:'border-pink-200', items:['Machine Learning','Deep Learning','TensorFlow','PyTorch','Keras','Scikit-learn','Classification','Regression','Hyperparameter Tuning'] },
-    { category:'Data Analytics', icon:'📈', iconColor: D?'text-teal-400':'text-teal-600', glowD:'rgba(45,212,191,0.18)', glowL:'rgba(15,118,110,0.1)', lightBg:'bg-teal-50', lightBorder:'border-teal-200', items:['Pandas','NumPy','EDA','Feature Engineering','Data Cleaning','Statistical Analysis','Power BI'] },
-    { category:'NLP & Gen AI', icon:'🤖', iconColor: D?'text-violet-400':'text-violet-600', glowD:'rgba(167,139,250,0.18)', glowL:'rgba(124,58,237,0.1)', lightBg:'bg-violet-50', lightBorder:'border-violet-200', items:['NLP','Generative AI','LangChain','LangGraph','LlamaIndex','RAG','Prompt Engineering','Groq API','Fine-tuning','ChromaDB'] },
-    { category:'Backend', icon:'>_', iconColor: D?'text-green-400':'text-green-700', glowD:'rgba(74,222,128,0.18)', glowL:'rgba(21,128,61,0.1)', lightBg:'bg-green-50', lightBorder:'border-green-200', items:['Flask','FastAPI','REST APIs','MongoDB','MySQL','Web Development'] },
-    { category:'Visualization', icon:'📊', iconColor: D?'text-yellow-400':'text-yellow-600', glowD:'rgba(250,204,21,0.18)', glowL:'rgba(202,138,4,0.1)', lightBg:'bg-yellow-50', lightBorder:'border-yellow-200', items:['Matplotlib','Seaborn','Plotly','Streamlit','Power BI'] },
-    { category:'Tools', icon:'⚙️', iconColor: D?'text-orange-400':'text-orange-600', glowD:'rgba(251,146,60,0.18)', glowL:'rgba(194,65,12,0.1)', lightBg:'bg-orange-50', lightBorder:'border-orange-200', items:['Git','GitHub','VS Code','Jupyter','Google Colab','Kaggle','Docker','Render','Vercel','Postman','GitHub Actions'] },
-    { category:'CS Fundamentals', icon:'🖥️', iconColor: D?'text-rose-400':'text-rose-600', glowD:'rgba(251,113,133,0.18)', glowL:'rgba(190,18,60,0.1)', lightBg:'bg-rose-50', lightBorder:'border-rose-200', items:['Computer Networks','OS Concepts','DBMS','OOP','DSA','System Design'] },
+    { category:'Programming', icon:'</>', iconColor:D?'text-cyan-400':'text-cyan-600', glowD:'rgba(34,211,238,0.18)', glowL:'rgba(6,182,212,0.12)', lightBg:'bg-cyan-50', lightBorder:'border-cyan-200', items:['Python','SQL','JavaScript','HTML5','CSS3','C++','DSA'] },
+    { category:'Machine Learning', icon:'🧠', iconColor:D?'text-pink-400':'text-pink-600', glowD:'rgba(244,114,182,0.18)', glowL:'rgba(219,39,119,0.1)', lightBg:'bg-pink-50', lightBorder:'border-pink-200', items:['Machine Learning','Deep Learning','TensorFlow','PyTorch','Keras','Scikit-learn','Classification','Regression','Hyperparameter Tuning'] },
+    { category:'Data Analytics', icon:'📈', iconColor:D?'text-teal-400':'text-teal-600', glowD:'rgba(45,212,191,0.18)', glowL:'rgba(15,118,110,0.1)', lightBg:'bg-teal-50', lightBorder:'border-teal-200', items:['Pandas','NumPy','EDA','Feature Engineering','Data Cleaning','Statistical Analysis','Power BI'] },
+    { category:'NLP & Gen AI', icon:'🤖', iconColor:D?'text-violet-400':'text-violet-600', glowD:'rgba(167,139,250,0.18)', glowL:'rgba(124,58,237,0.1)', lightBg:'bg-violet-50', lightBorder:'border-violet-200', items:['NLP','Generative AI','LangChain','LangGraph','LlamaIndex','RAG','Prompt Engineering','Groq API','Fine-tuning','ChromaDB'] },
+    { category:'Backend', icon:'>_', iconColor:D?'text-green-400':'text-green-700', glowD:'rgba(74,222,128,0.18)', glowL:'rgba(21,128,61,0.1)', lightBg:'bg-green-50', lightBorder:'border-green-200', items:['Flask','FastAPI','REST APIs','MongoDB','MySQL','Web Development'] },
+    { category:'Visualization', icon:'📊', iconColor:D?'text-yellow-400':'text-yellow-600', glowD:'rgba(250,204,21,0.18)', glowL:'rgba(202,138,4,0.1)', lightBg:'bg-yellow-50', lightBorder:'border-yellow-200', items:['Matplotlib','Seaborn','Plotly','Streamlit','Power BI'] },
+    { category:'Tools', icon:'⚙️', iconColor:D?'text-orange-400':'text-orange-600', glowD:'rgba(251,146,60,0.18)', glowL:'rgba(194,65,12,0.1)', lightBg:'bg-orange-50', lightBorder:'border-orange-200', items:['Git','GitHub','VS Code','Jupyter','Google Colab','Kaggle','Docker','Render','Vercel','Postman','GitHub Actions'] },
+    { category:'CS Fundamentals', icon:'🖥️', iconColor:D?'text-rose-400':'text-rose-600', glowD:'rgba(251,113,133,0.18)', glowL:'rgba(190,18,60,0.1)', lightBg:'bg-rose-50', lightBorder:'border-rose-200', items:['Computer Networks','OS Concepts','DBMS','OOP','DSA','System Design'] },
   ];
 
   const education = [
-    {
-      degree: 'Bachelor of Computer Applications (BCA)',
-      institution: 'Maa Shakumbhari University',
-      location: 'Saharanpur, Uttar Pradesh',
-      period: '2023 – 2026',
-      grade: 'In Progress',
-      icon: '🎓',
-      color: 'from-cyan-500 to-blue-500',
-      glowD: 'rgba(34,211,238,0.2)',
-      glowL: 'rgba(6,182,212,0.12)',
-      highlights: [
-        'Specialized in Data Structures, Algorithms, and Database Management',
-        'Completed coursework in Computer Networks, Operating Systems, and OOP',
-        'Built multiple projects combining web development and data science',
-        'Parallel self-learning in ML, AI, and Generative AI throughout degree',
-      ],
-    },
-    {
-      degree: 'Data Science with Generative AI',
-      institution: 'PW Skills (Physics Wallah)',
-      location: 'Online',
-      period: '2025 – Present',
-      grade: 'In Progress',
-      icon: '🤖',
-      color: 'from-purple-500 to-pink-500',
-      glowD: 'rgba(168,85,247,0.2)',
-      glowL: 'rgba(124,58,237,0.12)',
-      highlights: [
-        'Advanced ML, Deep Learning, NLP, and Generative AI curriculum',
-        'Hands-on projects using TensorFlow, PyTorch, and LangChain',
-        'Live sessions, assignments, and real-world dataset analysis',
-        'Covering LLMs, RAG pipelines, and Agentic AI systems',
-      ],
-    },
+    { degree:'Bachelor of Computer Applications (BCA)', institution:'Maa Shakumbhari University', location:'Saharanpur, Uttar Pradesh', period:'2023 – 2026', grade:'In Progress', icon:'🎓', color:'from-cyan-500 to-blue-500', glowD:'rgba(34,211,238,0.2)', glowL:'rgba(6,182,212,0.12)', highlights:['Specialized in Data Structures, Algorithms, and Database Management','Completed coursework in Computer Networks, Operating Systems, and OOP','Built multiple projects combining web development and data science','Parallel self-learning in ML, AI, and Generative AI throughout degree'] },
+    { degree:'Data Science with Generative AI', institution:'PW Skills (Physics Wallah)', location:'Online', period:'2025 – Present', grade:'In Progress', icon:'🤖', color:'from-purple-500 to-pink-500', glowD:'rgba(168,85,247,0.2)', glowL:'rgba(124,58,237,0.12)', highlights:['Advanced ML, Deep Learning, NLP, and Generative AI curriculum','Hands-on projects using TensorFlow, PyTorch, and LangChain','Live sessions, assignments, and real-world dataset analysis','Covering LLMs, RAG pipelines, and Agentic AI systems'] },
   ];
 
   const challenges = [
@@ -133,15 +98,15 @@ const Portfolio = () => {
   ];
 
   const experiences = [
-  {
-    role: 'Data Analyst Intern',
-    company: 'Intern Geek',
-    duration: 'Nov 2025 – Dec 2025',
-    description: 'Analysed retail sales and customer behaviour data using Python — performed end-to-end EDA, customer segmentation, product performance analysis, and generated actionable business insights with visualisations. Delivered a comprehensive final report with recommendations backed by data.',
-    skills: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'EDA', 'Data Visualisation'],
-    github: 'https://github.com/Vaibhavsharma45/Intern_Geek_project_analysis',
-  },
-];
+    {
+      role: 'Data Analyst Intern',
+      company: 'Intern Geek',
+      duration: 'Nov 2025 – Dec 2025',
+      description: 'Analysed retail sales and customer behaviour data using Python — performed end-to-end EDA, customer segmentation, product performance analysis, and generated actionable business insights with visualisations. Delivered a comprehensive final report with recommendations backed by data.',
+      skills: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'EDA', 'Data Visualisation'],
+      github: 'https://github.com/Vaibhavsharma45/Intern_Geek_project_analysis',
+    },
+  ];
 
   const certifications = [
     { name:'Artificial Intelligence & Machine Learning Cohort', org:'Intern Geek', year:'Jan – Feb 2026', grade:'Grade: A+', color:'from-purple-500 to-pink-500', glowD:'rgba(168,85,247,0.2)', glowL:'rgba(168,85,247,0.12)', icon:'🏆' },
@@ -176,46 +141,38 @@ const Portfolio = () => {
     { name:'Birth Weight Predictor', emoji:'🏥', tag:'ML · Healthcare', neon:'#f472b6', darkBorder:'border-pink-500/40', lightBorder:'border-pink-300', darkTag:'bg-pink-500/10 text-pink-400 border-pink-500/30', lightTag:'bg-pink-100 text-pink-700 border-pink-300', desc:'Machine learning model predicting birth weight from maternal health indicators with 92%+ accuracy using regression techniques. Deployed as an interactive web app.', stack:['Python','Scikit-learn','Pandas','Flask','Seaborn'], github:'https://github.com/Vaibhavsharma45/birth-weight-predictor', live:'https://birth-weight-predictor.onrender.com', stars:1 },
   ];
 
-  // ── CONTACT FORM ──────────────────────────────────────────────────────────
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!formData.name || !formData.email || !formData.message) return;
-  setFormStatus('sending');
-  try {
-    // EmailJS browser SDK method
-    const params = {
-      service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      user_id: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
-      template_params: {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      },
-    };
-    const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(params),
-    });
-    if (res.status === 200) {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+    setFormStatus('sending');
+    try {
+      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          user_id: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+          template_params: { name: formData.name, email: formData.email, message: formData.message },
+        }),
+      });
+      if (res.status === 200) {
+        setFormStatus('sent');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setFormStatus(''), 4000);
+      } else {
+        throw new Error('failed');
+      }
+    } catch {
+      window.open(
+        `mailto:vaibhavsharma95124v@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`,
+        '_blank'
+      );
       setFormStatus('sent');
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setFormStatus(''), 4000);
-    } else {
-      throw new Error('failed');
     }
-  } catch {
-    // Fallback — open Gmail
-    window.open(
-      `mailto:vaibhavsharma95124v@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`,
-      '_blank'
-    );
-    setFormStatus('sent');
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setFormStatus(''), 4000);
-  }
-};
+  };
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
@@ -250,7 +207,7 @@ const Portfolio = () => {
   return (
     <div className={`min-h-screen transition-all duration-500 ${bg} ${tMain} relative overflow-hidden`}>
 
-      {/* ── BACKGROUND ── */}
+      {/* BACKGROUND */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {D ? (
           <>
@@ -273,7 +230,7 @@ const Portfolio = () => {
         )}
       </div>
 
-      {/* ── NAVBAR ── */}
+      {/* NAVBAR */}
       <nav className={`fixed top-0 w-full z-50 backdrop-blur-xl ${navBg} border-b ${D ? 'border-[#1e3a5f]/60' : 'border-gray-200 shadow-sm'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -296,7 +253,7 @@ const Portfolio = () => {
         </div>
       </nav>
 
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section id="home" className={`pt-32 pb-20 px-4 relative transition-opacity duration-1000 ${isVisible.home ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="mb-8 relative inline-block">
@@ -337,32 +294,14 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── ABOUT ── */}
+      {/* ABOUT */}
       <section id="about" className={`py-20 px-4 ${sec(true)} transition-all duration-1000 ${isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<User className={D ? 'text-blue-400' : 'text-blue-600'} size={32} />} title="About Me" gradient={D ? 'from-blue-400 to-purple-400' : 'from-blue-600 to-purple-600'} />
           <div className="grid md:grid-cols-2 gap-10">
             {[
-              {
-                head: <><Sparkles className="text-yellow-500" size={20} /> Who I Am</>,
-                body: <>
-                  <p className={`text-sm leading-relaxed mb-4 ${tMuted}`}>I'm <strong className={D?'text-cyan-400':'text-cyan-600'}>Vaibhav Sharma</strong>, an aspiring AI & ML Engineer from Muzaffarnagar, UP. I recently completed my BCA and am actively building expertise in Python, Machine Learning, and Data Science — combining coursework at PW Skills with hands-on project development.</p>
-                  <p className={`text-sm leading-relaxed mb-4 ${tMuted}`}>I focus on <strong className={D?'text-cyan-400':'text-cyan-600'}>strong fundamentals and real projects</strong> over shortcuts. From building ML models to deploying Flask APIs, I want to understand every layer of the stack.</p>
-                  <p className={`text-sm leading-relaxed ${tMuted}`}>My philosophy: <span className={`italic font-semibold ${D?'text-purple-400':'text-purple-600'}`}>"Jo kuch bhi hota hai, ache ke liye hota hai"</span></p>
-                </>,
-                enterShadow: D ? '0 0 30px rgba(99,102,241,0.15)' : '0 6px 30px rgba(99,102,241,0.12)',
-              },
-              {
-                head: <><Heart className="text-red-500" size={20} /> Personal Interests</>,
-                body: <ul className="space-y-2.5">
-                  {['Staying updated with latest AI/ML research and trends','Regular exercise and playing cricket with friends','Reading powerful thoughts and articles for personal growth','Exploring astrology and self-improvement methods','Building side projects and experimenting with new tools','Watching tech talks and following AI researchers on social media'].map((t, i) => (
-                    <li key={i} className={`flex items-start gap-2 hover:translate-x-2 transition-transform duration-300 ${tMuted}`}>
-                      <span className={`${D?'text-cyan-400':'text-cyan-600'} mt-0.5 text-xs`}>▹</span><span className="text-sm">{t}</span>
-                    </li>
-                  ))}
-                </ul>,
-                enterShadow: D ? '0 0 30px rgba(244,114,182,0.12)' : '0 6px 30px rgba(244,114,182,0.1)',
-              },
+              { head: <><Sparkles className="text-yellow-500" size={20} /> Who I Am</>, body: <><p className={`text-sm leading-relaxed mb-4 ${tMuted}`}>I'm <strong className={D?'text-cyan-400':'text-cyan-600'}>Vaibhav Sharma</strong>, an aspiring AI & ML Engineer from Muzaffarnagar, UP. I recently completed my BCA and am actively building expertise in Python, Machine Learning, and Data Science — combining coursework at PW Skills with hands-on project development.</p><p className={`text-sm leading-relaxed mb-4 ${tMuted}`}>I focus on <strong className={D?'text-cyan-400':'text-cyan-600'}>strong fundamentals and real projects</strong> over shortcuts. From building ML models to deploying Flask APIs, I want to understand every layer of the stack.</p><p className={`text-sm leading-relaxed ${tMuted}`}>My philosophy: <span className={`italic font-semibold ${D?'text-purple-400':'text-purple-600'}`}>"Jo kuch bhi hota hai, ache ke liye hota hai"</span></p></>, enterShadow: D ? '0 0 30px rgba(99,102,241,0.15)' : '0 6px 30px rgba(99,102,241,0.12)' },
+              { head: <><Heart className="text-red-500" size={20} /> Personal Interests</>, body: <ul className="space-y-2.5">{['Staying updated with latest AI/ML research and trends','Regular exercise and playing cricket with friends','Reading powerful thoughts and articles for personal growth','Exploring astrology and self-improvement methods','Building side projects and experimenting with new tools','Watching tech talks and following AI researchers on social media'].map((t, i) => (<li key={i} className={`flex items-start gap-2 hover:translate-x-2 transition-transform duration-300 ${tMuted}`}><span className={`${D?'text-cyan-400':'text-cyan-600'} mt-0.5 text-xs`}>▹</span><span className="text-sm">{t}</span></li>))}</ul>, enterShadow: D ? '0 0 30px rgba(244,114,182,0.12)' : '0 6px 30px rgba(244,114,182,0.1)' },
             ].map((card, i) => (
               <div key={i} className={`p-8 rounded-2xl ${bgCard} border ${border} relative overflow-hidden group`}
                 style={{ boxShadow: D ? 'none' : '0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.3s, transform 0.3s' }}
@@ -378,7 +317,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── EDUCATION ── */}
+      {/* EDUCATION */}
       <section id="education" className={`py-20 px-4 ${sec(false)} transition-all duration-1000 ${isVisible.education ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<GraduationCap className={D?'text-cyan-400':'text-cyan-600'} size={32} />} title="Education" gradient={D?'from-cyan-400 to-blue-400':'from-cyan-600 to-blue-600'} />
@@ -388,35 +327,24 @@ const Portfolio = () => {
                 style={{ boxShadow: D ? 'none' : '0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.3s, transform 0.3s' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = D ? `0 0 30px ${edu.glowD}` : `0 6px 30px ${edu.glowL}`; e.currentTarget.style.transform = 'translateY(-4px)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = D ? 'none' : '0 2px 12px rgba(0,0,0,0.06)'; e.currentTarget.style.transform = 'none'; }}>
-                {/* Top accent bar */}
-                <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${edu.color} opacity-0 group-hover:opacity-100 transition-opacity duration-400`} />
-                {/* Shimmer */}
+                <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${edu.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                 <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${D?'via-white/5':'via-white/60'} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none`} />
-
-                {/* Header */}
                 <div className="flex items-start gap-4 mb-5">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${edu.color} flex items-center justify-center text-2xl flex-shrink-0 shadow-lg transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-300`}>
-                    {edu.icon}
-                  </div>
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${edu.color} flex items-center justify-center text-2xl flex-shrink-0 shadow-lg transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-300`}>{edu.icon}</div>
                   <div className="flex-1">
                     <h3 className={`text-base font-bold ${tMain} leading-tight mb-1`}>{edu.degree}</h3>
                     <p className={`text-sm font-semibold ${D?'text-cyan-400':'text-cyan-600'}`}>{edu.institution}</p>
                     <p className={`text-xs ${tMuted} mt-0.5`}>{edu.location}</p>
                   </div>
                 </div>
-
-                {/* Period & Grade */}
                 <div className="flex items-center gap-3 mb-5">
                   <span className={`text-xs px-3 py-1 rounded-full font-mono border ${D?'border-[#1e3a5f] text-slate-400 bg-white/5':'border-gray-200 text-gray-500 bg-gray-50'}`}>{edu.period}</span>
                   <span className={`text-xs px-3 py-1 rounded-full font-medium bg-gradient-to-r ${edu.color} text-white`}>{edu.grade}</span>
                 </div>
-
-                {/* Highlights */}
                 <ul className="space-y-2">
                   {edu.highlights.map((h, hi) => (
                     <li key={hi} className={`flex items-start gap-2 text-sm ${tMuted} hover:translate-x-1 transition-transform duration-200`}>
-                      <span className={`${D?'text-cyan-400':'text-cyan-600'} mt-0.5 text-xs`}>▹</span>
-                      <span>{h}</span>
+                      <span className={`${D?'text-cyan-400':'text-cyan-600'} mt-0.5 text-xs`}>▹</span><span>{h}</span>
                     </li>
                   ))}
                 </ul>
@@ -426,7 +354,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── CHALLENGES ── */}
+      {/* CHALLENGES */}
       <section id="challenges" className={`py-20 px-4 ${sec(true)} transition-all duration-1000 ${isVisible.challenges ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<TrendingUp className={D?'text-green-400':'text-green-600'} size={32} />} title="Challenges & Growth" gradient={D?'from-green-400 to-cyan-400':'from-green-600 to-cyan-600'} />
@@ -450,15 +378,14 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── SKILLS ── */}
+      {/* SKILLS */}
       <section id="skills" className={`py-20 px-4 ${sec(false)} transition-all duration-1000 ${isVisible.skills ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<Code className={D?'text-cyan-400':'text-cyan-600'} size={32} />} title="Technical Skills" gradient={D?'from-cyan-400 to-blue-400':'from-cyan-600 to-blue-600'} />
           <p className={`text-center ${tMuted} mb-12 text-sm -mt-6`}>Tools & technologies I work with 🛠️</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {skills.map((cat, i) => (
-              <div key={i}
-                className={`p-5 rounded-2xl border group relative overflow-hidden ${D ? `${bgCard} border-[#1e3a5f]` : `${cat.lightBg} ${cat.lightBorder}`}`}
+              <div key={i} className={`p-5 rounded-2xl border group relative overflow-hidden ${D ? `${bgCard} border-[#1e3a5f]` : `${cat.lightBg} ${cat.lightBorder}`}`}
                 style={{ boxShadow: D?'none':'0 2px 10px rgba(0,0,0,0.05)', transition: 'box-shadow 0.3s, transform 0.3s' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = D ? `0 0 25px ${cat.glowD}, 0 0 0 1px ${cat.glowD}` : `0 6px 20px ${cat.glowL}`; e.currentTarget.style.transform = 'translateY(-3px)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = D?'none':'0 2px 10px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'none'; }}>
@@ -471,13 +398,7 @@ const Portfolio = () => {
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {cat.items.map((skill, si) => (
-                    <span key={si}
-                      className={`text-xs px-2.5 py-1 rounded-full border font-medium transition-all duration-200 hover:scale-105 cursor-default ${
-                        D ? 'border-white/15 text-slate-300 bg-white/5 hover:border-white/30 hover:text-white'
-                          : `border-current ${cat.iconColor} bg-white/70 hover:bg-white font-semibold`
-                      }`}>
-                      {skill}
-                    </span>
+                    <span key={si} className={`text-xs px-2.5 py-1 rounded-full border font-medium transition-all duration-200 hover:scale-105 cursor-default ${D ? 'border-white/15 text-slate-300 bg-white/5 hover:border-white/30 hover:text-white' : `border-current ${cat.iconColor} bg-white/70 hover:bg-white font-semibold`}`}>{skill}</span>
                   ))}
                 </div>
               </div>
@@ -486,7 +407,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── EXPERIENCE ── */}
+      {/* EXPERIENCE */}
       <section id="experience" className={`py-20 px-4 ${sec(true)} transition-all duration-1000 ${isVisible.experience ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<Briefcase className={D?'text-purple-400':'text-purple-600'} size={32} />} title="Experience" gradient={D?'from-purple-400 to-pink-400':'from-purple-600 to-pink-600'} />
@@ -505,34 +426,32 @@ const Portfolio = () => {
                   <span className={`mt-2 md:mt-0 px-4 py-1 rounded-full text-xs font-mono ${D?'bg-purple-500/10 text-purple-400 border border-purple-500/30':'bg-purple-100 text-purple-700 border border-purple-200'}`}>{exp.duration}</span>
                 </div>
                 <p className={`${tMuted} mb-4 leading-relaxed text-sm`}>{exp.description}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {exp.skills.map((s, si) => (
                     <span key={si} className={`text-xs px-3 py-1 rounded-full border font-medium ${D?'border-purple-500/30 text-purple-400 bg-purple-500/10':'border-purple-200 text-purple-700 bg-purple-50'}`}>{s}</span>
                   ))}
                 </div>
+                {exp.github && (
+                  <a href={exp.github} target="_blank" rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-semibold border transition-all duration-300 hover:scale-105 ${D?'border-purple-500/40 text-purple-400 bg-purple-500/10 hover:bg-purple-500/20':'border-purple-300 text-purple-700 bg-purple-50 hover:bg-purple-100'}`}>
+                    <Github size={13} /> View Project on GitHub →
+                  </a>
+                )}
               </div>
             ))}
           </div>
-        <div className="flex flex-wrap gap-2 relative z-10 mt-4">
-  <a href={exp.github} target="_blank" rel="noopener noreferrer"
-    className={`flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-semibold border transition-all duration-300 hover:scale-105 ${D?'border-purple-500/40 text-purple-400 bg-purple-500/10 hover:bg-purple-500/20':'border-purple-300 text-purple-700 bg-purple-50 hover:bg-purple-100'}`}>
-    <Github size={13} /> View Project on GitHub →
-  </a>
-</div>
         </div>
       </section>
 
-      {/* ── PROJECTS ── */}
+      {/* PROJECTS */}
       <section id="projects" className={`py-20 px-4 ${sec(false)} transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<Github className={D?'text-cyan-400':'text-cyan-600'} size={32} />} title="Projects" gradient={D?'from-cyan-400 to-purple-400':'from-cyan-600 to-purple-600'} />
           <p className={`text-center ${tMuted} mb-12 text-sm -mt-6`}>Real projects — built, deployed, and live 🚀</p>
-
           <h3 className={`text-lg font-semibold mb-6 flex items-center gap-2 ${tMain}`}><span className="text-yellow-500">📌</span> Featured Projects</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
             {projects.map((p, i) => (
-              <div key={i}
-                className={`p-6 rounded-2xl ${D?bgCard2:'bg-white'} border ${D?p.darkBorder:p.lightBorder} flex flex-col cursor-pointer relative overflow-hidden group`}
+              <div key={i} className={`p-6 rounded-2xl ${D?bgCard2:'bg-white'} border ${D?p.darkBorder:p.lightBorder} flex flex-col cursor-pointer relative overflow-hidden group`}
                 style={{ boxShadow: D?'none':'0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.3s, transform 0.3s' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = D?`0 0 30px ${p.neon}25, 0 0 0 1px ${p.neon}40`:`0 8px 30px ${p.neon}30`; e.currentTarget.style.transform = 'translateY(-4px)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = D?'none':'0 2px 12px rgba(0,0,0,0.06)'; e.currentTarget.style.transform = 'none'; }}>
@@ -550,9 +469,7 @@ const Portfolio = () => {
                 </div>
                 <p className={`text-sm leading-relaxed mb-4 flex-1 ${tMuted}`}>{p.desc}</p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {p.stack.map((t, ti) => (
-                    <span key={ti} className={`text-xs px-2 py-0.5 rounded-full font-mono border ${D?'border-white/10 text-slate-400 bg-white/5':'border-gray-200 text-gray-600 bg-gray-50'}`}>{t}</span>
-                  ))}
+                  {p.stack.map((t, ti) => (<span key={ti} className={`text-xs px-2 py-0.5 rounded-full font-mono border ${D?'border-white/10 text-slate-400 bg-white/5':'border-gray-200 text-gray-600 bg-gray-50'}`}>{t}</span>))}
                 </div>
                 <div className="flex gap-2 mt-auto">
                   <a href={p.github} target="_blank" rel="noopener noreferrer"
@@ -560,8 +477,7 @@ const Portfolio = () => {
                     <Github size={12} /> Code
                   </a>
                   {p.live ? (
-                    <a href={p.live} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-green-500 to-teal-500 text-white hover:opacity-85 transition-all duration-300 hover:scale-105 shadow-sm">
+                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-green-500 to-teal-500 text-white hover:opacity-85 transition-all duration-300 hover:scale-105 shadow-sm">
                       <ExternalLink size={12} /> Live Demo
                     </a>
                   ) : (
@@ -575,8 +491,7 @@ const Portfolio = () => {
           <h3 className={`text-lg font-semibold mb-6 flex items-center gap-2 ${tMain}`}><Github size={18} className={D?'text-cyan-400':'text-cyan-600'} /> Latest GitHub Repos</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {githubRepos.length > 0 ? githubRepos.map((repo, i) => (
-              <div key={i}
-                className={`p-5 rounded-2xl ${D?bgCard2:'bg-white'} border ${border} flex flex-col group relative overflow-hidden`}
+              <div key={i} className={`p-5 rounded-2xl ${D?bgCard2:'bg-white'} border ${border} flex flex-col group relative overflow-hidden`}
                 style={{ boxShadow: D?'none':'0 2px 10px rgba(0,0,0,0.05)', transition: 'box-shadow 0.3s, transform 0.3s' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = D?'0 0 25px rgba(34,211,238,0.1), 0 0 0 1px rgba(34,211,238,0.25)':'0 6px 25px rgba(6,182,212,0.12)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = D?'none':'0 2px 10px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'none'; }}>
@@ -594,7 +509,6 @@ const Portfolio = () => {
               </div>
             )) : <div className={`col-span-3 text-center ${tMuted} animate-pulse py-10`}>Loading projects…</div>}
           </div>
-
           <div className="text-center">
             <a href="https://github.com/Vaibhavsharma45" target="_blank" rel="noreferrer"
               className={`inline-flex items-center gap-3 px-8 py-3 rounded-full font-semibold border transition-all duration-300 hover:scale-105 ${D?'text-white border-cyan-500/40 bg-cyan-500/10 hover:bg-cyan-500/20 hover:border-cyan-400':'text-cyan-700 border-cyan-300 bg-cyan-50 hover:bg-cyan-100'}`}
@@ -605,7 +519,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── CERTIFICATIONS ── */}
+      {/* CERTIFICATIONS */}
       <section id="certifications" className={`py-20 px-4 ${sec(true)} transition-all duration-1000 ${isVisible.certifications ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<Award className={D?'text-yellow-400':'text-yellow-600'} size={32} />} title="Certifications & Learning" gradient={D?'from-yellow-400 to-orange-400':'from-yellow-600 to-orange-600'} />
@@ -613,8 +527,8 @@ const Portfolio = () => {
             {certifications.map((cert, i) => (
               <div key={i} className={`p-6 rounded-2xl ${bgCard} border ${border} group relative overflow-hidden`}
                 style={{ boxShadow: D?'none':'0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.3s, transform 0.3s' }}
-                onMouseEnter={e => { const g = D?cert.glowD:cert.glowL; e.currentTarget.style.boxShadow = `0 0 25px ${g}, 0 0 0 1px ${g}`; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = D?'none':'0 2px 12px rgba(0,0,0,0.06)'; e.currentTarget.style.transform = 'none'; }}>
+                onMouseEnter={e => { const g=D?cert.glowD:cert.glowL; e.currentTarget.style.boxShadow=`0 0 25px ${g}, 0 0 0 1px ${g}`; e.currentTarget.style.transform='translateY(-3px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.boxShadow=D?'none':'0 2px 12px rgba(0,0,0,0.06)'; e.currentTarget.style.transform='none'; }}>
                 {!D && <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${cert.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />}
                 <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${D?'via-white/5':'via-white/70'} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none`} />
                 <div className="flex items-start gap-4">
@@ -634,22 +548,20 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── GOALS ── */}
+      {/* GOALS */}
       <section id="goals" className={`py-20 px-4 ${sec(false)} transition-all duration-1000 ${isVisible.goals ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<Target className={D?'text-green-400':'text-green-600'} size={32} />} title="My Goals" gradient={D?'from-green-400 to-blue-400':'from-green-600 to-blue-600'} />
           <p className={`text-center ${tMuted} mb-12 text-sm -mt-6`}>Where I'm headed — clear vision, consistent action 🎯</p>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { title:'⚡ Short-term Goals', items:goals.shortTerm, glowD:'rgba(34,197,94,0.15)', glowL:'rgba(34,197,94,0.1)', accent:D?'text-green-400':'text-green-600', bar:'from-green-400 to-cyan-400',
-                tagFn: (tag) => tag==='Top Priority' ? (D?'bg-red-500/10 text-red-400 border-red-500/30':'bg-red-50 text-red-600 border-red-200') : tag==='In Progress' ? (D?'bg-blue-500/10 text-blue-400 border-blue-500/30':'bg-blue-50 text-blue-600 border-blue-200') : (D?`bg-white/5 ${tMuted} border-white/10`:'bg-gray-100 text-gray-500 border-gray-200') },
-              { title:'🌟 Long-term Goals', items:goals.longTerm, glowD:'rgba(167,139,250,0.15)', glowL:'rgba(167,139,250,0.1)', accent:D?'text-purple-400':'text-purple-600', bar:'from-purple-400 to-pink-400',
-                tagFn: () => D?'bg-purple-500/10 text-purple-400 border-purple-500/30':'bg-purple-50 text-purple-700 border-purple-200' },
+              { title:'⚡ Short-term Goals', items:goals.shortTerm, glowD:'rgba(34,197,94,0.15)', glowL:'rgba(34,197,94,0.1)', accent:D?'text-green-400':'text-green-600', bar:'from-green-400 to-cyan-400', tagFn:(tag)=>tag==='Top Priority'?(D?'bg-red-500/10 text-red-400 border-red-500/30':'bg-red-50 text-red-600 border-red-200'):tag==='In Progress'?(D?'bg-blue-500/10 text-blue-400 border-blue-500/30':'bg-blue-50 text-blue-600 border-blue-200'):(D?`bg-white/5 ${tMuted} border-white/10`:'bg-gray-100 text-gray-500 border-gray-200') },
+              { title:'🌟 Long-term Goals', items:goals.longTerm, glowD:'rgba(167,139,250,0.15)', glowL:'rgba(167,139,250,0.1)', accent:D?'text-purple-400':'text-purple-600', bar:'from-purple-400 to-pink-400', tagFn:()=>D?'bg-purple-500/10 text-purple-400 border-purple-500/30':'bg-purple-50 text-purple-700 border-purple-200' },
             ].map((panel, pi) => (
               <div key={pi} className={`p-8 rounded-2xl ${bgCard} border ${border} group relative overflow-hidden`}
                 style={{ boxShadow: D?'none':'0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.3s' }}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = D?`0 0 30px ${panel.glowD}`:`0 6px 30px ${panel.glowL}`; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = D?'none':'0 2px 12px rgba(0,0,0,0.06)'; }}>
+                onMouseEnter={e => { e.currentTarget.style.boxShadow=D?`0 0 30px ${panel.glowD}`:`0 6px 30px ${panel.glowL}`; }}
+                onMouseLeave={e => { e.currentTarget.style.boxShadow=D?'none':'0 2px 12px rgba(0,0,0,0.06)'; }}>
                 {!D && <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${panel.bar} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />}
                 <h3 className={`text-xl font-semibold mb-6 ${panel.accent}`}>{panel.title}</h3>
                 <ul className="space-y-4">
@@ -669,12 +581,11 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── CONTACT ── */}
+      {/* CONTACT */}
       <section id="contact" className={`py-20 px-4 ${sec(true)} transition-all duration-1000 ${isVisible.contact ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-4xl mx-auto">
           <Title icon={<Mail className={D?'text-cyan-400':'text-cyan-600'} size={32} />} title="Get In Touch" gradient={D?'from-cyan-400 to-purple-400':'from-cyan-600 to-purple-600'} />
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info */}
             <div className="space-y-4">
               <h3 className={`text-xl font-semibold mb-6 ${tMain}`}>Contact Information</h3>
               {[
@@ -699,66 +610,32 @@ const Portfolio = () => {
               </a>
             </div>
 
-            {/* Contact Form */}
             <div className={`p-8 rounded-2xl ${bgCard} border ${border}`}
               style={{ boxShadow: D?'0 0 30px rgba(34,211,238,0.05)':'0 4px 20px rgba(0,0,0,0.08)' }}>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className={`block text-xs font-semibold mb-1.5 ${D?'text-slate-400':'text-gray-500'}`}>Your Name *</label>
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={e => setFormData(p => ({ ...p, name: e.target.value }))}
-                    required
-                    className={inputCls}
-                  />
+                  <input type="text" placeholder="John Doe" value={formData.name} onChange={e => setFormData(p => ({ ...p, name: e.target.value }))} required className={inputCls} />
                 </div>
                 <div>
                   <label className={`block text-xs font-semibold mb-1.5 ${D?'text-slate-400':'text-gray-500'}`}>Your Email *</label>
-                  <input
-                    type="email"
-                    placeholder="john@example.com"
-                    value={formData.email}
-                    onChange={e => setFormData(p => ({ ...p, email: e.target.value }))}
-                    required
-                    className={inputCls}
-                  />
+                  <input type="email" placeholder="john@example.com" value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} required className={inputCls} />
                 </div>
                 <div>
                   <label className={`block text-xs font-semibold mb-1.5 ${D?'text-slate-400':'text-gray-500'}`}>Your Message *</label>
-                  <textarea
-                    placeholder="Hi Vaibhav, I'd like to discuss..."
-                    value={formData.message}
-                    onChange={e => setFormData(p => ({ ...p, message: e.target.value }))}
-                    rows={5}
-                    required
-                    className={`${inputCls} resize-none`}
-                  />
+                  <textarea placeholder="Hi Vaibhav, I'd like to discuss..." value={formData.message} onChange={e => setFormData(p => ({ ...p, message: e.target.value }))} rows={5} required className={`${inputCls} resize-none`} />
                 </div>
-
-                {formStatus === 'error' && (
-  <p className="text-orange-400 text-xs text-center">Opening your email client as fallback...</p>
-)}
-
-                <button
-                  type="submit"
-                  disabled={formStatus === 'sending' || !formData.name || !formData.email || !formData.message}
+                <button type="submit" disabled={formStatus === 'sending' || !formData.name || !formData.email || !formData.message}
                   className="w-full py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
                   style={{ background: 'linear-gradient(135deg, #06b6d4, #6366f1)', boxShadow: D?'0 0 20px rgba(99,102,241,0.3)':'0 6px 20px rgba(99,102,241,0.35)' }}>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative z-10">
-                    {formStatus === 'sending' ? '⏳ Sending…'
-                      : formStatus === 'sent' ? '✅ Message Sent!'
-                      : 'Send Message →'}
+                    {formStatus === 'sending' ? '⏳ Sending…' : formStatus === 'sent' ? '✅ Message Sent!' : 'Send Message →'}
                   </span>
                 </button>
-
                 <p className={`text-xs text-center ${tMuted}`}>
                   Or reach me directly at{' '}
-                  <a href="mailto:vaibhavsharma95124v@gmail.com" className={D?'text-cyan-400':'text-cyan-600'}>
-                    vaibhavsharma95124v@gmail.com
-                  </a>
+                  <a href="mailto:vaibhavsharma95124v@gmail.com" className={D?'text-cyan-400':'text-cyan-600'}>vaibhavsharma95124v@gmail.com</a>
                 </p>
               </form>
             </div>
@@ -766,14 +643,12 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+      {/* FOOTER */}
       <footer className={`py-8 text-center ${D?'bg-[#0a1628] border-t border-[#1e3a5f]/60':'bg-white border-t border-gray-200 shadow-inner'}`}>
         <p className={`${tMuted} text-sm`}>
           © {new Date().getFullYear()} Vaibhav Sharma ·{' '}
-          <a href="https://thevaibhavacom.vercel.app" target="_blank" rel="noreferrer" className={D?'text-cyan-400 hover:text-cyan-300':'text-cyan-600 hover:text-cyan-700'}>
-            thevaibhavacom.vercel.app
-          </a>{' '}
-          · "Jo kuch bhi hota hai, ache ke liye hota hai" ❤️
+          <a href="https://thevaibhavacom.vercel.app" target="_blank" rel="noreferrer" className={D?'text-cyan-400 hover:text-cyan-300':'text-cyan-600 hover:text-cyan-700'}>thevaibhavacom.vercel.app</a>
+          {' '}· "Jo kuch bhi hota hai, ache ke liye hota hai" ❤️
         </p>
       </footer>
 
