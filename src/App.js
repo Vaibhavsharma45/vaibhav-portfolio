@@ -85,15 +85,16 @@ const Portfolio = () => {
   ];
 
   const skills = [
-    { category:'Programming', icon:'</>', iconColor:D?'text-cyan-400':'text-cyan-600', glowD:'rgba(34,211,238,0.18)', glowL:'rgba(6,182,212,0.12)', lightBg:'bg-cyan-50', lightBorder:'border-cyan-200', items:['Python','SQL','JavaScript','HTML5','CSS3','C++','DSA'] },
-    { category:'Machine Learning', icon:'🧠', iconColor:D?'text-pink-400':'text-pink-600', glowD:'rgba(244,114,182,0.18)', glowL:'rgba(219,39,119,0.1)', lightBg:'bg-pink-50', lightBorder:'border-pink-200', items:['Machine Learning','Deep Learning','TensorFlow','PyTorch','Keras','Scikit-learn','Classification','Regression','Hyperparameter Tuning'] },
-    { category:'Data Analytics', icon:'📈', iconColor:D?'text-teal-400':'text-teal-600', glowD:'rgba(45,212,191,0.18)', glowL:'rgba(15,118,110,0.1)', lightBg:'bg-teal-50', lightBorder:'border-teal-200', items:['Pandas','NumPy','EDA','Feature Engineering','Data Cleaning','Statistical Analysis','Power BI'] },
-    { category:'NLP & Gen AI', icon:'🤖', iconColor:D?'text-violet-400':'text-violet-600', glowD:'rgba(167,139,250,0.18)', glowL:'rgba(124,58,237,0.1)', lightBg:'bg-violet-50', lightBorder:'border-violet-200', items:['NLP','Generative AI','LangChain','LangGraph','LlamaIndex','RAG','Prompt Engineering','Groq API','Fine-tuning','ChromaDB'] },
-    { category:'Backend', icon:'>_', iconColor:D?'text-green-400':'text-green-700', glowD:'rgba(74,222,128,0.18)', glowL:'rgba(21,128,61,0.1)', lightBg:'bg-green-50', lightBorder:'border-green-200', items:['Flask','FastAPI','REST APIs','MongoDB','MySQL','Web Development'] },
-    { category:'Visualization', icon:'📊', iconColor:D?'text-yellow-400':'text-yellow-600', glowD:'rgba(250,204,21,0.18)', glowL:'rgba(202,138,4,0.1)', lightBg:'bg-yellow-50', lightBorder:'border-yellow-200', items:['Matplotlib','Seaborn','Plotly','Streamlit','Power BI'] },
-    { category:'Tools', icon:'⚙️', iconColor:D?'text-orange-400':'text-orange-600', glowD:'rgba(251,146,60,0.18)', glowL:'rgba(194,65,12,0.1)', lightBg:'bg-orange-50', lightBorder:'border-orange-200', items:['Git','GitHub','VS Code','Jupyter','Google Colab','Kaggle','Docker','Render','Vercel','Postman','GitHub Actions'] },
-    { category:'CS Fundamentals', icon:'🖥️', iconColor:D?'text-rose-400':'text-rose-600', glowD:'rgba(251,113,133,0.18)', glowL:'rgba(190,18,60,0.1)', lightBg:'bg-rose-50', lightBorder:'border-rose-200', items:['Computer Networks','OS Concepts','DBMS','OOP','DSA','System Design'] },
-  ];
+  { category:'Programming', icon:'</>', iconColor:D?'text-cyan-400':'text-cyan-600', glowD:'rgba(34,211,238,0.18)', glowL:'rgba(6,182,212,0.12)', lightBg:'bg-cyan-50', lightBorder:'border-cyan-200', items:[{n:'Python',l:5},{n:'SQL',l:4},{n:'JavaScript',l:3},{n:'HTML5',l:4},{n:'CSS3',l:3},{n:'C++',l:3},{n:'DSA',l:3}] },
+  { category:'Machine Learning', icon:'🧠', iconColor:D?'text-pink-400':'text-pink-600', glowD:'rgba(244,114,182,0.18)', glowL:'rgba(219,39,119,0.1)', lightBg:'bg-pink-50', lightBorder:'border-pink-200', items:[{n:'Scikit-learn',l:5},{n:'TensorFlow',l:4},{n:'PyTorch',l:4},{n:'Keras',l:4},{n:'Classification',l:5},{n:'Regression',l:5},{n:'Deep Learning',l:4},{n:'Hyperparameter Tuning',l:3}] },
+  { category:'Data Analytics', icon:'📈', iconColor:D?'text-teal-400':'text-teal-600', glowD:'rgba(45,212,191,0.18)', glowL:'rgba(15,118,110,0.1)', lightBg:'bg-teal-50', lightBorder:'border-teal-200', items:[{n:'Pandas',l:5},{n:'NumPy',l:5},{n:'EDA',l:5},{n:'Feature Engineering',l:4},{n:'Data Cleaning',l:5},{n:'Statistical Analysis',l:4},{n:'Power BI',l:3}] },
+  { category:'NLP & Gen AI', icon:'🤖', iconColor:D?'text-violet-400':'text-violet-600', glowD:'rgba(167,139,250,0.18)', glowL:'rgba(124,58,237,0.1)', lightBg:'bg-violet-50', lightBorder:'border-violet-200', items:[{n:'LangChain',l:4},{n:'LangGraph',l:4},{n:'LlamaIndex',l:3},{n:'RAG',l:4},{n:'Groq API',l:5},{n:'ChromaDB',l:4},{n:'Prompt Engineering',l:5},{n:'Fine-tuning',l:3}] },
+  { category:'Backend', icon:'>_', iconColor:D?'text-green-400':'text-green-700', glowD:'rgba(74,222,128,0.18)', glowL:'rgba(21,128,61,0.1)', lightBg:'bg-green-50', lightBorder:'border-green-200', items:[{n:'Flask',l:5},{n:'FastAPI',l:4},{n:'REST APIs',l:4},{n:'MongoDB',l:3},{n:'MySQL',l:4},{n:'Web Development',l:3}] },
+  { category:'Visualization', icon:'📊', iconColor:D?'text-yellow-400':'text-yellow-600', glowD:'rgba(250,204,21,0.18)', glowL:'rgba(202,138,4,0.1)', lightBg:'bg-yellow-50', lightBorder:'border-yellow-200', items:[{n:'Matplotlib',l:5},{n:'Seaborn',l:5},{n:'Plotly',l:4},{n:'Streamlit',l:4},{n:'Power BI',l:3}] },
+  { category:'Tools & DevOps', icon:'⚙️', iconColor:D?'text-orange-400':'text-orange-600', glowD:'rgba(251,146,60,0.18)', glowL:'rgba(194,65,12,0.1)', lightBg:'bg-orange-50', lightBorder:'border-orange-200', items:[{n:'Git',l:5},{n:'GitHub',l:5},{n:'VS Code',l:5},{n:'Jupyter',l:5},{n:'Google Colab',l:5},{n:'Docker',l:3},{n:'Vercel',l:4},{n:'Render',l:4},{n:'Postman',l:3},{n:'GitHub Actions',l:3}] },
+  { category:'CS Fundamentals', icon:'🖥️', iconColor:D?'text-rose-400':'text-rose-600', glowD:'rgba(251,113,133,0.18)', glowL:'rgba(190,18,60,0.1)', lightBg:'bg-rose-50', lightBorder:'border-rose-200', items:[{n:'DBMS',l:4},{n:'OOP',l:4},{n:'Computer Networks',l:3},{n:'OS Concepts',l:3},{n:'DSA',l:3},{n:'System Design',l:3}] },
+  { category:'Currently Learning', icon:'🔥', iconColor:D?'text-amber-400':'text-amber-600', glowD:'rgba(251,191,36,0.18)', glowL:'rgba(217,119,6,0.1)', lightBg:'bg-amber-50', lightBorder:'border-amber-200', items:[{n:'Agentic AI',l:3},{n:'AutoGen',l:2},{n:'Vector DBs',l:3},{n:'LLM Fine-tuning',l:2},{n:'Multi-agent Systems',l:2},{n:'OpenCV',l:2}] },
+];
 
   const education = [
     { degree:'Bachelor of Computer Applications (BCA)', institution:'Maa Shakumbhari University', location:'Saharanpur, Uttar Pradesh', period:'2023 – 2026', grade:'In Progress', icon:'🎓', color:'from-cyan-500 to-blue-500', glowD:'rgba(34,211,238,0.2)', glowL:'rgba(6,182,212,0.12)', highlights:['Specialized in Data Structures, Algorithms, and Database Management','Completed coursework in Computer Networks, Operating Systems, and OOP','Built 6+ real-world ML/AI projects alongside degree coursework','Self-taught Python, ML, and GenAI — parallel to formal curriculum'] },
@@ -445,33 +446,59 @@ const Portfolio = () => {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className={`py-20 px-4 ${sec(false)} transition-all duration-1000 ${isVisible.skills ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        <div className="max-w-7xl mx-auto">
-          <Title icon={<Code className={D?'text-cyan-400':'text-cyan-600'} size={32} />} title="Technical Skills" gradient={D?'from-cyan-400 to-blue-400':'from-cyan-600 to-blue-600'} />
-          <p className={`text-center ${tMuted} mb-12 text-sm -mt-6`}>Tools & technologies I work with 🛠️</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {skills.map((cat, i) => (
-              <div key={i} className={`p-5 rounded-2xl border group relative overflow-hidden ${D ? `${bgCard} border-[#1e3a5f]` : `${cat.lightBg} ${cat.lightBorder}`}`}
-                style={{ boxShadow: D?'none':'0 2px 10px rgba(0,0,0,0.05)', transition: 'box-shadow 0.3s, transform 0.3s' }}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = D ? `0 0 25px ${cat.glowD}, 0 0 0 1px ${cat.glowD}` : `0 6px 20px ${cat.glowL}`; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = D?'none':'0 2px 10px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'none'; }}>
-                <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${D?'via-white/5':'via-white/60'} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none`} />
-                <div className="flex items-center gap-2 mb-4">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${D?'bg-white/5':'bg-white/80'} shadow-sm`}>
-                    <span className={`text-sm font-bold font-mono ${cat.iconColor}`}>{cat.icon}</span>
-                  </div>
-                  <h3 className={`text-sm font-bold ${cat.iconColor}`}>{cat.category}</h3>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {cat.items.map((skill, si) => (
-                    <span key={si} className={`text-xs px-2.5 py-1 rounded-full border font-medium transition-all duration-200 hover:scale-105 cursor-default ${D ? 'border-white/15 text-slate-300 bg-white/5 hover:border-white/30 hover:text-white' : `border-current ${cat.iconColor} bg-white/70 hover:bg-white font-semibold`}`}>{skill}</span>
+<section id="skills" className={`py-20 px-4 ${sec(false)} transition-all duration-1000 ${isVisible.skills ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+  <div className="max-w-7xl mx-auto">
+    <Title icon={<Code className={D?'text-cyan-400':'text-cyan-600'} size={32} />} title="Technical Skills" gradient={D?'from-cyan-400 to-blue-400':'from-cyan-600 to-blue-600'} />
+    <p className={`text-center ${tMuted} mb-2 text-sm -mt-6`}>Tools & technologies I work with 🛠️</p>
+    <div className={`flex items-center justify-center gap-6 mb-10 text-xs ${tMuted}`}>
+      {[1,2,3,4,5].map(l => (
+        <span key={l} className="flex items-center gap-1.5">
+          <span className="flex gap-0.5">{[...Array(5)].map((_,i) => <span key={i} className={`w-1.5 h-1.5 rounded-full ${i < l ? (D?'bg-cyan-400':'bg-cyan-500') : (D?'bg-white/15':'bg-gray-200')}`} />)}</span>
+          <span>{['Basics','Learning','Comfortable','Proficient','Expert'][l-1]}</span>
+        </span>
+      ))}
+    </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {skills.map((cat, i) => (
+        <div key={i} className={`p-6 rounded-2xl border group relative overflow-hidden ${D ? `${bgCard} border-[#1e3a5f]` : `${cat.lightBg} ${cat.lightBorder}`}`}
+          style={{ boxShadow: D?'none':'0 2px 10px rgba(0,0,0,0.05)', transition: 'box-shadow 0.3s, transform 0.3s' }}
+          onMouseEnter={e => { e.currentTarget.style.boxShadow = D ? `0 0 30px ${cat.glowD}, 0 0 0 1px ${cat.glowD}` : `0 6px 20px ${cat.glowL}`; e.currentTarget.style.transform = 'translateY(-4px)'; }}
+          onMouseLeave={e => { e.currentTarget.style.boxShadow = D?'none':'0 2px 10px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'none'; }}>
+          <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${D?'via-white/5':'via-white/60'} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none`} />
+
+          {/* Card Header */}
+          <div className="flex items-center gap-3 mb-5">
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${D?'bg-white/8':'bg-white'} shadow-md border ${D?'border-white/10':cat.lightBorder}`}>
+              <span className={`text-base font-bold font-mono ${cat.iconColor}`}>{cat.icon}</span>
+            </div>
+            <h3 className={`text-sm font-bold ${cat.iconColor} tracking-wide`}>{cat.category}</h3>
+          </div>
+
+          {/* Skill Badges with proficiency dots */}
+          <div className="flex flex-col gap-2">
+            {cat.items.map((skill, si) => (
+              <div key={si} className={`flex items-center justify-between px-3 py-1.5 rounded-lg border transition-all duration-200 hover:scale-[1.02] cursor-default group/skill ${
+                D ? 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'
+                  : 'border-white/80 bg-white hover:border-gray-300 hover:bg-white shadow-sm'
+              }`}>
+                <span className={`text-xs font-semibold ${D?'text-slate-200':'text-gray-700'}`}>{skill.n}</span>
+                <span className="flex gap-0.5 ml-2 flex-shrink-0">
+                  {[...Array(5)].map((_,di) => (
+                    <span key={di} className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
+                      di < skill.l
+                        ? (D ? 'bg-cyan-400 group-hover/skill:bg-cyan-300' : 'bg-cyan-500 group-hover/skill:bg-cyan-600')
+                        : (D ? 'bg-white/15' : 'bg-gray-200')
+                    }`} />
                   ))}
-                </div>
+                </span>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* EXPERIENCE */}
       <section id="experience" className={`py-20 px-4 ${sec(true)} transition-all duration-1000 ${isVisible.experience ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
