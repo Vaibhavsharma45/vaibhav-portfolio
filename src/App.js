@@ -14,8 +14,8 @@ const Portfolio = () => {
   const [isVisible, setIsVisible] = useState({});
 
   const roles = useMemo(() => [
-    'AI & ML Engineer', 'Data Scientist', 'Generative AI Enthusiast',
-    'Python Developer', 'Backend Engineer', 'Problem Solver',
+    'AI & ML Engineer', 'Data Scientist', 'Generative AI Developer',
+    'Python Developer', 'LLM App Builder', 'Problem Solver',
   ], []);
   const [roleIndex, setRoleIndex] = useState(0);
 
@@ -74,6 +74,16 @@ const Portfolio = () => {
 
   const NAV_ITEMS = ['Home','About','Education','Skills','Experience','Projects','Certifications','Goals','Contact'];
 
+  // ── STATS BAR ─────────────────────────────────────────────────────────────
+  const stats = [
+    { value: '6+', label: 'Deployed Projects' },
+    { value: '92%', label: 'Best Model Accuracy' },
+    { value: 'R²·0.85', label: 'Regression Score' },
+    { value: '10+', label: 'ML/AI Tools' },
+    { value: 'A+', label: 'AI/ML Cohort Grade' },
+    { value: '50K+', label: 'Records Analysed' },
+  ];
+
   const skills = [
     { category:'Programming', icon:'</>', iconColor:D?'text-cyan-400':'text-cyan-600', glowD:'rgba(34,211,238,0.18)', glowL:'rgba(6,182,212,0.12)', lightBg:'bg-cyan-50', lightBorder:'border-cyan-200', items:['Python','SQL','JavaScript','HTML5','CSS3','C++','DSA'] },
     { category:'Machine Learning', icon:'🧠', iconColor:D?'text-pink-400':'text-pink-600', glowD:'rgba(244,114,182,0.18)', glowL:'rgba(219,39,119,0.1)', lightBg:'bg-pink-50', lightBorder:'border-pink-200', items:['Machine Learning','Deep Learning','TensorFlow','PyTorch','Keras','Scikit-learn','Classification','Regression','Hyperparameter Tuning'] },
@@ -86,15 +96,15 @@ const Portfolio = () => {
   ];
 
   const education = [
-    { degree:'Bachelor of Computer Applications (BCA)', institution:'Maa Shakumbhari University', location:'Saharanpur, Uttar Pradesh', period:'2023 – 2026', grade:'In Progress', icon:'🎓', color:'from-cyan-500 to-blue-500', glowD:'rgba(34,211,238,0.2)', glowL:'rgba(6,182,212,0.12)', highlights:['Specialized in Data Structures, Algorithms, and Database Management','Completed coursework in Computer Networks, Operating Systems, and OOP','Built multiple projects combining web development and data science','Parallel self-learning in ML, AI, and Generative AI throughout degree'] },
-    { degree:'Data Science with Generative AI', institution:'PW Skills (Physics Wallah)', location:'Online', period:'2025 – Present', grade:'In Progress', icon:'🤖', color:'from-purple-500 to-pink-500', glowD:'rgba(168,85,247,0.2)', glowL:'rgba(124,58,237,0.12)', highlights:['Advanced ML, Deep Learning, NLP, and Generative AI curriculum','Hands-on projects using TensorFlow, PyTorch, and LangChain','Live sessions, assignments, and real-world dataset analysis','Covering LLMs, RAG pipelines, and Agentic AI systems'] },
+    { degree:'Bachelor of Computer Applications (BCA)', institution:'Maa Shakumbhari University', location:'Saharanpur, Uttar Pradesh', period:'2023 – 2026', grade:'In Progress', icon:'🎓', color:'from-cyan-500 to-blue-500', glowD:'rgba(34,211,238,0.2)', glowL:'rgba(6,182,212,0.12)', highlights:['Specialized in Data Structures, Algorithms, and Database Management','Completed coursework in Computer Networks, Operating Systems, and OOP','Built 6+ real-world ML/AI projects alongside degree coursework','Self-taught Python, ML, and GenAI — parallel to formal curriculum'] },
+    { degree:'Data Science with Generative AI', institution:'PW Skills (Physics Wallah)', location:'Online', period:'2025 – Present', grade:'In Progress', icon:'🤖', color:'from-purple-500 to-pink-500', glowD:'rgba(168,85,247,0.2)', glowL:'rgba(124,58,237,0.12)', highlights:['Advanced ML, Deep Learning, NLP, and Generative AI curriculum','Hands-on model building — TensorFlow, PyTorch, LangChain, LangGraph','Covering LLMs, RAG pipelines, Vector DBs, and Agentic AI systems','Real dataset projects: EDA → feature engineering → model deployment'] },
   ];
 
   const challenges = [
     { icon:'👨‍👩‍👦', title:'Family Pressure vs Passion', description:'Coming from a non-tech background, there was constant pressure to pursue a stable government job instead of AI. I chose to let my work speak — built real projects, secured an internship, and proved that a career in AI is not just possible, but promising.', badge:'Overcame ✓', darkBadge:'text-green-400 border-green-400/40 bg-green-400/10', lightBadge:'text-green-700 border-green-200 bg-green-50', glowD:'rgba(34,211,238,0.12)', glowL:'rgba(6,182,212,0.08)' },
-    { icon:'🧠', title:'Overcoming Self-Doubt', description:'Early on, I doubted whether someone from a tier-2 city without elite college credentials could break into AI. My first Kaggle attempt landed in the bottom 50%. Instead of quitting, I analysed every mistake — and today I have 6 deployed projects to show for it.', badge:'Still growing ↑', darkBadge:'text-blue-400 border-blue-400/40 bg-blue-400/10', lightBadge:'text-blue-700 border-blue-200 bg-blue-50', glowD:'rgba(99,102,241,0.12)', glowL:'rgba(37,99,235,0.08)' },
-    { icon:'🌐', title:'English Barrier in Technical Learning', description:'Most quality AI/ML resources are in English, which was a significant barrier initially. I tackled it by combining vernacular explanations with official documentation, taking bilingual notes, and practising consistently — now I read research papers and docs with ease.', badge:'Solved ✓', darkBadge:'text-purple-400 border-purple-400/40 bg-purple-400/10', lightBadge:'text-purple-700 border-purple-200 bg-purple-50', glowD:'rgba(167,139,250,0.12)', glowL:'rgba(124,58,237,0.08)' },
-    { icon:'⚡', title:'Self-Taught Without Formal Mentorship', description:'With no structured mentorship or campus resources, the internet, GitHub, and open-source communities became my classroom. This forced me to develop strong independent problem-solving skills — a habit that now lets me pick up any new technology quickly.', badge:'Core Strength 💪', darkBadge:'text-orange-400 border-orange-400/40 bg-orange-400/10', lightBadge:'text-orange-700 border-orange-200 bg-orange-50', glowD:'rgba(251,146,60,0.12)', glowL:'rgba(194,65,12,0.08)' },
+    { icon:'🧠', title:'Overcoming Self-Doubt', description:"Early on, I doubted whether someone from a tier-2 city without elite college credentials could break into AI. My first Kaggle attempt ranked bottom 50%. Instead of quitting, I analysed every mistake, iterated fast — and today I have 6 deployed AI/ML projects and a Grade A+ certification.", badge:'Still growing ↑', darkBadge:'text-blue-400 border-blue-400/40 bg-blue-400/10', lightBadge:'text-blue-700 border-blue-200 bg-blue-50', glowD:'rgba(99,102,241,0.12)', glowL:'rgba(37,99,235,0.08)' },
+    { icon:'🌐', title:'English Barrier in Technical Learning', description:'Most quality AI/ML resources — research papers, documentation, Hugging Face models — are in English, which was a significant barrier initially. I tackled it by combining Hindi explanations with official docs, and now I read arxiv papers and ML blogs comfortably.', badge:'Solved ✓', darkBadge:'text-purple-400 border-purple-400/40 bg-purple-400/10', lightBadge:'text-purple-700 border-purple-200 bg-purple-50', glowD:'rgba(167,139,250,0.12)', glowL:'rgba(124,58,237,0.08)' },
+    { icon:'⚡', title:'Self-Taught Without Formal Mentorship', description:'With no structured AI/ML mentorship or campus lab, YouTube, GitHub, Kaggle, and open-source communities became my university. This forced me to develop strong independent problem-solving habits — I can now pick up any new ML framework or LLM tool quickly from scratch.', badge:'Core Strength 💪', darkBadge:'text-orange-400 border-orange-400/40 bg-orange-400/10', lightBadge:'text-orange-700 border-orange-200 bg-orange-50', glowD:'rgba(251,146,60,0.12)', glowL:'rgba(194,65,12,0.08)' },
   ];
 
   const experiences = [
@@ -102,7 +112,8 @@ const Portfolio = () => {
       role: 'Data Analyst Intern',
       company: 'Intern Geek',
       duration: 'Nov 2025 – Dec 2025',
-      description: 'Analysed retail sales and customer behaviour data using Python — performed end-to-end EDA, customer segmentation, product performance analysis, and generated actionable business insights with visualisations. Delivered a comprehensive final report with recommendations backed by data.',
+      description: 'Analysed retail sales and customer behaviour dataset using Python — performed end-to-end EDA across 4 CSV tables (customers, orders, order_items, products), built customer segmentation, identified top revenue-driving products, and delivered a comprehensive report with data-backed business recommendations.',
+      metrics: ['4 datasets joined & analysed', 'EDA → Segmentation → Insights pipeline', 'Final report with actionable recommendations'],
       skills: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'EDA', 'Data Visualisation'],
       github: 'https://github.com/Vaibhavsharma45/Intern_Geek_project_analysis',
     },
@@ -118,27 +129,45 @@ const Portfolio = () => {
 
   const goals = {
     shortTerm: [
-      { icon:'🎯', text:'Land a full-time AI/ML role or internship within the next 6 months', tag:'Top Priority' },
-      { icon:'🚀', text:'Complete the Data Science with Gen AI course and ship 2 more production-grade projects', tag:'In Progress' },
-      { icon:'🤖', text:'Master Agentic AI — LangGraph, AutoGen, and multi-agent system design', tag:'Learning' },
-      { icon:'🌟', text:'Make meaningful contributions to an open-source AI/ML library on GitHub', tag:'Upcoming' },
-      { icon:'📝', text:'Start writing technical articles documenting projects, learnings, and experiments', tag:'Upcoming' },
+      { icon:'🎯', text:'Land a full-time AI/ML role or internship — applying with 6 deployed projects as proof of work', tag:'Top Priority' },
+      { icon:'🚀', text:'Complete Data Science with GenAI course · build 2 more production-grade AI projects', tag:'In Progress' },
+      { icon:'🤖', text:'Master Agentic AI — LangGraph multi-agent systems, AutoGen, tool-calling pipelines', tag:'Learning' },
+      { icon:'🌟', text:'Contribute to an open-source ML/LLM library on GitHub — give back to the community', tag:'Upcoming' },
+      { icon:'📝', text:'Write technical articles — model breakdowns, project walkthroughs, AI experiments', tag:'Upcoming' },
     ],
     longTerm: [
-      { icon:'🏢', text:'Work as an AI Engineer at a product-based company building real-world Generative AI solutions', tag:'1–2 Years' },
-      { icon:'🎓', text:'Pursue advanced studies or research in AI/ML if the right opportunity presents itself', tag:'2–3 Years' },
-      { icon:'💡', text:'Build and launch an AI-powered SaaS product that solves a genuine problem at scale', tag:'2–3 Years' },
-      { icon:'🌍', text:'Mentor aspiring AI engineers from tier-2 and tier-3 cities — give back what I never had', tag:'Long Term' },
+      { icon:'🏢', text:'Join a product-based company as an AI Engineer — building GenAI solutions at scale', tag:'1–2 Years' },
+      { icon:'🎓', text:'Pursue MS/research in AI/ML — deep dive into model architectures and applied AI', tag:'2–3 Years' },
+      { icon:'💡', text:'Build and launch an AI-powered SaaS product solving a real problem — from idea to revenue', tag:'2–3 Years' },
+      { icon:'🌍', text:'Mentor aspiring AI engineers from tier-2/3 cities — break the access barrier', tag:'Long Term' },
     ],
   };
 
   const projects = [
-    { name:'DataMind Pro', emoji:'📊', tag:'AI · Full Stack', neon:'#22d3ee', darkBorder:'border-cyan-500/40', lightBorder:'border-cyan-300', darkTag:'bg-cyan-500/10 text-cyan-400 border-cyan-500/30', lightTag:'bg-cyan-100 text-cyan-700 border-cyan-300', desc:'AI-powered data analysis platform — upload any CSV/Excel and get auto EDA, ML models, Groq LLM insights, PDF/PPT reports, and a chatbot. Built with Flask + 9 Blueprints + Groq Llama 3.3 70B.', stack:['Flask','Python','Groq API','Scikit-learn','Plotly'], github:'https://github.com/Vaibhavsharma45/Auto_analyst', live:'https://datamind-pro.onrender.com', stars:1 },
-    { name:'Bujji AI', emoji:'🤖', tag:'AI · Voice Assistant', neon:'#a78bfa', darkBorder:'border-violet-500/40', lightBorder:'border-violet-300', darkTag:'bg-violet-500/10 text-violet-400 border-violet-500/30', lightTag:'bg-violet-100 text-violet-700 border-violet-300', desc:'Personal JARVIS-style voice assistant — wake word "Hey Robo", LangGraph ReAct agent, ChromaDB memory, PC control, WhatsApp/email, browser automation, and a web dashboard. 100% free stack.', stack:['Python','LangGraph','Groq API','FastAPI','ChromaDB'], github:'https://github.com/Vaibhavsharma45/Bujji_AI', live:null, stars:0 },
-    { name:'Marg Darshak', emoji:'🧭', tag:'AI · Web App', neon:'#34d399', darkBorder:'border-emerald-500/40', lightBorder:'border-emerald-300', darkTag:'bg-emerald-500/10 text-emerald-400 border-emerald-500/30', lightTag:'bg-emerald-100 text-emerald-700 border-emerald-300', desc:'Comprehensive web platform combining Career Compass (AI career recommendations), Gyan Kosh (spiritual wisdom repository), and Skill Saathi (curated learning resources) — solving real student pain-points.', stack:['Flask','Python','Scikit-learn','Seaborn','ML'], github:'https://github.com/Vaibhavsharma45/marg-darshak', live:'https://marg-darshak.onrender.com', stars:1 },
-    { name:'Resume Analyser', emoji:'📄', tag:'AI · NLP', neon:'#fb923c', darkBorder:'border-orange-500/40', lightBorder:'border-orange-300', darkTag:'bg-orange-500/10 text-orange-400 border-orange-500/30', lightTag:'bg-orange-100 text-orange-700 border-orange-300', desc:'AI-powered resume analysis tool — parses uploaded PDFs, extracts skills and keywords, scores against job descriptions, and suggests improvements using NLP techniques.', stack:['Python','Flask','NLP','JavaScript','CSS'], github:'https://github.com/Vaibhavsharma45/Resume_Analyser', live:'https://resume-analyser-gbp1.vercel.app/', stars:1 },
-    { name:'Crypto Volatility Predictor', emoji:'📈', tag:'ML · Finance', neon:'#facc15', darkBorder:'border-yellow-500/40', lightBorder:'border-yellow-300', darkTag:'bg-yellow-500/10 text-yellow-400 border-yellow-500/30', lightTag:'bg-yellow-100 text-yellow-700 border-yellow-300', desc:'End-to-end ML pipeline predicting 7-day crypto volatility using Random Forest with 14 engineered features (ATR, Bollinger Bands, momentum). Achieves R² ~0.85 with Streamlit deployment.', stack:['Python','Scikit-learn','Pandas','Streamlit','Plotly'], github:'https://github.com/Vaibhavsharma45/crypto-volatility-prediction-project', live:'https://crypto-volatility-prediction-project-mak4penaud7jwri5vptzto.streamlit.app/', stars:2 },
-    { name:'Birth Weight Predictor', emoji:'🏥', tag:'ML · Healthcare', neon:'#f472b6', darkBorder:'border-pink-500/40', lightBorder:'border-pink-300', darkTag:'bg-pink-500/10 text-pink-400 border-pink-500/30', lightTag:'bg-pink-100 text-pink-700 border-pink-300', desc:'Machine learning model predicting birth weight from maternal health indicators with 92%+ accuracy using regression techniques. Deployed as an interactive web app.', stack:['Python','Scikit-learn','Pandas','Flask','Seaborn'], github:'https://github.com/Vaibhavsharma45/birth-weight-predictor', live:'https://birth-weight-predictor.onrender.com', stars:1 },
+    { name:'DataMind Pro', emoji:'📊', tag:'AI · Full Stack', neon:'#22d3ee', darkBorder:'border-cyan-500/40', lightBorder:'border-cyan-300', darkTag:'bg-cyan-500/10 text-cyan-400 border-cyan-500/30', lightTag:'bg-cyan-100 text-cyan-700 border-cyan-300',
+      desc:'AI-powered data analysis platform — upload CSV/Excel, get auto EDA, 5+ ML models, Groq Llama 3.3 70B insights, PDF/PPT reports, and an LLM chatbot. Built with Flask + 9 Blueprints.',
+      metrics: ['5+ ML models auto-trained', 'Groq Llama 3.3 70B powered', 'PDF + PPT report generation'],
+      stack:['Flask','Python','Groq API','Scikit-learn','Plotly'], github:'https://github.com/Vaibhavsharma45/Auto_analyst', live:'https://datamind-pro.onrender.com', stars:1 },
+    { name:'Bujji AI', emoji:'🤖', tag:'AI · Agentic', neon:'#a78bfa', darkBorder:'border-violet-500/40', lightBorder:'border-violet-300', darkTag:'bg-violet-500/10 text-violet-400 border-violet-500/30', lightTag:'bg-violet-100 text-violet-700 border-violet-300',
+      desc:'JARVIS-style AI assistant — LangGraph ReAct agent, wake-word activation, ChromaDB persistent memory, PC control, WhatsApp/email automation, and web dashboard. 100% free stack.',
+      metrics: ['LangGraph ReAct agent', 'ChromaDB long-term memory', 'PC + browser automation'],
+      stack:['Python','LangGraph','Groq API','FastAPI','ChromaDB'], github:'https://github.com/Vaibhavsharma45/Bujji_AI', live:null, stars:0 },
+    { name:'Marg Darshak', emoji:'🧭', tag:'AI · Web App', neon:'#34d399', darkBorder:'border-emerald-500/40', lightBorder:'border-emerald-300', darkTag:'bg-emerald-500/10 text-emerald-400 border-emerald-500/30', lightTag:'bg-emerald-100 text-emerald-700 border-emerald-300',
+      desc:'Career recommendation platform — ML model suggests career paths, Gyan Kosh for wisdom, Skill Saathi for curated resources. Solves real guidance gap for tier-2/3 students.',
+      metrics: ['ML-based career classifier', '3 modules in one platform', 'Targets tier-2/3 students'],
+      stack:['Flask','Python','Scikit-learn','Seaborn','ML'], github:'https://github.com/Vaibhavsharma45/marg-darshak', live:'https://marg-darshak.onrender.com', stars:1 },
+    { name:'Resume Analyser', emoji:'📄', tag:'AI · NLP', neon:'#fb923c', darkBorder:'border-orange-500/40', lightBorder:'border-orange-300', darkTag:'bg-orange-500/10 text-orange-400 border-orange-500/30', lightTag:'bg-orange-100 text-orange-700 border-orange-300',
+      desc:'NLP-powered resume scanner — parses PDF, extracts skills via TF-IDF, scores against JD keywords, and gives improvement suggestions. ATS-aware matching logic.',
+      metrics: ['TF-IDF keyword extraction', 'ATS-score against JD', 'PDF parsing + skill gap report'],
+      stack:['Python','Flask','NLP','JavaScript','CSS'], github:'https://github.com/Vaibhavsharma45/Resume_Analyser', live:'https://resume-analyser-gbp1.vercel.app/', stars:1 },
+    { name:'Crypto Volatility Predictor', emoji:'📈', tag:'ML · Finance', neon:'#facc15', darkBorder:'border-yellow-500/40', lightBorder:'border-yellow-300', darkTag:'bg-yellow-500/10 text-yellow-400 border-yellow-500/30', lightTag:'bg-yellow-100 text-yellow-700 border-yellow-300',
+      desc:'End-to-end ML pipeline predicting 7-day crypto volatility — 14 engineered features (ATR, Bollinger Bands, momentum) on 50K+ records. Random Forest with R² ~0.85.',
+      metrics: ['R² score: ~0.85', '14 engineered features', '50K+ records · Streamlit deployed'],
+      stack:['Python','Scikit-learn','Pandas','Streamlit','Plotly'], github:'https://github.com/Vaibhavsharma45/crypto-volatility-prediction-project', live:'https://crypto-volatility-prediction-project-mak4penaud7jwri5vptzto.streamlit.app/', stars:2 },
+    { name:'Birth Weight Predictor', emoji:'🏥', tag:'ML · Healthcare', neon:'#f472b6', darkBorder:'border-pink-500/40', lightBorder:'border-pink-300', darkTag:'bg-pink-500/10 text-pink-400 border-pink-500/30', lightTag:'bg-pink-100 text-pink-700 border-pink-300',
+      desc:'Regression model predicting neonatal birth weight from maternal health indicators — 92%+ accuracy using feature-engineered dataset. Deployed as an interactive Flask web app.',
+      metrics: ['92%+ model accuracy', 'Maternal health feature set', 'Flask web app · deployed live'],
+      stack:['Python','Scikit-learn','Pandas','Flask','Seaborn'], github:'https://github.com/Vaibhavsharma45/birth-weight-predictor', live:'https://birth-weight-predictor.onrender.com', stars:1 },
   ];
 
   const handleSubmit = async (e) => {
@@ -160,9 +189,7 @@ const Portfolio = () => {
         setFormStatus('sent');
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setFormStatus(''), 4000);
-      } else {
-        throw new Error('failed');
-      }
+      } else { throw new Error('failed'); }
     } catch {
       window.open(
         `mailto:vaibhavsharma95124v@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`,
@@ -185,7 +212,7 @@ const Portfolio = () => {
 
   const RepoDesc = ({ repo }) => (
     <p className={`${tMuted} text-sm line-clamp-3 mb-3`}>
-      {repo.description || 'An open-source project by Vaibhav Sharma. Click to view on GitHub.'}
+      {repo.description || 'An open-source AI/ML project by Vaibhav Sharma. Click to view on GitHub.'}
     </p>
   );
 
@@ -254,7 +281,7 @@ const Portfolio = () => {
       </nav>
 
       {/* HERO */}
-      <section id="home" className={`pt-32 pb-20 px-4 relative transition-opacity duration-1000 ${isVisible.home ? 'opacity-100' : 'opacity-0'}`}>
+      <section id="home" className={`pt-32 pb-16 px-4 relative transition-opacity duration-1000 ${isVisible.home ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="mb-8 relative inline-block">
             <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 flex items-center justify-center text-6xl font-bold text-white relative overflow-hidden group cursor-pointer"
@@ -264,15 +291,29 @@ const Portfolio = () => {
             </div>
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-cyan-400/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
           </div>
+
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             Hi, I'm <span className={`bg-gradient-to-r ${D ? 'from-cyan-400 via-blue-400 to-purple-400' : 'from-cyan-600 via-blue-600 to-purple-600'} bg-clip-text text-transparent`}>Vaibhav Sharma</span>
           </h1>
-          <div className="text-2xl md:text-3xl mb-8 h-12 flex items-center justify-center gap-2">
+          <div className="text-2xl md:text-3xl mb-6 h-12 flex items-center justify-center gap-2">
             <span className={tMuted}>Aspiring</span>
             <span className={`${D ? 'text-cyan-400' : 'text-cyan-600'} font-semibold min-w-[320px] text-left`}>{typedText}</span>
             <span className={`animate-pulse ${D ? 'text-cyan-400' : 'text-cyan-600'}`}>|</span>
           </div>
-          <p className={`text-xl ${tMuted} max-w-3xl mx-auto mb-8`}>Data Science with Gen AI Learner · Building AI Solutions that Matter</p>
+          <p className={`text-lg ${tMuted} max-w-2xl mx-auto mb-8`}>
+            Building AI/ML solutions that go beyond notebooks — <span className={D?'text-cyan-400':'text-cyan-600'}>6 deployed projects</span>, real data, real results.
+          </p>
+
+          {/* STATS BAR */}
+          <div className={`flex flex-wrap justify-center gap-4 mb-8 max-w-3xl mx-auto`}>
+            {stats.map((s, i) => (
+              <div key={i} className={`px-4 py-2 rounded-xl border ${D ? 'bg-white/5 border-white/10' : 'bg-white border-gray-200 shadow-sm'} flex flex-col items-center min-w-[90px]`}>
+                <span className={`text-lg font-bold ${D?'text-cyan-400':'text-cyan-600'}`}>{s.value}</span>
+                <span className={`text-xs ${tMuted} text-center leading-tight`}>{s.label}</span>
+              </div>
+            ))}
+          </div>
+
           <div className="flex justify-center gap-4 mb-8">
             {[
               { icon: Github, link: 'https://github.com/Vaibhavsharma45' },
@@ -300,8 +341,33 @@ const Portfolio = () => {
           <Title icon={<User className={D ? 'text-blue-400' : 'text-blue-600'} size={32} />} title="About Me" gradient={D ? 'from-blue-400 to-purple-400' : 'from-blue-600 to-purple-600'} />
           <div className="grid md:grid-cols-2 gap-10">
             {[
-              { head: <><Sparkles className="text-yellow-500" size={20} /> Who I Am</>, body: <><p className={`text-sm leading-relaxed mb-4 ${tMuted}`}>I'm <strong className={D?'text-cyan-400':'text-cyan-600'}>Vaibhav Sharma</strong>, an aspiring AI & ML Engineer from Muzaffarnagar, UP. I recently completed my BCA and am actively building expertise in Python, Machine Learning, and Data Science — combining coursework at PW Skills with hands-on project development.</p><p className={`text-sm leading-relaxed mb-4 ${tMuted}`}>I focus on <strong className={D?'text-cyan-400':'text-cyan-600'}>strong fundamentals and real projects</strong> over shortcuts. From building ML models to deploying Flask APIs, I want to understand every layer of the stack.</p><p className={`text-sm leading-relaxed ${tMuted}`}>My philosophy: <span className={`italic font-semibold ${D?'text-purple-400':'text-purple-600'}`}>"Jo kuch bhi hota hai, ache ke liye hota hai"</span></p></>, enterShadow: D ? '0 0 30px rgba(99,102,241,0.15)' : '0 6px 30px rgba(99,102,241,0.12)' },
-              { head: <><Heart className="text-red-500" size={20} /> Personal Interests</>, body: <ul className="space-y-2.5">{['Staying updated with latest AI/ML research and trends','Regular exercise and playing cricket with friends','Reading powerful thoughts and articles for personal growth','Exploring astrology and self-improvement methods','Building side projects and experimenting with new tools','Watching tech talks and following AI researchers on social media'].map((t, i) => (<li key={i} className={`flex items-start gap-2 hover:translate-x-2 transition-transform duration-300 ${tMuted}`}><span className={`${D?'text-cyan-400':'text-cyan-600'} mt-0.5 text-xs`}>▹</span><span className="text-sm">{t}</span></li>))}</ul>, enterShadow: D ? '0 0 30px rgba(244,114,182,0.12)' : '0 6px 30px rgba(244,114,182,0.1)' },
+              {
+                head: <><Sparkles className="text-yellow-500" size={20} /> Who I Am</>,
+                body: <>
+                  <p className={`text-sm leading-relaxed mb-4 ${tMuted}`}>I'm <strong className={D?'text-cyan-400':'text-cyan-600'}>Vaibhav Sharma</strong>, an aspiring AI & ML Engineer from Muzaffarnagar, UP. Currently pursuing BCA while actively building ML models, LLM applications, and deployed AI products — combining PW Skills coursework with real project development.</p>
+                  <p className={`text-sm leading-relaxed mb-4 ${tMuted}`}>I've built <strong className={D?'text-cyan-400':'text-cyan-600'}>6 deployed AI/ML projects</strong> — achieving R² ~0.85 in regression, 92%+ classification accuracy, and powering apps with Groq Llama 3.3 70B. I care about the full stack: data → model → deployment → user.</p>
+                  <p className={`text-sm leading-relaxed ${tMuted}`}>My philosophy: <span className={`italic font-semibold ${D?'text-purple-400':'text-purple-600'}`}>"Jo kuch bhi hota hai, ache ke liye hota hai"</span></p>
+                </>,
+                enterShadow: D ? '0 0 30px rgba(99,102,241,0.15)' : '0 6px 30px rgba(99,102,241,0.12)',
+              },
+              {
+                head: <><Heart className="text-red-500" size={20} /> Personal Interests</>,
+                body: <ul className="space-y-2.5">
+                  {[
+                    'Reading AI research papers & staying updated on LLM advancements',
+                    'Kaggle competitions — turning losses into learning loops',
+                    'Regular exercise and playing cricket with friends',
+                    'Exploring astrology and self-improvement methods',
+                    'Building side projects to experiment with new AI tools',
+                    'Watching AI researcher talks — Andrej Karpathy, Yann LeCun, Sam Altman',
+                  ].map((t, i) => (
+                    <li key={i} className={`flex items-start gap-2 hover:translate-x-2 transition-transform duration-300 ${tMuted}`}>
+                      <span className={`${D?'text-cyan-400':'text-cyan-600'} mt-0.5 text-xs`}>▹</span><span className="text-sm">{t}</span>
+                    </li>
+                  ))}
+                </ul>,
+                enterShadow: D ? '0 0 30px rgba(244,114,182,0.12)' : '0 6px 30px rgba(244,114,182,0.1)',
+              },
             ].map((card, i) => (
               <div key={i} className={`p-8 rounded-2xl ${bgCard} border ${border} relative overflow-hidden group`}
                 style={{ boxShadow: D ? 'none' : '0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.3s, transform 0.3s' }}
@@ -426,6 +492,16 @@ const Portfolio = () => {
                   <span className={`mt-2 md:mt-0 px-4 py-1 rounded-full text-xs font-mono ${D?'bg-purple-500/10 text-purple-400 border border-purple-500/30':'bg-purple-100 text-purple-700 border border-purple-200'}`}>{exp.duration}</span>
                 </div>
                 <p className={`${tMuted} mb-4 leading-relaxed text-sm`}>{exp.description}</p>
+
+                {/* Metrics chips */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {exp.metrics.map((m, mi) => (
+                    <span key={mi} className={`text-xs px-3 py-1 rounded-full font-mono border ${D?'border-cyan-500/30 text-cyan-400 bg-cyan-500/5':'border-cyan-300 text-cyan-700 bg-cyan-50'}`}>
+                      📌 {m}
+                    </span>
+                  ))}
+                </div>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {exp.skills.map((s, si) => (
                     <span key={si} className={`text-xs px-3 py-1 rounded-full border font-medium ${D?'border-purple-500/30 text-purple-400 bg-purple-500/10':'border-purple-200 text-purple-700 bg-purple-50'}`}>{s}</span>
@@ -447,7 +523,7 @@ const Portfolio = () => {
       <section id="projects" className={`py-20 px-4 ${sec(false)} transition-all duration-1000 ${isVisible.projects ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <Title icon={<Github className={D?'text-cyan-400':'text-cyan-600'} size={32} />} title="Projects" gradient={D?'from-cyan-400 to-purple-400':'from-cyan-600 to-purple-600'} />
-          <p className={`text-center ${tMuted} mb-12 text-sm -mt-6`}>Real projects — built, deployed, and live 🚀</p>
+          <p className={`text-center ${tMuted} mb-12 text-sm -mt-6`}>Real AI/ML projects — built, measured, deployed 🚀</p>
           <h3 className={`text-lg font-semibold mb-6 flex items-center gap-2 ${tMain}`}><span className="text-yellow-500">📌</span> Featured Projects</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
             {projects.map((p, i) => (
@@ -467,7 +543,15 @@ const Portfolio = () => {
                   </div>
                   {p.stars > 0 && <span className="text-xs text-yellow-500 font-mono">⭐ {p.stars}</span>}
                 </div>
-                <p className={`text-sm leading-relaxed mb-4 flex-1 ${tMuted}`}>{p.desc}</p>
+                <p className={`text-sm leading-relaxed mb-3 flex-1 ${tMuted}`}>{p.desc}</p>
+
+                {/* Metrics */}
+                <div className="flex flex-col gap-1 mb-3">
+                  {p.metrics.map((m, mi) => (
+                    <span key={mi} className={`text-xs font-mono ${D?'text-cyan-400/80':'text-cyan-700'}`}>↳ {m}</span>
+                  ))}
+                </div>
+
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {p.stack.map((t, ti) => (<span key={ti} className={`text-xs px-2 py-0.5 rounded-full font-mono border ${D?'border-white/10 text-slate-400 bg-white/5':'border-gray-200 text-gray-600 bg-gray-50'}`}>{t}</span>))}
                 </div>
